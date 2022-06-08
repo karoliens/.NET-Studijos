@@ -4,23 +4,52 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Karolis"); //išveda į konsolę Karolis
+            //Išveskite į konsolę savo vardą
 
-            Console.WriteLine("Įveskite savo vardą:");
-            Console.WriteLine($"Jūsų vardas: {Console.ReadLine()}");
+            //Console.WriteLine("Karolis");
 
-            Console.WriteLine("Įveskite savo vardą:");
-            Console.WriteLine();
-            var firstLetter = Console.ReadKey();
-            Console.WriteLine($"Pirmosios vardo raidės ASCII kodas: {(int)Console.ReadKey().KeyChar}");
+            //Nuskaitykite iš klaviatūros savo vardą ir išveskite į konsolę
 
-            Console.WriteLine("Įveskite savo vardą:");
-            var name = Console.ReadKey().Key;
-            Console.WriteLine($"Pirmoji vardo raidė: {name}");
+            //Console.WriteLine("Įveskite savo vardą:");
+            //Console.WriteLine($"Jūsų vardas: {Console.ReadLine()}");
+
+            //Nuskaitykite iš klaviatūros savo vardo pirmąją raidę ir išveskite į konsolę jos ASCII kodą
+
+            //Console.WriteLine("Įveskite savo vardo pirmą raidę ir bus išvestas ASCII kodas:");
+            //Console.WriteLine($"\tPirmosios vardo raidės ASCII kodas:{(int)Console.ReadKey().Key}");
+
+            //Nuskaitykite iš klaviatūros savo vardo pirmąją raidę, tada nuskaitykite bet kokį skaičių ir išveskite į konsolę sumą. Pabandykite šį skaičių išvesti įvairiais formatais
+
+            Console.WriteLine("Įveskite savo vardo pirmą raidę:");
+            var firstLetter = Console.ReadKey().Key;
+            Console.WriteLine($"\tPirmosios vardo raidės ASCII kodas:{(int)firstLetter}");
 
             Console.WriteLine("Įveskite skaičių:");
             var anyNumber = Console.ReadLine();
-            Console.WriteLine($"Raidės ir skaičiaus suma: {name}{anyNumber}");
+            Convert.ToInt32(anyNumber);
+            Console.WriteLine($"\tĮvestas skaičius:{anyNumber}");
+
+
+
+
+            //Console.WriteLine("(1) Pirkti\n(2) Parduoti\n(3) Likučiai", );
+
+
+            //Console.WriteLine("\"LABAS\"");
+            //Console.WriteLine("\u0022LABAS\u0022");
+
+
+            //Console.WriteLine("Karolis");
+
+
+
+            //Console.WriteLine("     " + Console.ReadLine().Length);
+            //Console.WriteLine("Karolis" + Console.ReadLine().Length);
+
+            //Console.WriteLine("\t*********************");
+            //Console.WriteLine("\t**\t\t**");
+
+            Console.Read(););
         }
     }
 }
