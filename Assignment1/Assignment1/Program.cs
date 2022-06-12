@@ -18,7 +18,7 @@
             Console.WriteLine($"5eil.{keturi}{tuscias}{tuscias}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
-            Console.WriteLine("\n\n----testi------");
+            Console.WriteLine("\n\n----tęsti------");
             Console.ReadLine();
 
             //Nupieštas apverstas Tower of Hanoi
@@ -30,7 +30,7 @@
             Console.WriteLine($"5eil.{tuscias}{tuscias}{tuscias}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
-            Console.WriteLine("\n\n----testi------");
+            Console.WriteLine("\n\n----tęsti------");
             Console.ReadLine();
 
             //Išvalytas Tower of Hanoi
@@ -42,7 +42,7 @@
             Console.WriteLine($"5eil.{tuscias}{tuscias}{tuscias}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
-            Console.WriteLine("\n\n----testi------");
+            Console.WriteLine("\n\n----tęsti------");
             Console.ReadLine();
 
             //Į kiekvieno stulpelio 5 eilutę įdėtas 4 dalių elementas
@@ -54,7 +54,7 @@
             Console.WriteLine($"5eil.{keturi}{keturi}{keturi}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
-            Console.WriteLine("\n\n----testi------");
+            Console.WriteLine("\n\n----tęsti------");
             Console.ReadLine();
 
             /*
@@ -71,7 +71,7 @@
             Console.WriteLine($"5eil.{keturi}{trys}{du}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
-            Console.WriteLine("\n\n----testi------");
+            Console.WriteLine("\n\n----tęsti------");
             Console.ReadLine();
 
             //Į 1 stulpelio 4 eilutę įdėtas toks pat elementas koks yra 3 stulpelyje 4 eilutėje
@@ -83,7 +83,7 @@
             Console.WriteLine($"5eil.{keturi}{trys}{du}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
-            Console.WriteLine("\n\n----testi------");
+            Console.WriteLine("\n\n----tęsti------");
             Console.ReadLine();
 
             //Į visas 2 stulpelio eilutes įdėtas toks pat elementas koks yra 3 stulpelio 5 eilutėje
@@ -95,7 +95,7 @@
             Console.WriteLine($"5eil.{keturi}{vienas}{du}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
-            Console.WriteLine("\n\n----testi------");
+            Console.WriteLine("\n\n----tęsti------");
             Console.ReadLine();
 
             /*
@@ -110,7 +110,7 @@
             Console.WriteLine($"5eil.{tuscias}{tuscias}{keturi}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
-            Console.WriteLine("\n\n----testi------");
+            Console.WriteLine("\n\n----tęsti------");
             Console.ReadLine();
 
             //Pakeistas visų elementų dizainas iš # į "
@@ -122,7 +122,7 @@
             Console.WriteLine($"5eil.{tuscias}{tuscias}{keturi.Replace("#", "\"")}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
-            Console.WriteLine("\n\n----testi------");
+            Console.WriteLine("\n\n----tęsti------");
             Console.ReadLine();
 
             /*
@@ -130,7 +130,7 @@
             Išvestas visas Tower of Hanoi su perpiešta pirma eilute
             */
 
-            Console.WriteLine("Nupieskite 1 stulpelio 1 eilute");
+            Console.WriteLine("Nupieškite 1 stulpelio 1 eilutę");
 
             string ivedimas = Console.ReadLine();
 
@@ -141,7 +141,7 @@
             Console.WriteLine($"5eil.{tuscias}{tuscias}{keturi.Replace("#", "\"")}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
-            Console.WriteLine("\n\n----testi------");
+            Console.WriteLine("\n\n----tęsti------");
             Console.ReadLine();
         }
     }
