@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-           //Nupiestas Tower of Hanoi
+           //Nupieštas Tower of Hanoi
 
             string tuscias = "       |     ";
             string vienas = "      #|#    ";
@@ -21,7 +21,7 @@
             Console.WriteLine("\n\n----testi------");
             Console.ReadLine();
 
-            //Nupiestas apverstas Tower of Hanoi
+            //Nupieštas apverstas Tower of Hanoi
 
             Console.WriteLine($"1eil.{keturi}{tuscias}{tuscias}");
             Console.WriteLine($"2eil.{trys}{tuscias}{tuscias}");
@@ -33,7 +33,7 @@
             Console.WriteLine("\n\n----testi------");
             Console.ReadLine();
 
-            //Isvalytas Tower of Hanoi
+            //Išvalytas Tower of Hanoi
 
             Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias}");
             Console.WriteLine($"2eil.{tuscias}{tuscias}{tuscias}");
@@ -45,7 +45,7 @@
             Console.WriteLine("\n\n----testi------");
             Console.ReadLine();
 
-            //Į kiekvieno stulpelio 5 eilute idetas 4 dalių elementas
+            //Į kiekvieno stulpelio 5 eilutę įdėtas 4 dalių elementas
 
             Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias}");
             Console.WriteLine($"2eil.{tuscias}{tuscias}{tuscias}");
@@ -58,10 +58,10 @@
             Console.ReadLine();
 
             /*
-            Į 1 stulpelio 5 eilute įdėtas 4 dalių elementas
-            I 2 sutulpelio 5 eilute idetas 3 dalių elementas
-            I 3 stulpelio 4 eilute idetas 1 dalies elementas
-            I 3 stulpelio 5 eilute idetas 2 dalių elementas
+            Į 1 stulpelio 5 eilutę įdėtas 4 dalių elementas
+            Į 2 sutulpelio 5 eilutę įdėtas 3 dalių elementas
+            Į 3 stulpelio 4 eilutę įdėtas 1 dalies elementas
+            Į 3 stulpelio 5 eilutę įdėtas 2 dalių elementas
             */
 
             Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias}");
@@ -74,7 +74,7 @@
             Console.WriteLine("\n\n----testi------");
             Console.ReadLine();
 
-            //Į 1 stulpelio 4 eilute įdėtas toks pat elementas kaip yra 3 stulpelyje 4 eiluteje
+            //Į 1 stulpelio 4 eilutę įdėtas toks pat elementas koks yra 3 stulpelyje 4 eilutėje
 
             Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias}");
             Console.WriteLine($"2eil.{tuscias}{tuscias}{tuscias}");
@@ -86,7 +86,7 @@
             Console.WriteLine("\n\n----testi------");
             Console.ReadLine();
 
-            //Į visas 2 stulpelio eilutes įdėtas toks pat elementas kaip yra 3 stulpelio 5 eiluteje
+            //Į visas 2 stulpelio eilutes įdėtas toks pat elementas koks yra 3 stulpelio 5 eilutėje
 
             Console.WriteLine($"1eil.{tuscias}{vienas}{tuscias}");
             Console.WriteLine($"2eil.{tuscias}{vienas}{tuscias}");
@@ -99,7 +99,7 @@
             Console.ReadLine();
 
             /*
-            I 3 stulpeli sudėta teisinga piramide
+            Į 3 stulpelį sudėta teisinga piramidė
             1 stulpelis ir 2 stulpelis turi likti tušti
             */
 
@@ -113,7 +113,7 @@
             Console.WriteLine("\n\n----testi------");
             Console.ReadLine();
 
-            //pakeiskitas visų elementų dizainas iš # į "
+            //Pakeistas visų elementų dizainas iš # į "
 
             Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias.Replace("#","\"")}");
             Console.WriteLine($"2eil.{tuscias}{tuscias}{vienas.Replace("#", "\"")}");
@@ -125,7 +125,10 @@
             Console.WriteLine("\n\n----testi------");
             Console.ReadLine();
 
-            //paprašykite naudotojo nupiešti 1 sulpelio 1 eilutę. Išveskite visą Tower of Hanoi su perpiešta pirma eilute
+            /*
+            Paprašyta naudotojo nupiešti 1 sulpelio 1 eilutę
+            Išvestas visas Tower of Hanoi su perpiešta pirma eilute
+            */
 
             Console.WriteLine("Nupieskite 1 stulpelio 1 eilute");
 
