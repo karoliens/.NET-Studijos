@@ -6,11 +6,11 @@
         {
            //Nupieštas Tower of Hanoi
 
-            string tuscias = "       |     ";
-            string vienas = "      #|#    ";
-            string du = "     ##|##   ";
-            string trys = "    ###|###  ";
-            string keturi = "   ####|#### ";
+            string tuscias = "        |    ";
+            string vienas = "       #|#   ";
+            string du = "      ##|##  ";
+            string trys = "     ###|### ";
+            string keturi = "    ####|####";
             Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias}");
             Console.WriteLine($"2eil.{vienas}{tuscias}{tuscias}");
             Console.WriteLine($"3eil.{du}{tuscias}{tuscias}");
