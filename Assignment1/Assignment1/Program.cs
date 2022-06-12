@@ -6,16 +6,16 @@
         {
            //Nupiestas Tower of Hanoi
 
-            string pirmaEil = "       |     ";
-            string antraEil = "      #|#    ";
-            string treciaEil = "     ##|##   ";
-            string ketvirtaEil = "    ###|###  ";
-            string penktaEil = "   ####|#### ";
-            Console.WriteLine($"1eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"2eil.{antraEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"3eil.{treciaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"4eil.{ketvirtaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"5eil.{penktaEil}{pirmaEil}{pirmaEil}");
+            string tuscias = "       |     ";
+            string vienas = "      #|#    ";
+            string du = "     ##|##   ";
+            string trys = "    ###|###  ";
+            string keturi = "   ####|#### ";
+            Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"2eil.{vienas}{tuscias}{tuscias}");
+            Console.WriteLine($"3eil.{du}{tuscias}{tuscias}");
+            Console.WriteLine($"4eil.{trys}{tuscias}{tuscias}");
+            Console.WriteLine($"5eil.{keturi}{tuscias}{tuscias}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
             Console.WriteLine("\n\n----testi------");
@@ -23,11 +23,11 @@
 
             //Nupiestas apverstas Tower of Hanoi
 
-            Console.WriteLine($"1eil.{penktaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"2eil.{ketvirtaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"3eil.{treciaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"4eil.{antraEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"5eil.{pirmaEil}{pirmaEil}{pirmaEil}");
+            Console.WriteLine($"1eil.{keturi}{tuscias}{tuscias}");
+            Console.WriteLine($"2eil.{trys}{tuscias}{tuscias}");
+            Console.WriteLine($"3eil.{du}{tuscias}{tuscias}");
+            Console.WriteLine($"4eil.{vienas}{tuscias}{tuscias}");
+            Console.WriteLine($"5eil.{tuscias}{tuscias}{tuscias}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
             Console.WriteLine("\n\n----testi------");
@@ -35,11 +35,11 @@
 
             //Isvalytas Tower of Hanoi
 
-            Console.WriteLine($"1eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"2eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"3eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"4eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"5eil.{pirmaEil}{pirmaEil}{pirmaEil}");
+            Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"2eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"3eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"4eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"5eil.{tuscias}{tuscias}{tuscias}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
             Console.WriteLine("\n\n----testi------");
@@ -47,11 +47,11 @@
 
             //Į kiekvieno stulpelio 5 eilute idetas 4 dalių elementas
 
-            Console.WriteLine($"1eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"2eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"3eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"4eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"5eil.{penktaEil}{penktaEil}{penktaEil}");
+            Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"2eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"3eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"4eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"5eil.{keturi}{keturi}{keturi}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
             Console.WriteLine("\n\n----testi------");
@@ -64,11 +64,11 @@
             I 3 stulpelio 5 eilute idetas 2 dalių elementas
             */
 
-            Console.WriteLine($"1eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"2eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"3eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"4eil.{pirmaEil}{pirmaEil}{antraEil}");
-            Console.WriteLine($"5eil.{penktaEil}{ketvirtaEil}{treciaEil}");
+            Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"2eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"3eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"4eil.{tuscias}{tuscias}{vienas}");
+            Console.WriteLine($"5eil.{keturi}{trys}{du}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
             Console.WriteLine("\n\n----testi------");
@@ -76,11 +76,11 @@
 
             //Į 1 stulpelio 4 eilute įdėtas toks pat elementas kaip yra 3 stulpelyje 4 eiluteje
 
-            Console.WriteLine($"1eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"2eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"3eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"4eil.{antraEil}{pirmaEil}{antraEil}");
-            Console.WriteLine($"5eil.{penktaEil}{ketvirtaEil}{treciaEil}");
+            Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"2eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"3eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"4eil.{vienas}{tuscias}{vienas}");
+            Console.WriteLine($"5eil.{keturi}{trys}{du}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
             Console.WriteLine("\n\n----testi------");
@@ -88,11 +88,11 @@
 
             //Į visas 2 stulpelio eilutes įdėtas toks pat elementas kaip yra 3 stulpelio 5 eiluteje
 
-            Console.WriteLine($"1eil.{pirmaEil}{antraEil}{pirmaEil}");
-            Console.WriteLine($"2eil.{pirmaEil}{antraEil}{pirmaEil}");
-            Console.WriteLine($"3eil.{pirmaEil}{antraEil}{pirmaEil}");
-            Console.WriteLine($"4eil.{antraEil}{antraEil}{antraEil}");
-            Console.WriteLine($"5eil.{penktaEil}{antraEil}{treciaEil}");
+            Console.WriteLine($"1eil.{tuscias}{vienas}{tuscias}");
+            Console.WriteLine($"2eil.{tuscias}{vienas}{tuscias}");
+            Console.WriteLine($"3eil.{tuscias}{vienas}{tuscias}");
+            Console.WriteLine($"4eil.{vienas}{vienas}{vienas}");
+            Console.WriteLine($"5eil.{keturi}{vienas}{du}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
             Console.WriteLine("\n\n----testi------");
@@ -103,11 +103,11 @@
             1 stulpelis ir 2 stulpelis turi likti tušti
             */
 
-            Console.WriteLine($"1eil.{pirmaEil}{pirmaEil}{pirmaEil}");
-            Console.WriteLine($"2eil.{pirmaEil}{pirmaEil}{antraEil}");
-            Console.WriteLine($"3eil.{pirmaEil}{pirmaEil}{treciaEil}");
-            Console.WriteLine($"4eil.{pirmaEil}{pirmaEil}{ketvirtaEil}");
-            Console.WriteLine($"5eil.{pirmaEil}{pirmaEil}{penktaEil}");
+            Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias}");
+            Console.WriteLine($"2eil.{tuscias}{tuscias}{vienas}");
+            Console.WriteLine($"3eil.{tuscias}{tuscias}{du}");
+            Console.WriteLine($"4eil.{tuscias}{tuscias}{trys}");
+            Console.WriteLine($"5eil.{tuscias}{tuscias}{keturi}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
             Console.WriteLine("\n\n----testi------");
@@ -115,11 +115,11 @@
 
             //pakeiskitas visų elementų dizainas iš # į "
 
-            Console.WriteLine($"1eil.{pirmaEil}{pirmaEil}{pirmaEil.Replace("#","\"")}");
-            Console.WriteLine($"2eil.{pirmaEil}{pirmaEil}{antraEil.Replace("#", "\"")}");
-            Console.WriteLine($"3eil.{pirmaEil}{pirmaEil}{treciaEil.Replace("#", "\"")}");
-            Console.WriteLine($"4eil.{pirmaEil}{pirmaEil}{ketvirtaEil.Replace("#", "\"")}");
-            Console.WriteLine($"5eil.{pirmaEil}{pirmaEil}{penktaEil.Replace("#", "\"")}");
+            Console.WriteLine($"1eil.{tuscias}{tuscias}{tuscias.Replace("#","\"")}");
+            Console.WriteLine($"2eil.{tuscias}{tuscias}{vienas.Replace("#", "\"")}");
+            Console.WriteLine($"3eil.{tuscias}{tuscias}{du.Replace("#", "\"")}");
+            Console.WriteLine($"4eil.{tuscias}{tuscias}{trys.Replace("#", "\"")}");
+            Console.WriteLine($"5eil.{tuscias}{tuscias}{keturi.Replace("#", "\"")}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
             Console.WriteLine("\n\n----testi------");
@@ -131,11 +131,11 @@
 
             string ivedimas = Console.ReadLine();
 
-            Console.WriteLine($"1eil.{ivedimas}{pirmaEil}{pirmaEil.Replace("#", "\"")}");
-            Console.WriteLine($"2eil.{pirmaEil}{pirmaEil}{antraEil.Replace("#", "\"")}");
-            Console.WriteLine($"3eil.{pirmaEil}{pirmaEil}{treciaEil.Replace("#", "\"")}");
-            Console.WriteLine($"4eil.{pirmaEil}{pirmaEil}{ketvirtaEil.Replace("#", "\"")}");
-            Console.WriteLine($"5eil.{pirmaEil}{pirmaEil}{penktaEil.Replace("#", "\"")}");
+            Console.WriteLine($"1eil.{ivedimas}{tuscias}{tuscias.Replace("#", "\"")}");
+            Console.WriteLine($"2eil.{tuscias}{tuscias}{vienas.Replace("#", "\"")}");
+            Console.WriteLine($"3eil.{tuscias}{tuscias}{du.Replace("#", "\"")}");
+            Console.WriteLine($"4eil.{tuscias}{tuscias}{trys.Replace("#", "\"")}");
+            Console.WriteLine($"5eil.{tuscias}{tuscias}{keturi.Replace("#", "\"")}");
 
             Console.WriteLine("      ----1stulp-------2stulp-------3stulp----");
             Console.WriteLine("\n\n----testi------");
