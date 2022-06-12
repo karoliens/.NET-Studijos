@@ -134,7 +134,7 @@
 
             string ivedimas = Console.ReadLine();
 
-            Console.WriteLine($"1eil.{ivedimas}{tuscias}{tuscias.Replace("#", "\"")}");
+            Console.WriteLine($"1eil.     {ivedimas} {tuscias}{tuscias.Replace("#", "\"")}"); //gerai išlygiuoja tik su ###|###
             Console.WriteLine($"2eil.{tuscias}{tuscias}{vienas.Replace("#", "\"")}");
             Console.WriteLine($"3eil.{tuscias}{tuscias}{du.Replace("#", "\"")}");
             Console.WriteLine($"4eil.{tuscias}{tuscias}{trys.Replace("#", "\"")}");
