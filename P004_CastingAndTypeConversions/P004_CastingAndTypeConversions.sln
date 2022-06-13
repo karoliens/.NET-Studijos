@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P004_CastingAndTypeConversions", "P004_TypeConversions\P004_CastingAndTypeConversions.csproj", "{55E68FBA-4D85-4FF7-8D4E-AF7F6145A96E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55E68FBA-4D85-4FF7-8D4E-AF7F6145A96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55E68FBA-4D85-4FF7-8D4E-AF7F6145A96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55E68FBA-4D85-4FF7-8D4E-AF7F6145A96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55E68FBA-4D85-4FF7-8D4E-AF7F6145A96E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEAB0153-2192-4E11-B6B2-A8360D98B4EB}
+	EndGlobalSection
+EndGlobal
