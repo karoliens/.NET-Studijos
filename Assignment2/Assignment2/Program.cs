@@ -20,19 +20,19 @@
             rezultatas gali atrodyti taip:
                             |--------------------|
                             |   ^F     _    ^C   |
-                            |  100  - | | -  40  |
+                            |  104  - | | -  40  |
                             |   95  - | | -  35  |
-                            |   90  - | | -  30  |
-                            |   80  - | | -  25  |
-                            |   70  - | | -  20  |
-                            |   60  - | | -  15  |
+                            |   86  - | | -  30  |
+                            |   77  - | | -  25  |
+                            |   68  - | | -  20  |
+                            |   59  - | | -  15  |
                             |   50  - |#| -  10  |
-                            |   40  - |#| -   5  |
-                            |   30  - |#| -   0  |
-                            |   20  - |#| -  -5  |
-                            |   10  - |#| - -10  |
+                            |   41  - |#| -   5  |
+                            |   32  - |#| -   0  |
+                            |   23  - |#| -  -5  |
+                            |   14  - |#| - -10  |
                             |    5  - |#| - -15  |
-                            |    0  - |#| - -20  |
+                            |   -4  - |#| - -20  |
                             |  -10  - |#| - -25  |
                             |  -20  - |#| - -30  |
                             |  -30  - |#| - -35  |
@@ -41,7 +41,8 @@
                             |       (*****)      |
                             |        `---'       |
                             |____________________|
- */
+            */
+
             Console.WriteLine("Įveskite temperatūrą pagal Celsijų:");
             var tempC = double.Parse(Console.ReadLine());
             var tempF = tempC * 1.8 + 32;
@@ -61,35 +62,47 @@
             var tempKPerskaiciuotaIsF = (tempF - 32) * 5 / 9 + 273.15;
             Console.WriteLine($"Ar perskaičiuota temperatūra pagal Kelviną sutampa su ankstesniu skaičiavimu? {tempKPerskaiciuotaIsF == tempK}");
 
-            
-
             var skaleMax = tempC + 40;
             var skaleMin = tempC - 40;
-
-            Console.WriteLine(skaleMin);
-            Console.WriteLine(skaleMax);
+            var tempC5 = skaleMax - 5;
+            var tempC10 = skaleMax - 10;
+            var tempC15 = skaleMax - 15;
+            var tempC20 = skaleMax - 20;
+            var tempC25 = skaleMax - 25;
+            var tempC30 = skaleMax - 30;
+            var tempC35 = skaleMax - 35;
+            var tempC40 = skaleMax - 40;
+            var tempC45 = skaleMax - 45;
+            var tempC50 = skaleMax - 50;
+            var tempC55 = skaleMax - 55;
+            var tempC60 = skaleMax - 60;
+            var tempC65 = skaleMax - 65;
+            var tempC70 = skaleMax - 70;
+            var tempC75 = skaleMax - 75;
 
             Console.WriteLine("|--------------------|");
             Console.WriteLine("|   ^F     _    ^C   |");
-            Console.WriteLine($" {skaleMax}");
-            Console.WriteLine($" {skaleMax - 5}");
-            Console.WriteLine($" {skaleMax - 10}");
-            Console.WriteLine($" {skaleMax - 15}");
-            Console.WriteLine($" {skaleMax - 20}");
-            Console.WriteLine($" {skaleMax - 25}");
-            Console.WriteLine($" {skaleMax - 30}");
-            Console.WriteLine($" {skaleMax - 35}");
-            Console.WriteLine($" {skaleMax - 40}");
-            Console.WriteLine($" {skaleMax - 45}");
-            Console.WriteLine($" {skaleMax - 50}");
-            Console.WriteLine($" {skaleMax - 55}");
-            Console.WriteLine($" {skaleMax - 60}");
-            Console.WriteLine($" {skaleMax - 65}");
-            Console.WriteLine($" {skaleMax - 70}");
-            Console.WriteLine($" {skaleMax - 75}");
-            Console.WriteLine($" {skaleMax - 80}");
-            Console.WriteLine($" {skaleMin}");
-
+            Console.WriteLine($"|  {skaleMax * 1.8 + 32}  - | | -  {skaleMax}  |");
+            Console.WriteLine($"|   {tempC5 * 1.8 + 32}  - | | -  {tempC5}  |");
+            Console.WriteLine($"|   {tempC10 * 1.8 + 32}  - | | -  {tempC10}  |");
+            Console.WriteLine($"|   {tempC15 * 1.8 + 32}  - | | -  {tempC15}  |");
+            Console.WriteLine($"|   {tempC20 * 1.8 + 32}  - | | -  {tempC20}  |");
+            Console.WriteLine($"|   {tempC25 * 1.8 + 32}  - | | -  {tempC25}  |");
+            Console.WriteLine($"|   {tempC30 * 1.8 + 32}  - | | -  {tempC30}  |");
+            Console.WriteLine($"|   {tempC35 * 1.8 + 32}  - | | -   {tempC35}  |");
+            Console.WriteLine($"|   {tempC40 * 1.8 + 32}  - | | -   {tempC40}  |");
+            Console.WriteLine($"|   {tempC45 * 1.8 + 32}  - | | -  {tempC45}  |");
+            Console.WriteLine($"|   {tempC50 * 1.8 + 32}  - | | - {tempC50}  |");
+            Console.WriteLine($"|    {tempC55 * 1.8 + 32}  - | | - {tempC55}  |");
+            Console.WriteLine($"|   {tempC60 * 1.8 + 32}  - | | - {tempC60}  |");
+            Console.WriteLine($"|  {tempC65 * 1.8 + 32}  - | | - {tempC65}  |");
+            Console.WriteLine($"|  {tempC70 * 1.8 + 32}  - | | - {tempC70}  |");
+            Console.WriteLine($"|  {tempC75 * 1.8 + 32}  - | | - {tempC75}  |");
+            Console.WriteLine($"|  {skaleMin * 1.8 + 32}  - | | - {skaleMin}  |");
+            Console.WriteLine("|        '***`       |");
+            Console.WriteLine("|       (*****)      |");
+            Console.WriteLine("|        `---'       |");
+            Console.WriteLine("|____________________|");
         }
     }
 }
