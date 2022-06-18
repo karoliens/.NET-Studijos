@@ -78,17 +78,54 @@
             string kanalasA24 = "_";
             string kanalasA25 = "_";
 
+            //Kanalo B atskirų elementų priskyrimas kintamiesiems
+
+            string kanalasB0 = "_";
+            string kanalasB1 = "_";
+            string kanalasB2 = "_";
+            string kanalasB3 = "_";
+            string kanalasB4 = "-";
+            string kanalasB5 = "-";
+            string kanalasB6 = "-";
+            string kanalasB7 = "_";
+            string kanalasB8 = "_";
+            string kanalasB9 = "_";
+            string kanalasB10 = "-";
+            string kanalasB11 = "-";
+            string kanalasB12 = "-";
+            string kanalasB13 = "_";
+            string kanalasB14 = "_";
+            string kanalasB15 = "_";
+            string kanalasB16 = "-";
+            string kanalasB17 = "-";
+            string kanalasB18 = "-";
+            string kanalasB19 = "_";
+            string kanalasB20 = "_";
+            string kanalasB21 = "_";
+            string kanalasB22 = "-";
+            string kanalasB23 = "-";
+            string kanalasB24 = "-";
+            string kanalasB25 = "_";
+
             //Kanalo A pradinis išvedimas
 
-            /*
-            Console.WriteLine($"{kanalasA0}{kanalasA1}{kanalasA2}{kanalasA3}{kanalasA4}" +
+            Console.WriteLine($"Kanalas A\n{kanalasA0}{kanalasA1}{kanalasA2}{kanalasA3}{kanalasA4}" +
             $"{kanalasA5}{kanalasA6}{kanalasA7}{kanalasA8}" +
             $"{kanalasA9}{kanalasA10}{kanalasA11}{kanalasA12}" +
             $"{kanalasA13}{kanalasA14}{kanalasA15}{kanalasA16}" +
             $"{kanalasA17}{kanalasA18}{kanalasA19}{kanalasA20}" +
             $"{kanalasA21}{kanalasA22}{kanalasA23}{kanalasA24}" +
             $"{kanalasA25}");
-            */
+
+            //Kanalo B pradinis išvedimas
+
+            Console.WriteLine($"Kanalas B\n{kanalasB0}{kanalasB1}{kanalasB2}{kanalasB3}{kanalasB4}" +
+                $"{kanalasB5}{kanalasB6}{kanalasB7}{kanalasB8}" +
+                $"{kanalasB9}{kanalasB10}{kanalasB11}{kanalasB12}" +
+                $"{kanalasB13}{kanalasB14}{kanalasB15}{kanalasB16}" +
+                $"{kanalasB17}{kanalasB18}{kanalasB19}{kanalasB20}" +
+                $"{kanalasB21}{kanalasB22}{kanalasB23}{kanalasB24}" +
+                $"{kanalasB25}");
 
             //Kanalo A elementų keitimas į eilutę True ir False
 
@@ -148,46 +185,7 @@
             bool kanalasA24Bool = bool.Parse(kanalasA24);
             bool kanalasA25Bool = bool.Parse(kanalasA25);
 
-            //Kanalo B atskirų elementų priskyrimas kintamiesiems
-
-            string kanalasB0 = "_";
-            string kanalasB1 = "_";
-            string kanalasB2 = "_";
-            string kanalasB3 = "_";
-            string kanalasB4 = "-";
-            string kanalasB5 = "-";
-            string kanalasB6 = "-";
-            string kanalasB7 = "_";
-            string kanalasB8 = "_";
-            string kanalasB9 = "_";
-            string kanalasB10 = "-";
-            string kanalasB11 = "-";
-            string kanalasB12 = "-";
-            string kanalasB13 = "_";
-            string kanalasB14 = "_";
-            string kanalasB15 = "_";
-            string kanalasB16 = "-";
-            string kanalasB17 = "-";
-            string kanalasB18 = "-";
-            string kanalasB19 = "_";
-            string kanalasB20 = "_";
-            string kanalasB21 = "_";
-            string kanalasB22 = "-";
-            string kanalasB23 = "-";
-            string kanalasB24 = "-";
-            string kanalasB25 = "_";
-
-            //Kanalo B pradinis išvedimas
-
-            /*
-            Console.WriteLine($"{kanalasB0}{kanalasB1}{kanalasB2}{kanalasB3}{kanalasB4}" +
-                $"{kanalasB5}{kanalasB6}{kanalasB7}{kanalasB8}" +
-                $"{kanalasB9}{kanalasB10}{kanalasB11}{kanalasB12}" +
-                $"{kanalasB13}{kanalasB14}{kanalasB15}{kanalasB16}" +
-                $"{kanalasB17}{kanalasB18}{kanalasB19}{kanalasB20}" +
-                $"{kanalasB21}{kanalasB22}{kanalasB23}{kanalasB24}" +
-                $"{kanalasB25}");
-            */
+            
 
             //Kanalo B elementų keitimas į eilutę True ir False
 
@@ -247,7 +245,7 @@
             bool kanalasB24Bool = bool.Parse(kanalasB24);
             bool kanalasB25Bool = bool.Parse(kanalasB25);
 
-            //Kanalo A ir B && loginis lyginimas
+            //Kanalo A ir B AND loginis lyginimas
 
             bool a0B0 = bool.Parse(kanalasA0) && bool.Parse(kanalasB0);
             bool a1B1 = bool.Parse(kanalasA1) && bool.Parse(kanalasB1);
@@ -276,9 +274,415 @@
             bool a24B24 = bool.Parse(kanalasA24) && bool.Parse(kanalasB24);
             bool a25B25 = bool.Parse(kanalasA25) && bool.Parse(kanalasB25);
 
-            //Kanalų A ir B loginio lyginimo && i6vedimas į konsolę
+            //Kanalų A ir B loginio lyginimo AND išvedimas į konsolę
 
-            Console.WriteLine($"{Convert.ToString(a0B0).Replace("False", "_").Replace("True", "-")}" +
+            Console.WriteLine($"AND\n{Convert.ToString(a0B0).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a1B1).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a2B2).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a3B3).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a4B4).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a5B5).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a6B6).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a7B7).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a8B8).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a9B9).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a10B10).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a11B11).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a12B12).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a13B13).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a14B14).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a15B15).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a16B16).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a17B17).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a18B18).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a19B19).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a20B20).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a21B21).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a22B22).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a23B23).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a24B24).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a25B25).Replace("False", "_").Replace("True", "-")}");
+
+            //Kanalo A ir B OR loginis lyginimas
+
+            a0B0 = bool.Parse(kanalasA0) || bool.Parse(kanalasB0);
+            a1B1 = bool.Parse(kanalasA1) || bool.Parse(kanalasB1);
+            a2B2 = bool.Parse(kanalasA2) || bool.Parse(kanalasB2);
+            a3B3 = bool.Parse(kanalasA3) || bool.Parse(kanalasB3);
+            a4B4 = bool.Parse(kanalasA4) || bool.Parse(kanalasB4);
+            a5B5 = bool.Parse(kanalasA5) || bool.Parse(kanalasB5);
+            a6B6 = bool.Parse(kanalasA6) || bool.Parse(kanalasB6);
+            a7B7 = bool.Parse(kanalasA7) || bool.Parse(kanalasB7);
+            a8B8 = bool.Parse(kanalasA8) || bool.Parse(kanalasB8);
+            a9B9 = bool.Parse(kanalasA9) || bool.Parse(kanalasB9);
+            a10B10 = bool.Parse(kanalasA10) || bool.Parse(kanalasB10);
+            a11B11 = bool.Parse(kanalasA11) || bool.Parse(kanalasB11);
+            a12B12 = bool.Parse(kanalasA12) || bool.Parse(kanalasB12);
+            a13B13 = bool.Parse(kanalasA13) || bool.Parse(kanalasB13);
+            a14B14 = bool.Parse(kanalasA14) || bool.Parse(kanalasB14);
+            a15B15 = bool.Parse(kanalasA15) || bool.Parse(kanalasB15);
+            a16B16 = bool.Parse(kanalasA16) || bool.Parse(kanalasB16);
+            a17B17 = bool.Parse(kanalasA17) || bool.Parse(kanalasB17);
+            a18B18 = bool.Parse(kanalasA18) || bool.Parse(kanalasB18);
+            a19B19 = bool.Parse(kanalasA19) || bool.Parse(kanalasB19);
+            a20B20 = bool.Parse(kanalasA20) || bool.Parse(kanalasB20);
+            a21B21 = bool.Parse(kanalasA21) || bool.Parse(kanalasB21);
+            a22B22 = bool.Parse(kanalasA22) || bool.Parse(kanalasB22);
+            a23B23 = bool.Parse(kanalasA23) || bool.Parse(kanalasB23);
+            a24B24 = bool.Parse(kanalasA24) || bool.Parse(kanalasB24);
+            a25B25 = bool.Parse(kanalasA25) || bool.Parse(kanalasB25);
+
+            //Kanalų A ir B loginio lyginimo OR išvedimas į konsolę
+
+            Console.WriteLine($"OR\n{Convert.ToString(a0B0).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a1B1).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a2B2).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a3B3).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a4B4).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a5B5).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a6B6).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a7B7).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a8B8).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a9B9).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a10B10).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a11B11).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a12B12).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a13B13).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a14B14).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a15B15).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a16B16).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a17B17).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a18B18).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a19B19).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a20B20).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a21B21).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a22B22).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a23B23).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a24B24).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a25B25).Replace("False", "_").Replace("True", "-")}");
+
+            //Kanalo A ir B XOR loginis lyginimas
+
+            a0B0 = bool.Parse(kanalasA0) ^ bool.Parse(kanalasB0);
+            a1B1 = bool.Parse(kanalasA1) ^ bool.Parse(kanalasB1);
+            a2B2 = bool.Parse(kanalasA2) ^ bool.Parse(kanalasB2);
+            a3B3 = bool.Parse(kanalasA3) ^ bool.Parse(kanalasB3);
+            a4B4 = bool.Parse(kanalasA4) ^ bool.Parse(kanalasB4);
+            a5B5 = bool.Parse(kanalasA5) ^ bool.Parse(kanalasB5);
+            a6B6 = bool.Parse(kanalasA6) ^ bool.Parse(kanalasB6);
+            a7B7 = bool.Parse(kanalasA7) ^ bool.Parse(kanalasB7);
+            a8B8 = bool.Parse(kanalasA8) ^ bool.Parse(kanalasB8);
+            a9B9 = bool.Parse(kanalasA9) ^ bool.Parse(kanalasB9);
+            a10B10 = bool.Parse(kanalasA10) ^ bool.Parse(kanalasB10);
+            a11B11 = bool.Parse(kanalasA11) ^ bool.Parse(kanalasB11);
+            a12B12 = bool.Parse(kanalasA12) ^ bool.Parse(kanalasB12);
+            a13B13 = bool.Parse(kanalasA13) ^ bool.Parse(kanalasB13);
+            a14B14 = bool.Parse(kanalasA14) ^ bool.Parse(kanalasB14);
+            a15B15 = bool.Parse(kanalasA15) ^ bool.Parse(kanalasB15);
+            a16B16 = bool.Parse(kanalasA16) ^ bool.Parse(kanalasB16);
+            a17B17 = bool.Parse(kanalasA17) ^ bool.Parse(kanalasB17);
+            a18B18 = bool.Parse(kanalasA18) ^ bool.Parse(kanalasB18);
+            a19B19 = bool.Parse(kanalasA19) ^ bool.Parse(kanalasB19);
+            a20B20 = bool.Parse(kanalasA20) ^ bool.Parse(kanalasB20);
+            a21B21 = bool.Parse(kanalasA21) ^ bool.Parse(kanalasB21);
+            a22B22 = bool.Parse(kanalasA22) ^ bool.Parse(kanalasB22);
+            a23B23 = bool.Parse(kanalasA23) ^ bool.Parse(kanalasB23);
+            a24B24 = bool.Parse(kanalasA24) ^ bool.Parse(kanalasB24);
+            a25B25 = bool.Parse(kanalasA25) ^ bool.Parse(kanalasB25);
+
+            //Kanalų A ir B loginio lyginimo XOR išvedimas į konsolę
+
+            Console.WriteLine($"XOR\n{Convert.ToString(a0B0).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a1B1).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a2B2).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a3B3).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a4B4).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a5B5).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a6B6).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a7B7).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a8B8).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a9B9).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a10B10).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a11B11).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a12B12).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a13B13).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a14B14).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a15B15).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a16B16).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a17B17).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a18B18).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a19B19).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a20B20).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a21B21).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a22B22).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a23B23).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a24B24).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a25B25).Replace("False", "_").Replace("True", "-")}");
+
+            //Kanalo A ir B NAND loginis lyginimas
+
+            a0B0 = !(bool.Parse(kanalasA0)) && !(bool.Parse(kanalasB0));
+            a1B1 = !(bool.Parse(kanalasA1)) && !(bool.Parse(kanalasB1));
+            a2B2 = !(bool.Parse(kanalasA2)) && !(bool.Parse(kanalasB2));
+            a3B3 = !(bool.Parse(kanalasA3)) && !(bool.Parse(kanalasB3));
+            a4B4 = !(bool.Parse(kanalasA4)) && !(bool.Parse(kanalasB4));
+            a5B5 = !(bool.Parse(kanalasA5)) && !(bool.Parse(kanalasB5));
+            a6B6 = !(bool.Parse(kanalasA6)) && !(bool.Parse(kanalasB6));
+            a7B7 = !(bool.Parse(kanalasA7)) && !(bool.Parse(kanalasB7));
+            a8B8 = !(bool.Parse(kanalasA8)) && !(bool.Parse(kanalasB8));
+            a9B9 = !(bool.Parse(kanalasA9)) && !(bool.Parse(kanalasB9));
+            a10B10 = !(bool.Parse(kanalasA10)) && !(bool.Parse(kanalasB10));
+            a11B11 = !(bool.Parse(kanalasA11)) && !(bool.Parse(kanalasB11));
+            a12B12 = !(bool.Parse(kanalasA12)) && !(bool.Parse(kanalasB12));
+            a13B13 = !(bool.Parse(kanalasA13)) && !(bool.Parse(kanalasB13));
+            a14B14 = !(bool.Parse(kanalasA14)) && !(bool.Parse(kanalasB14));
+            a15B15 = !(bool.Parse(kanalasA15)) && !(bool.Parse(kanalasB15));
+            a16B16 = !(bool.Parse(kanalasA16)) && !(bool.Parse(kanalasB16));
+            a17B17 = !(bool.Parse(kanalasA17)) && !(bool.Parse(kanalasB17));
+            a18B18 = !(bool.Parse(kanalasA18)) && !(bool.Parse(kanalasB18));
+            a19B19 = !(bool.Parse(kanalasA19)) && !(bool.Parse(kanalasB19));
+            a20B20 = !(bool.Parse(kanalasA20)) && !(bool.Parse(kanalasB20));
+            a21B21 = !(bool.Parse(kanalasA21)) && !(bool.Parse(kanalasB21));
+            a22B22 = !(bool.Parse(kanalasA22)) && !(bool.Parse(kanalasB22));
+            a23B23 = !(bool.Parse(kanalasA23)) && !(bool.Parse(kanalasB23));
+            a24B24 = !(bool.Parse(kanalasA24)) && !(bool.Parse(kanalasB24));
+            a25B25 = !(bool.Parse(kanalasA25)) && !(bool.Parse(kanalasB25));
+
+            //Kanalų A ir B loginio lyginimo NAND išvedimas į konsolę
+
+            Console.WriteLine($"NAND\n{Convert.ToString(a0B0).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a1B1).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a2B2).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a3B3).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a4B4).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a5B5).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a6B6).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a7B7).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a8B8).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a9B9).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a10B10).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a11B11).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a12B12).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a13B13).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a14B14).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a15B15).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a16B16).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a17B17).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a18B18).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a19B19).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a20B20).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a21B21).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a22B22).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a23B23).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a24B24).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a25B25).Replace("False", "_").Replace("True", "-")}");
+
+            //Kanalo A ir B NOR loginis lyginimas
+
+            a0B0 = !(bool.Parse(kanalasA0)) || !(bool.Parse(kanalasB0));
+            a1B1 = !(bool.Parse(kanalasA1)) || !(bool.Parse(kanalasB1));
+            a2B2 = !(bool.Parse(kanalasA2)) || !(bool.Parse(kanalasB2));
+            a3B3 = !(bool.Parse(kanalasA3)) || !(bool.Parse(kanalasB3));
+            a4B4 = !(bool.Parse(kanalasA4)) || !(bool.Parse(kanalasB4));
+            a5B5 = !(bool.Parse(kanalasA5)) || !(bool.Parse(kanalasB5));
+            a6B6 = !(bool.Parse(kanalasA6)) || !(bool.Parse(kanalasB6));
+            a7B7 = !(bool.Parse(kanalasA7)) || !(bool.Parse(kanalasB7));
+            a8B8 = !(bool.Parse(kanalasA8)) || !(bool.Parse(kanalasB8));
+            a9B9 = !(bool.Parse(kanalasA9)) || !(bool.Parse(kanalasB9));
+            a10B10 = !(bool.Parse(kanalasA10)) || !(bool.Parse(kanalasB10));
+            a11B11 = !(bool.Parse(kanalasA11)) || !(bool.Parse(kanalasB11));
+            a12B12 = !(bool.Parse(kanalasA12)) || !(bool.Parse(kanalasB12));
+            a13B13 = !(bool.Parse(kanalasA13)) || !(bool.Parse(kanalasB13));
+            a14B14 = !(bool.Parse(kanalasA14)) || !(bool.Parse(kanalasB14));
+            a15B15 = !(bool.Parse(kanalasA15)) || !(bool.Parse(kanalasB15));
+            a16B16 = !(bool.Parse(kanalasA16)) || !(bool.Parse(kanalasB16));
+            a17B17 = !(bool.Parse(kanalasA17)) || !(bool.Parse(kanalasB17));
+            a18B18 = !(bool.Parse(kanalasA18)) || !(bool.Parse(kanalasB18));
+            a19B19 = !(bool.Parse(kanalasA19)) || !(bool.Parse(kanalasB19));
+            a20B20 = !(bool.Parse(kanalasA20)) || !(bool.Parse(kanalasB20));
+            a21B21 = !(bool.Parse(kanalasA21)) || !(bool.Parse(kanalasB21));
+            a22B22 = !(bool.Parse(kanalasA22)) || !(bool.Parse(kanalasB22));
+            a23B23 = !(bool.Parse(kanalasA23)) || !(bool.Parse(kanalasB23));
+            a24B24 = !(bool.Parse(kanalasA24)) || !(bool.Parse(kanalasB24));
+            a25B25 = !(bool.Parse(kanalasA25)) || !(bool.Parse(kanalasB25));
+
+            //Kanalų A ir B loginio lyginimo NOR išvedimas į konsolę
+
+            Console.WriteLine($"NOR\n{Convert.ToString(a0B0).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a1B1).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a2B2).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a3B3).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a4B4).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a5B5).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a6B6).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a7B7).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a8B8).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a9B9).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a10B10).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a11B11).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a12B12).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a13B13).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a14B14).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a15B15).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a16B16).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a17B17).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a18B18).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a19B19).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a20B20).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a21B21).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a22B22).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a23B23).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a24B24).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a25B25).Replace("False", "_").Replace("True", "-")}");
+
+            //Kanalo A ir B NOT A loginis lyginimas
+
+            bool a0 = bool.Parse(kanalasA0);
+            bool a1 = bool.Parse(kanalasA1);
+            bool a2 = bool.Parse(kanalasA2);
+            bool a3 = bool.Parse(kanalasA3);
+            bool a4 = bool.Parse(kanalasA4);
+            bool a5 = bool.Parse(kanalasA5);
+            bool a6 = bool.Parse(kanalasA6);
+            bool a7 = bool.Parse(kanalasA7);
+            bool a8 = bool.Parse(kanalasA8);
+            bool a9 = bool.Parse(kanalasA9);
+            bool a10 = bool.Parse(kanalasA10);
+            bool a11 = bool.Parse(kanalasA11);
+            bool a12 = bool.Parse(kanalasA12);
+            bool a13 = bool.Parse(kanalasA13);
+            bool a14 = bool.Parse(kanalasA14);
+            bool a15 = bool.Parse(kanalasA15);
+            bool a16 = bool.Parse(kanalasA16);
+            bool a17 = bool.Parse(kanalasA17);
+            bool a18 = bool.Parse(kanalasA18);
+            bool a19 = bool.Parse(kanalasA19);
+            bool a20 = bool.Parse(kanalasA20);
+            bool a21 = bool.Parse(kanalasA21);
+            bool a22 = bool.Parse(kanalasA22);
+            bool a23 = bool.Parse(kanalasA23);
+            bool a24 = bool.Parse(kanalasA24);
+            bool a25 = bool.Parse(kanalasA25);
+
+            //Kanalų A ir B loginio lyginimo NOT A išvedimas į konsolę
+
+            Console.WriteLine($"NOT A\n{Convert.ToString(!a0).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a1).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a2).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a3).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a4).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a5).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a6).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a7).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a8).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a9).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a10).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a11).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a12).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a13).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a14).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a15).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a16).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a17).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a18).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a19).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a20).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a21).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a22).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a23).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a24).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(!a25).Replace("False", "_").Replace("True", "-")}");
+
+            //Kanalo A ir B NOT A OR B loginis lyginimas
+
+            a0B0 = !(bool.Parse(kanalasA0)) || bool.Parse(kanalasB0);
+            a1B1 = !(bool.Parse(kanalasA1)) || bool.Parse(kanalasB1);
+            a2B2 = !(bool.Parse(kanalasA2)) || bool.Parse(kanalasB2);
+            a3B3 = !(bool.Parse(kanalasA3)) || bool.Parse(kanalasB3);
+            a4B4 = !(bool.Parse(kanalasA4)) || bool.Parse(kanalasB4);
+            a5B5 = !(bool.Parse(kanalasA5)) || bool.Parse(kanalasB5);
+            a6B6 = !(bool.Parse(kanalasA6)) || bool.Parse(kanalasB6);
+            a7B7 = !(bool.Parse(kanalasA7)) || bool.Parse(kanalasB7);
+            a8B8 = !(bool.Parse(kanalasA8)) || bool.Parse(kanalasB8);
+            a9B9 = !(bool.Parse(kanalasA9)) || bool.Parse(kanalasB9);
+            a10B10 = !(bool.Parse(kanalasA10)) || bool.Parse(kanalasB10);
+            a11B11 = !(bool.Parse(kanalasA11)) || bool.Parse(kanalasB11);
+            a12B12 = !(bool.Parse(kanalasA12)) || bool.Parse(kanalasB12);
+            a13B13 = !(bool.Parse(kanalasA13)) || bool.Parse(kanalasB13);
+            a14B14 = !(bool.Parse(kanalasA14)) || bool.Parse(kanalasB14);
+            a15B15 = !(bool.Parse(kanalasA15)) || bool.Parse(kanalasB15);
+            a16B16 = !(bool.Parse(kanalasA16)) || bool.Parse(kanalasB16);
+            a17B17 = !(bool.Parse(kanalasA17)) || bool.Parse(kanalasB17);
+            a18B18 = !(bool.Parse(kanalasA18)) || bool.Parse(kanalasB18);
+            a19B19 = !(bool.Parse(kanalasA19)) || bool.Parse(kanalasB19);
+            a20B20 = !(bool.Parse(kanalasA20)) || bool.Parse(kanalasB20);
+            a21B21 = !(bool.Parse(kanalasA21)) || bool.Parse(kanalasB21);
+            a22B22 = !(bool.Parse(kanalasA22)) || bool.Parse(kanalasB22);
+            a23B23 = !(bool.Parse(kanalasA23)) || bool.Parse(kanalasB23);
+            a24B24 = !(bool.Parse(kanalasA24)) || bool.Parse(kanalasB24);
+            a25B25 = !(bool.Parse(kanalasA25)) || bool.Parse(kanalasB25);
+
+            //Kanalų A ir B loginio lyginimo NOT A OR B išvedimas į konsolę
+
+            Console.WriteLine($"NOT A OR B\n{Convert.ToString(a0B0).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a1B1).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a2B2).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a3B3).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a4B4).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a5B5).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a6B6).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a7B7).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a8B8).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a9B9).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a10B10).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a11B11).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a12B12).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a13B13).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a14B14).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a15B15).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a16B16).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a17B17).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a18B18).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a19B19).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a20B20).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a21B21).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a22B22).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a23B23).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a24B24).Replace("False", "_").Replace("True", "-")}" +
+                $"{Convert.ToString(a25B25).Replace("False", "_").Replace("True", "-")}");
+
+            //Kanalo A ir B (A OR B) NAND A loginis lyginimas
+
+            a0B0 = !(bool.Parse(kanalasA0)) || bool.Parse(kanalasB0);
+            a1B1 = !(bool.Parse(kanalasA1)) || bool.Parse(kanalasB1);
+            a2B2 = !(bool.Parse(kanalasA2)) || bool.Parse(kanalasB2);
+            a3B3 = !(bool.Parse(kanalasA3)) || bool.Parse(kanalasB3);
+            a4B4 = !(bool.Parse(kanalasA4)) || bool.Parse(kanalasB4);
+            a5B5 = !(bool.Parse(kanalasA5)) || bool.Parse(kanalasB5);
+            a6B6 = !(bool.Parse(kanalasA6)) || bool.Parse(kanalasB6);
+            a7B7 = !(bool.Parse(kanalasA7)) || bool.Parse(kanalasB7);
+            a8B8 = !(bool.Parse(kanalasA8)) || bool.Parse(kanalasB8);
+            a9B9 = !(bool.Parse(kanalasA9)) || bool.Parse(kanalasB9);
+            a10B10 = !(bool.Parse(kanalasA10)) || bool.Parse(kanalasB10);
+            a11B11 = !(bool.Parse(kanalasA11)) || bool.Parse(kanalasB11);
+            a12B12 = !(bool.Parse(kanalasA12)) || bool.Parse(kanalasB12);
+            a13B13 = !(bool.Parse(kanalasA13)) || bool.Parse(kanalasB13);
+            a14B14 = !(bool.Parse(kanalasA14)) || bool.Parse(kanalasB14);
+            a15B15 = !(bool.Parse(kanalasA15)) || bool.Parse(kanalasB15);
+            a16B16 = !(bool.Parse(kanalasA16)) || bool.Parse(kanalasB16);
+            a17B17 = !(bool.Parse(kanalasA17)) || bool.Parse(kanalasB17);
+            a18B18 = !(bool.Parse(kanalasA18)) || bool.Parse(kanalasB18);
+            a19B19 = !(bool.Parse(kanalasA19)) || bool.Parse(kanalasB19);
+            a20B20 = !(bool.Parse(kanalasA20)) || bool.Parse(kanalasB20);
+            a21B21 = !(bool.Parse(kanalasA21)) || bool.Parse(kanalasB21);
+            a22B22 = !(bool.Parse(kanalasA22)) || bool.Parse(kanalasB22);
+            a23B23 = !(bool.Parse(kanalasA23)) || bool.Parse(kanalasB23);
+            a24B24 = !(bool.Parse(kanalasA24)) || bool.Parse(kanalasB24);
+            a25B25 = !(bool.Parse(kanalasA25)) || bool.Parse(kanalasB25);
+
+            //Kanalų A ir B loginio lyginimo (A OR B) NAND A išvedimas į konsolę
+
+            Console.WriteLine($"(A OR B) NAND A\n{Convert.ToString(a0B0).Replace("False", "_").Replace("True", "-")}" +
                 $"{Convert.ToString(a1B1).Replace("False", "_").Replace("True", "-")}" +
                 $"{Convert.ToString(a2B2).Replace("False", "_").Replace("True", "-")}" +
                 $"{Convert.ToString(a3B3).Replace("False", "_").Replace("True", "-")}" +
