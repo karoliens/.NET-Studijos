@@ -64,41 +64,20 @@
 
             var skaleMax = tempC + 40;
             var skaleMin = tempC - 40;
-            var tempC5 = skaleMax - 5;
-            var tempC10 = skaleMax - 10;
-            var tempC15 = skaleMax - 15;
-            var tempC20 = skaleMax - 20;
-            var tempC25 = skaleMax - 25;
-            var tempC30 = skaleMax - 30;
-            var tempC35 = skaleMax - 35;
-            var tempC40 = skaleMax - 40;
-            var tempC45 = skaleMax - 45;
-            var tempC50 = skaleMax - 50;
-            var tempC55 = skaleMax - 55;
-            var tempC60 = skaleMax - 60;
-            var tempC65 = skaleMax - 65;
-            var tempC70 = skaleMax - 70;
-            var tempC75 = skaleMax - 75;
 
             Console.WriteLine("|--------------------|");
             Console.WriteLine("|   ^F     _    ^C   |");
-            Console.WriteLine($"|  {skaleMax * 1.8 + 32}  - | | -  {skaleMax}  |");
-            Console.WriteLine($"|   {tempC5 * 1.8 + 32}  - | | -  {tempC5}  |");
-            Console.WriteLine($"|   {tempC10 * 1.8 + 32}  - | | -  {tempC10}  |");
-            Console.WriteLine($"|   {tempC15 * 1.8 + 32}  - | | -  {tempC15}  |");
-            Console.WriteLine($"|   {tempC20 * 1.8 + 32}  - | | -  {tempC20}  |");
-            Console.WriteLine($"|   {tempC25 * 1.8 + 32}  - | | -  {tempC25}  |");
-            Console.WriteLine($"|   {tempC30 * 1.8 + 32}  - | | -  {tempC30}  |");
-            Console.WriteLine($"|   {tempC35 * 1.8 + 32}  - | | -   {tempC35}  |");
-            Console.WriteLine($"|   {tempC40 * 1.8 + 32}  - | | -   {tempC40}  |");
-            Console.WriteLine($"|   {tempC45 * 1.8 + 32}  - | | -  {tempC45}  |");
-            Console.WriteLine($"|   {tempC50 * 1.8 + 32}  - | | - {tempC50}  |");
-            Console.WriteLine($"|    {tempC55 * 1.8 + 32}  - | | - {tempC55}  |");
-            Console.WriteLine($"|   {tempC60 * 1.8 + 32}  - | | - {tempC60}  |");
-            Console.WriteLine($"|  {tempC65 * 1.8 + 32}  - | | - {tempC65}  |");
-            Console.WriteLine($"|  {tempC70 * 1.8 + 32}  - | | - {tempC70}  |");
-            Console.WriteLine($"|  {tempC75 * 1.8 + 32}  - | | - {tempC75}  |");
-            Console.WriteLine($"|  {skaleMin * 1.8 + 32}  - | | - {skaleMin}  |");
+
+            for (var i = skaleMax; i > tempC; i = i - 5)
+            {
+                Console.WriteLine(String.Format("| {0, 4}  - | | - {1, 3}  |", i * 1.8 + 32, i));
+            }
+
+            for (var i = tempC; i >= skaleMin; i = i - 5)
+            {
+                Console.WriteLine(String.Format("| {0, 4}  - |#| - {1, 3}  |", i * 1.8 + 32, i));
+            }
+
             Console.WriteLine("|        '***`       |");
             Console.WriteLine("|       (*****)      |");
             Console.WriteLine("|        `---'       |");
