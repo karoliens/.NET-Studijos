@@ -53,7 +53,6 @@
             Console.WriteLine($"Temperatūra pagal Kelviną: {tempK}");
 
             var tempCPerskaiciuotaIsF = (tempF - 32) / 1.8;
-            //Console.WriteLine(tempFPerskaiciuota);
             Console.WriteLine($"Ar perskaičiuota temperatūra pagal Farenheitą sutampa su įvestu skaičiu? {tempCPerskaiciuotaIsF == tempC}");
 
             var tempCPerskaiciuotaIsK = tempK - 273.15;
