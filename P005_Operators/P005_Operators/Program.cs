@@ -62,7 +62,7 @@
 
             var kanalasAANDB = kanalasAInt & kanalasBInt;
 
-            Console.WriteLine("____-_____-_____-_____-___");
+            //Console.WriteLine("____-_____-_____-_____-___");
             Console.WriteLine(Convert.ToString(kanalasAANDB, 2).PadLeft(26, '0').Replace("0", "_").Replace("1", "-"));
 
             /*

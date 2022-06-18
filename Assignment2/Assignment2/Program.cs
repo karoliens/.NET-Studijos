@@ -45,36 +45,44 @@
 
             Console.WriteLine("Įveskite temperatūrą pagal Celsijų:");
             var tempC = double.Parse(Console.ReadLine());
-            var tempF = tempC * 1.8 + 32;
-            var tempK = tempC + 273.15;
+            var tempF = tempC * 1.8 + 32; //Įvestos temperatūros pagal Celcijų konvertavimas į temperatūrą pagal Farenheitą
+            var tempK = tempC + 273.15; //Įvestos temperatūros pagal Celcijų konvertavimas į temperatūrą pagal Kelviną
 
             Console.WriteLine($"Temperatūra pagal Farenheitą: {tempF}");
 
             Console.WriteLine($"Temperatūra pagal Kelviną: {tempK}");
 
             var tempCPerskaiciuotaIsF = (tempF - 32) / 1.8;
+
+            //Perskaičiuotos temperatūros pagal Farenheitą tikrinimas su anksčiau apskaičiuota temperatūra 
             Console.WriteLine($"Ar perskaičiuota temperatūra pagal Farenheitą sutampa su įvestu skaičiu? {tempCPerskaiciuotaIsF == tempC}");
 
             var tempCPerskaiciuotaIsK = tempK - 273.15;
+            //Perskaičiuotos temperatūros pagal Celcijų tikrinimas su anksčiau apskaičiuota temperatūra
             Console.WriteLine($"Ar perskaičiuota temperatūra pagal Celcijų sutampa su įvestu skaičiu? {tempCPerskaiciuotaIsK == tempC}");
 
             var tempKPerskaiciuotaIsF = (tempF - 32) * 5 / 9 + 273.15;
+
+            //Perskaičiuotos temperatūros pagal Kelviną tikrinimas su anksčiau apskaičiuota temperatūra
             Console.WriteLine($"Ar perskaičiuota temperatūra pagal Kelviną sutampa su ankstesniu skaičiavimu? {tempKPerskaiciuotaIsF == tempK}");
 
-            var skaleMax = tempC + 40;
-            var skaleMin = tempC - 40;
+            var skaleMax = tempC + 40; //Prie įvestos temperatūros pridedama 40
+            var skaleMin = tempC - 40; //Prie įvestos temperatūros atimama 40
 
             Console.WriteLine("|--------------------|");
             Console.WriteLine("|   ^F     _    ^C   |");
 
+
+            //Loopinama pradedant maksimalia termometro reikšme ir baigiant įvesta, kas 5
             for (var i = skaleMax; i > tempC; i = i - 5)
             {
-                Console.WriteLine(String.Format("| {0, 4}  - | | - {1, 3}  |", i * 1.8 + 32, i));
+                Console.WriteLine(String.Format("| {0, 4}  - | | - {1, 3}  |", (int)(i * 1.8 + 32), i)); //Formatuojama, kad neiškraipytų piešinio
             }
 
+            //Loopinama pradedant įvesta termometro reikšme ir baigiant minimalia, kas 5
             for (var i = tempC; i >= skaleMin; i = i - 5)
             {
-                Console.WriteLine(String.Format("| {0, 4}  - |#| - {1, 3}  |", i * 1.8 + 32, i));
+                Console.WriteLine(String.Format("| {0, 4}  - |#| - {1, 3}  |", (int)(i * 1.8 + 32), i)); //Formatuojama, kad neiškraipytų piešinio
             }
 
             Console.WriteLine("|        '***`       |");
