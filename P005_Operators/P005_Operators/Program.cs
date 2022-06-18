@@ -51,6 +51,21 @@
 
             //Kanalo A atskirų elementų priskyrimas kintamiesiems
 
+            var kanalasA = "__---___---___---___---___";
+            var kanalasB = "____---___---___---___---_";
+
+            var kanalasABinary = kanalasA.Replace("_", "0").Replace("-", "1");
+            var kanalasBBinary = kanalasB.Replace("_", "0").Replace("-", "1");
+
+            int kanalasAInt = Convert.ToInt32(kanalasABinary, 2);
+            int kanalasBInt = Convert.ToInt32(kanalasBBinary, 2);
+
+            var kanalasAANDB = kanalasAInt & kanalasBInt;
+
+            Console.WriteLine("____-_____-_____-_____-___");
+            Console.WriteLine(Convert.ToString(kanalasAANDB, 2).PadLeft(26, '0').Replace("0", "_").Replace("1", "-"));
+
+            /*
             string kanalasA0 = "_";
             string kanalasA1 = "_";
             string kanalasA2 = "-";
