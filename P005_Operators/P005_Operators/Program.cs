@@ -49,6 +49,8 @@
             e) (A OR B) NAND A
             */
 
+            //Kanalo A atskirų elementų priskyrimas kintamiesiems
+
             string kanalasA0 = "_";
             string kanalasA1 = "_";
             string kanalasA2 = "-";
@@ -76,6 +78,8 @@
             string kanalasA24 = "_";
             string kanalasA25 = "_";
 
+            //Kanalo A pradinis išvedimas
+
             /*
             Console.WriteLine($"{kanalasA0}{kanalasA1}{kanalasA2}{kanalasA3}{kanalasA4}" +
             $"{kanalasA5}{kanalasA6}{kanalasA7}{kanalasA8}" +
@@ -85,6 +89,8 @@
             $"{kanalasA21}{kanalasA22}{kanalasA23}{kanalasA24}" +
             $"{kanalasA25}");
             */
+
+            //Kanalo A elementų keitimas į eilutę True ir False
 
             kanalasA0 = kanalasA0.Replace("_", "False").Replace("-", "True");
             kanalasA1 = kanalasA1.Replace("_", "False").Replace("-", "True");
@@ -113,6 +119,8 @@
             kanalasA24 = kanalasA24.Replace("_", "False").Replace("-", "True");
             kanalasA25 = kanalasA25.Replace("_", "False").Replace("-", "True");
 
+            //Kanalo A eilutės elementų keitimas į loginius kintamuosius
+
             bool kanalasA0Bool = bool.Parse(kanalasA0);
             bool kanalasA1Bool = bool.Parse(kanalasA1);
             bool kanalasA2Bool = bool.Parse(kanalasA2);
@@ -139,6 +147,8 @@
             bool kanalasA23Bool = bool.Parse(kanalasA23);
             bool kanalasA24Bool = bool.Parse(kanalasA24);
             bool kanalasA25Bool = bool.Parse(kanalasA25);
+
+            //Kanalo B atskirų elementų priskyrimas kintamiesiems
 
             string kanalasB0 = "_";
             string kanalasB1 = "_";
@@ -167,6 +177,8 @@
             string kanalasB24 = "-";
             string kanalasB25 = "_";
 
+            //Kanalo B pradinis išvedimas
+
             /*
             Console.WriteLine($"{kanalasB0}{kanalasB1}{kanalasB2}{kanalasB3}{kanalasB4}" +
                 $"{kanalasB5}{kanalasB6}{kanalasB7}{kanalasB8}" +
@@ -176,6 +188,8 @@
                 $"{kanalasB21}{kanalasB22}{kanalasB23}{kanalasB24}" +
                 $"{kanalasB25}");
             */
+
+            //Kanalo B elementų keitimas į eilutę True ir False
 
             kanalasB0 = kanalasB0.Replace("_", "False").Replace("-", "True");
             kanalasB1 = kanalasB1.Replace("_", "False").Replace("-", "True");
@@ -204,6 +218,8 @@
             kanalasB24 = kanalasB24.Replace("_", "False").Replace("-", "True");
             kanalasB25 = kanalasB25.Replace("_", "False").Replace("-", "True");
 
+            //Kanalo B eilutės elementų keitimas į loginius kintamuosius
+
             bool kanalasB0Bool = bool.Parse(kanalasB0);
             bool kanalasB1Bool = bool.Parse(kanalasB1);
             bool kanalasB2Bool = bool.Parse(kanalasB2);
@@ -231,6 +247,8 @@
             bool kanalasB24Bool = bool.Parse(kanalasB24);
             bool kanalasB25Bool = bool.Parse(kanalasB25);
 
+            //Kanalo A ir B && loginis lyginimas
+
             bool a0B0 = bool.Parse(kanalasA0) && bool.Parse(kanalasB0);
             bool a1B1 = bool.Parse(kanalasA1) && bool.Parse(kanalasB1);
             bool a2B2 = bool.Parse(kanalasA2) && bool.Parse(kanalasB2);
@@ -257,6 +275,8 @@
             bool a23B23 = bool.Parse(kanalasA23) && bool.Parse(kanalasB23);
             bool a24B24 = bool.Parse(kanalasA24) && bool.Parse(kanalasB24);
             bool a25B25 = bool.Parse(kanalasA25) && bool.Parse(kanalasB25);
+
+            //Kanalų A ir B loginio lyginimo && i6vedimas į konsolę
 
             Console.WriteLine($"{Convert.ToString(a0B0).Replace("False", "_").Replace("True", "-")}" +
                 $"{Convert.ToString(a1B1).Replace("False", "_").Replace("True", "-")}" +
