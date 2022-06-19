@@ -139,16 +139,44 @@
             Console.WriteLine($"Abi kartu transporto priemonės įveikdamos atstumą iki susitikimo išskyrė {transportPriemCo2IkiTasko} gramus CO2.");
 
             var laikasPoKurioSusitiksH = atstumas / (greitis1 + greitis2);
-            var segmentai = atstumas / 20;
             var atstumasNuoAIkiSusitikimoKm = greitis1 * laikasPoKurioSusitiksH;
+            
+            for (var i = 0; i < 20; i++)
+            {
+                Console.Write("| 5km  ");
+            }
+            
+            Console.WriteLine("|");
+            
+            for (var i = 0; i <= 20; i++)
+            {
+                Console.Write("|      ");
+            }
+            
+            Console.Write("\nA");
+            
+            for (var i = 0; i < atstumasNuoAIkiSusitikimoKm ; i++)
+            {
+                Console.Write("-");
+            }
 
-            //Console.WriteLine(laikasAbieju);
-            Console.WriteLine("\n| {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  |", segmentai, "km");
-            //Console.WriteLine("|     |");
+            Console.Write("V");
+
+            for (var i = atstumasNuoAIkiSusitikimoKm; i < atstumas; i++)
+            {
+                Console.Write("-");
+            }
+
+            Console.Write("B");
+
+            Console.Write("\n|");
+
             for (var i = 0; i < atstumasNuoAIkiSusitikimoKm; i++)
             {
                 Console.Write("-");
             }
+
+            Console.Write("|");
             Console.WriteLine($"\n|----------------------------------------------------------------{atstumas}km-----------------------------------------------------------------------|");
             Console.WriteLine($">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {laikasIkiTasko1}min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             Console.WriteLine($"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< {laikasIkiTasko2}min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
