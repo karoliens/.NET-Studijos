@@ -91,13 +91,13 @@
             Console.WriteLine("|____________________|");*/
 
             Console.WriteLine("Įveskite atstumą tarp taškų A ir B kilometrais:");
-            var atstumas = float.Parse(Console.ReadLine());
+            var atstumas = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Įveskite pirmos transporto priemonės greitį km/h:");
-            var greitis1 = float.Parse(Console.ReadLine());
+            var greitis1 = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Įveskite antros transporto priemonės greitį km/h:");
-            var greitis2 = float.Parse(Console.ReadLine());
+            var greitis2 = int.Parse(Console.ReadLine());
 
             //Skaičiuojamas laikas po kurio pirma ir antra transporto priemonės susitiks sekundėmis
             // t = S / (v1 + v2)
@@ -106,7 +106,7 @@
 
             //Skaičiuojamas atstumas nuo taško A iki vietos, kurioje susitiks pirma ir antra transporto priemonės metrais
 
-            var atstumasNuoAIkiSusitikimo = (greitis1) * (5 / 18) * laikasPoKurioSusitiks;
+            var atstumasNuoAIkiSusitikimo = greitis1 * ((float)5 / 18) * laikasPoKurioSusitiks;
 
             //Skaičiuojamas laikas kada pirma ir antra transporto priemonės pasieks galutinius taškus minutėmis
             // t = S / v
@@ -130,6 +130,7 @@
 
             var transportPriemCo2IkiTasko = (atstumasNuoAIkiSusitikimo * 95) + (atstumas - atstumasNuoAIkiSusitikimo) * 95;
 
+            //Console.WriteLine(atstumasNuoAIkiSusitikimo);
             Console.WriteLine($"Transporto priemonės susitiks po {atstumasNuoAIkiSusitikimo} metrų.");
             Console.WriteLine($"Transporto priemonės susitiks po {laikasPoKurioSusitiks} sekundžių.");
             Console.WriteLine($"Pirma transporto priemonė pasieks galutinį tašką po {laikasIkiTasko1} minučių.");
@@ -137,23 +138,29 @@
             Console.WriteLine($"Abi kartu transporto priemonės įveikdamos visą atstumą išskyrė {transportPriemCo2Visas} gramus CO2.");
             Console.WriteLine($"Abi kartu transporto priemonės įveikdamos atstumą iki susitikimo išskyrė {transportPriemCo2IkiTasko} gramus CO2.");
 
+            var laikasPoKurioSusitiksH = atstumas / (greitis1 + greitis2);
             var segmentai = atstumas / 20;
+            var atstumasNuoAIkiSusitikimoKm = greitis1 * laikasPoKurioSusitiksH;
 
-            Console.WriteLine("| {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1}|", segmentai, "km");
-            Console.WriteLine("|     |");
-
-            Console.WriteLine($"|----------------------------------------------------------------{atstumas}km-----------------------------------------------------------------------|");
+            //Console.WriteLine(laikasAbieju);
+            Console.WriteLine("\n| {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  | {0}{1}  |", segmentai, "km");
+            //Console.WriteLine("|     |");
+            for (var i = 0; i < atstumasNuoAIkiSusitikimoKm; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine($"\n|----------------------------------------------------------------{atstumas}km-----------------------------------------------------------------------|");
             Console.WriteLine($">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {laikasIkiTasko1}min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             Console.WriteLine($"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< {laikasIkiTasko2}min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 
             /*
-           | 5km  | 5km  | 5km  | 5km   | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  |
-           |      |      |      |       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-          _A______|______|______|___V___|______|______|______|______|______|______|______|______|______|______|______|______|______|______|______|______B_
-           |-----------22km---------|        
-           |----------------------------------------------------------------100km-----------------------------------------------------------------------|        
-           >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 90min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-           <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            | 5km  | 5km  | 5km  | 5km   | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  |
+            |      |      |      |       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+           _A______|______|______|___V___|______|______|______|______|______|______|______|______|______|______|______|______|______|______|______|______B_
+            |-----------22km---------|        
+            |----------------------------------------------------------------100km-----------------------------------------------------------------------|        
+            >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 90min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
             */
         }
     }
