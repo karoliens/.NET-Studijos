@@ -42,7 +42,7 @@
                             |        `---'       |
                             |____________________|
             */
-            
+            /*
             Console.WriteLine("Įveskite temperatūrą pagal Celsijų:");
             var tempC = double.Parse(Console.ReadLine());
             var tempF = tempC * 1.8 + 32; //Įvestos temperatūros pagal Celcijų konvertavimas į temperatūrą pagal Farenheitą
@@ -88,7 +88,7 @@
             Console.WriteLine("|        '***`       |");
             Console.WriteLine("|       (*****)      |");
             Console.WriteLine("|        `---'       |");
-            Console.WriteLine("|____________________|");
+            Console.WriteLine("|____________________|");*/
 
             Console.WriteLine("Įveskite atstumą tarp taškų A ir B kilometrais:");
             var atstumas = int.Parse(Console.ReadLine());
@@ -102,7 +102,7 @@
             //Skaičiuojamas laikas po kurio pirma ir antra transporto priemonės susitiks valandomis
             // t = S / (v1 + v2)
 
-            var laikasPoKurioSusitiks = (atstumas / (greitis1 + greitis2));
+            var laikasPoKurioSusitiks = ((float)atstumas / (greitis1 + greitis2));
 
             //Skaičiuojamas atstumas nuo taško A iki vietos, kurioje susitiks pirma ir antra transporto priemonės kilometrais
 
@@ -130,7 +130,7 @@
 
             var transportPriemCo2IkiTasko = (atstumasNuoAIkiSusitikimo * 95) + (atstumas - atstumasNuoAIkiSusitikimo) * 95;
 
-            Console.WriteLine($"Transporto priemonės susitiks po {atstumasNuoAIkiSusitikimo} metrų.");
+            Console.WriteLine($"Transporto priemonės susitiks po {atstumasNuoAIkiSusitikimo * 1000} metrų.");
             Console.WriteLine($"Transporto priemonės susitiks po {laikasPoKurioSusitiks * 3600} sekundžių.");
             Console.WriteLine($"Pirma transporto priemonė pasieks galutinį tašką po {laikasIkiTasko1 * 60} minučių.");
             Console.WriteLine($"Antra transporto priemonė pasieks galutinį tašką po {laikasIkiTasko2 * 60} minučių.");
@@ -149,7 +149,7 @@
 
             /*
             Nesugalvojau kaip nupiešti be loop, todėl naudojau loop, tačiau vistiek neveikia gerai.
-            Taip pat susidūriau su sunkumaisskaičiuojant po kokio atstumo susitko transporto priemonės.
+            Veikia tik su vienženkliais skaičiais header
             */
 
             //20 segmentų
@@ -161,7 +161,12 @@
             var eilute = "|----------------------------------------------------------------100km-----------------------------------------------------------------------|";
             var eilutesIlgis = eilute.Length;
 
-            Console.WriteLine(eilutesIlgis);
+            //Įvedamas naujas kintamasis, kuris skaičiuoja bendrą eilutės ilgį ir perskaičiuoja kiek ženklų atitinka atstumą A -> V
+
+            var proporcija = ((atstumasNuoAIkiSusitikimo * 100) / eilutesIlgis) * 2;
+            //Console.WriteLine(proporcija);
+            //Console.WriteLine(eilutesIlgis);
+            //Console.WriteLine(atstumasNuoAIkiSusitikimo);
 
             for (var i = 0; i < 20; i++) //piešiami segmentai
             {
@@ -177,14 +182,14 @@
             
             Console.Write("\nA");
             
-            for (var i = 0; i < atstumasNuoAIkiSusitikimo; i++) //piešiama A -> V
+            for (var i = 0; i < proporcija - 2; i++) //piešiama A -> V, atimami 2 ženklus, nes yra dvi raidės
             {
                 Console.Write("-");
             }
 
             Console.Write("V");
            
-            for (var i = atstumasNuoAIkiSusitikimo; i < eilutesIlgis; i++) //piešiama V -> B
+            for (var i = proporcija; i < eilutesIlgis - 3; i++) //piešiama V -> B, atimami 3 ženklai, nes atsiranda 3 raidė B
             {
                 Console.Write("-");
             }
@@ -193,15 +198,15 @@
 
             Console.Write("\n|");
 
-            for (var i = 0; i < atstumasNuoAIkiSusitikimo; i++) //piešiama A -> V
+            for (var i = 0; i < proporcija - 2; i++) //piešiama A -> V
             {
                 Console.Write("-");
             }
 
             Console.Write("|");
-            Console.WriteLine($"\n|----------------------------------------------------------------{atstumas}km-----------------------------------------------------------------------|");
-            Console.WriteLine($">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {laikasIkiTasko1}min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-            Console.WriteLine($"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< {laikasIkiTasko2}min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+            Console.WriteLine($"\n|----------------------------------------------------------------{atstumas}km----------------------------------------------------------------------|");
+            Console.WriteLine($">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {laikasIkiTasko1 * 60}min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            Console.WriteLine($"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< {laikasIkiTasko2 * 60}min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         }
     }
 }
