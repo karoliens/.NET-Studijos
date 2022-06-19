@@ -102,7 +102,7 @@
             //Skaičiuojamas laikas po kurio pirma ir antra transporto priemonės susitiks valandomis
             // t = S / (v1 + v2)
 
-            var laikasPoKurioSusitiks = ((float)atstumas / (greitis1 + greitis2));
+            var laikasPoKurioSusitiks = ((float)atstumas / (greitis1 + greitis2)); //float, kad nenukąstu reikšmės po kablelio
 
             //Skaičiuojamas atstumas nuo taško A iki vietos, kurioje susitiks pirma ir antra transporto priemonės kilometrais
 
