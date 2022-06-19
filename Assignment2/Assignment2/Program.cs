@@ -152,15 +152,18 @@
             Taip pat susidūriau su sunkumaisskaičiuojant po kokio atstumo susitko transporto priemonės.
             */
 
-            var laikasPoKurioSusitiksH = atstumas / (greitis1 + greitis2);
-            var atstumasNuoAIkiSusitikimoKm = greitis1 * laikasPoKurioSusitiksH;
-            var segmentai = atstumas / 20; 
+            //20 segmentų
+
+            var segmentai = atstumas / 20;
+
+            //skaičiuojamas eilutės ilgis
+
             var eilute = "|----------------------------------------------------------------100km-----------------------------------------------------------------------|";
             var eilutesIlgis = eilute.Length;
 
             Console.WriteLine(eilutesIlgis);
 
-            for (var i = 0; i < 20; i++)
+            for (var i = 0; i < 20; i++) //piešiami segmentai
             {
                 Console.Write($"| {segmentai}km  ");
             }
@@ -174,14 +177,14 @@
             
             Console.Write("\nA");
             
-            for (var i = 0; i < atstumasNuoAIkiSusitikimoKm; i++)
+            for (var i = 0; i < atstumasNuoAIkiSusitikimo; i++) //piešiama A -> V
             {
                 Console.Write("-");
             }
 
             Console.Write("V");
            
-            for (var i = atstumasNuoAIkiSusitikimoKm; i < eilutesIlgis; i++)
+            for (var i = atstumasNuoAIkiSusitikimo; i < eilutesIlgis; i++) //piešiama V -> B
             {
                 Console.Write("-");
             }
@@ -190,7 +193,7 @@
 
             Console.Write("\n|");
 
-            for (var i = 0; i < atstumasNuoAIkiSusitikimoKm; i++)
+            for (var i = 0; i < atstumasNuoAIkiSusitikimo; i++) //piešiama A -> V
             {
                 Console.Write("-");
             }
