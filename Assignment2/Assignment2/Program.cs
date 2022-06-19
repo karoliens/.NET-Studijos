@@ -106,7 +106,7 @@
 
             //Skaičiuojamas atstumas nuo taško A iki vietos, kurioje susitiks pirma ir antra transporto priemonės metrais
 
-            var atstumasNuoAIkiSusitikimo = (greitis1) * (5 / 8) * laikasPoKurioSusitiks;
+            var atstumasNuoAIkiSusitikimo = (greitis1) * (5 / 18) * laikasPoKurioSusitiks;
 
             //Skaičiuojamas laikas kada pirma ir antra transporto priemonės pasieks galutinius taškus minutėmis
             // t = S / v
