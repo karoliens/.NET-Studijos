@@ -106,7 +106,7 @@
 
             //Skaičiuojamas atstumas nuo taško A iki vietos, kurioje susitiks pirma ir antra transporto priemonės metrais
 
-            var atstumasNuoAIkiSusitikimo = greitis1 * laikasPoKurioSusitiks;
+            var atstumasNuoAIkiSusitikimo = (greitis1) * (5 / 8) * laikasPoKurioSusitiks;
 
             //Skaičiuojamas laikas kada pirma ir antra transporto priemonės pasieks galutinius taškus minutėmis
             // t = S / v
@@ -140,6 +140,11 @@
             var segmentai = atstumas / 20;
 
             Console.WriteLine("| {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1}|", segmentai, "km");
+            Console.WriteLine("|     |");
+
+            Console.WriteLine($"|----------------------------------------------------------------{atstumas}km-----------------------------------------------------------------------|");
+            Console.WriteLine($">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {laikasIkiTasko1}min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            Console.WriteLine($"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< {laikasIkiTasko2}min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 
             /*
            | 5km  | 5km  | 5km  | 5km   | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  |
