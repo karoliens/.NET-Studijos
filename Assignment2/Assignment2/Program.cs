@@ -42,7 +42,7 @@
                             |        `---'       |
                             |____________________|
             */
-
+            /*
             Console.WriteLine("Įveskite temperatūrą pagal Celsijų:");
             var tempC = double.Parse(Console.ReadLine());
             var tempF = tempC * 1.8 + 32; //Įvestos temperatūros pagal Celcijų konvertavimas į temperatūrą pagal Farenheitą
@@ -88,7 +88,68 @@
             Console.WriteLine("|        '***`       |");
             Console.WriteLine("|       (*****)      |");
             Console.WriteLine("|        `---'       |");
-            Console.WriteLine("|____________________|");
+            Console.WriteLine("|____________________|");*/
+
+            Console.WriteLine("Įveskite atstumą tarp taškų A ir B kilometrais:");
+            var atstumas = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Įveskite pirmos transporto priemonės greitį km/h:");
+            var greitis1 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Įveskite antros transporto priemonės greitį km/h:");
+            var greitis2 = float.Parse(Console.ReadLine());
+
+            //Skaičiuojamas laikas po kurio pirma ir antra transporto priemonės susitiks sekundėmis
+            // t = S / (v1 + v2)
+
+            var laikasPoKurioSusitiks = (atstumas / (greitis1 + greitis2)) * 3600;
+
+            //Skaičiuojamas atstumas nuo taško A iki vietos, kurioje susitiks pirma ir antra transporto priemonės metrais
+
+            var atstumasNuoAIkiSusitikimo = greitis1 * laikasPoKurioSusitiks;
+
+            //Skaičiuojamas laikas kada pirma ir antra transporto priemonės pasieks galutinius taškus minutėmis
+            // t = S / v
+
+            var laikasIkiTasko1 = (atstumas / greitis1) * 60;
+            var laikasIkiTasko2 = (atstumas / greitis2) * 60;
+
+           /*
+           Skaičiuojama kiek gramų CO2 išskyrė abi transporto priemonės kartu sudėjus įveikdamos visą atstumą:
+           A -> B ir B -> A
+           Vienos transporto priemonės CO2 norma yra 95g/km
+           */
+
+            var transportPriemCo2Visas = atstumas * 2 * 95;
+
+            /*
+            Skaičiuojama kiek gramų CO2 išskyrė abi transporto priemonės kartu sudėjus įveikdamos atstumą iki susitikimo:
+            A -> susitikimo ir B -> susitikimo
+            Vienos transporto priemonės CO2 norma yra 95g/km
+            */
+
+            var transportPriemCo2IkiTasko = (atstumasNuoAIkiSusitikimo * 95) + (atstumas - atstumasNuoAIkiSusitikimo) * 95;
+
+            Console.WriteLine($"Transporto priemonės susitiks po {atstumasNuoAIkiSusitikimo} metrų.");
+            Console.WriteLine($"Transporto priemonės susitiks po {laikasPoKurioSusitiks} sekundžių.");
+            Console.WriteLine($"Pirma transporto priemonė pasieks galutinį tašką po {laikasIkiTasko1} minučių.");
+            Console.WriteLine($"Antra transporto priemonė pasieks galutinį tašką po {laikasIkiTasko2} minučių.");
+            Console.WriteLine($"Abi kartu transporto priemonės įveikdamos visą atstumą išskyrė {transportPriemCo2Visas} gramus CO2.");
+            Console.WriteLine($"Abi kartu transporto priemonės įveikdamos atstumą iki susitikimo išskyrė {transportPriemCo2IkiTasko} gramus CO2.");
+
+            var segmentai = atstumas / 20;
+
+            Console.WriteLine("| {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1} | {0}{1}|", segmentai, "km");
+
+            /*
+           | 5km  | 5km  | 5km  | 5km   | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  |
+           |      |      |      |       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+          _A______|______|______|___V___|______|______|______|______|______|______|______|______|______|______|______|______|______|______|______|______B_
+           |-----------22km---------|        
+           |----------------------------------------------------------------100km-----------------------------------------------------------------------|        
+           >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 90min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+           <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            */
         }
     }
 }
