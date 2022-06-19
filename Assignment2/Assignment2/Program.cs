@@ -130,7 +130,6 @@
 
             var transportPriemCo2IkiTasko = (atstumasNuoAIkiSusitikimo * 95) + (atstumas - atstumasNuoAIkiSusitikimo) * 95;
 
-            //Console.WriteLine(atstumasNuoAIkiSusitikimo);
             Console.WriteLine($"Transporto priemonės susitiks po {atstumasNuoAIkiSusitikimo} metrų.");
             Console.WriteLine($"Transporto priemonės susitiks po {laikasPoKurioSusitiks} sekundžių.");
             Console.WriteLine($"Pirma transporto priemonė pasieks galutinį tašką po {laikasIkiTasko1} minučių.");
@@ -138,10 +137,24 @@
             Console.WriteLine($"Abi kartu transporto priemonės įveikdamos visą atstumą išskyrė {transportPriemCo2Visas} gramus CO2.");
             Console.WriteLine($"Abi kartu transporto priemonės įveikdamos atstumą iki susitikimo išskyrė {transportPriemCo2IkiTasko} gramus CO2.");
 
+            /*
+            | 5km  | 5km  | 5km  | 5km   | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  |
+            |      |      |      |       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+            A______|______|______|___V___|______|______|______|______|______|______|______|______|______|______|______|______|______|______|______|______B
+            |-----------22km---------|        
+            |----------------------------------------------------------------100km-----------------------------------------------------------------------|        
+            >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 90min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            */
+
             var laikasPoKurioSusitiksH = atstumas / (greitis1 + greitis2);
             var atstumasNuoAIkiSusitikimoKm = greitis1 * laikasPoKurioSusitiksH;
-            var segmentai = atstumas / 20;
-            
+            var segmentai = atstumas / 20; 
+            var eilute = "|----------------------------------------------------------------100km-----------------------------------------------------------------------|";
+            var eilutesIlgis = eilute.Length;
+
+            Console.WriteLine(eilutesIlgis);
+
             for (var i = 0; i < 20; i++)
             {
                 Console.Write($"| {segmentai}km  ");
@@ -156,14 +169,14 @@
             
             Console.Write("\nA");
             
-            for (var i = 0; i < atstumasNuoAIkiSusitikimoKm ; i++)
+            for (var i = 0; i < atstumasNuoAIkiSusitikimoKm; i++)
             {
                 Console.Write("-");
             }
 
             Console.Write("V");
-
-            for (var i = atstumasNuoAIkiSusitikimoKm; i < atstumas; i++)
+           
+            for (var i = atstumasNuoAIkiSusitikimoKm; i < eilutesIlgis; i++)
             {
                 Console.Write("-");
             }
@@ -181,16 +194,6 @@
             Console.WriteLine($"\n|----------------------------------------------------------------{atstumas}km-----------------------------------------------------------------------|");
             Console.WriteLine($">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {laikasIkiTasko1}min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             Console.WriteLine($"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< {laikasIkiTasko2}min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-
-            /*
-            | 5km  | 5km  | 5km  | 5km   | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  | 5km  |
-            |      |      |      |       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-           _A______|______|______|___V___|______|______|______|______|______|______|______|______|______|______|______|______|______|______|______|______B_
-            |-----------22km---------|        
-            |----------------------------------------------------------------100km-----------------------------------------------------------------------|        
-            >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 90min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-            */
         }
     }
 }
