@@ -99,20 +99,20 @@
             Console.WriteLine("Įveskite antros transporto priemonės greitį km/h:");
             var greitis2 = int.Parse(Console.ReadLine());
 
-            //Skaičiuojamas laikas po kurio pirma ir antra transporto priemonės susitiks sekundėmis
+            //Skaičiuojamas laikas po kurio pirma ir antra transporto priemonės susitiks valandomis
             // t = S / (v1 + v2)
 
-            var laikasPoKurioSusitiks = (atstumas / (greitis1 + greitis2)) * 3600;
+            var laikasPoKurioSusitiks = (atstumas / (greitis1 + greitis2));
 
-            //Skaičiuojamas atstumas nuo taško A iki vietos, kurioje susitiks pirma ir antra transporto priemonės metrais
+            //Skaičiuojamas atstumas nuo taško A iki vietos, kurioje susitiks pirma ir antra transporto priemonės kilometrais
 
-            var atstumasNuoAIkiSusitikimo = greitis1 * ((float)5 / 18) * laikasPoKurioSusitiks;
+            var atstumasNuoAIkiSusitikimo = greitis1 * laikasPoKurioSusitiks;
 
-            //Skaičiuojamas laikas kada pirma ir antra transporto priemonės pasieks galutinius taškus minutėmis
+            //Skaičiuojamas laikas kada pirma ir antra transporto priemonės pasieks galutinius taškus valandomis
             // t = S / v
 
-            var laikasIkiTasko1 = (atstumas / greitis1) * 60;
-            var laikasIkiTasko2 = (atstumas / greitis2) * 60;
+            var laikasIkiTasko1 = (atstumas / greitis1);
+            var laikasIkiTasko2 = (atstumas / greitis2);
 
            /*
            Skaičiuojama kiek gramų CO2 išskyrė abi transporto priemonės kartu sudėjus įveikdamos visą atstumą:
@@ -130,10 +130,10 @@
 
             var transportPriemCo2IkiTasko = (atstumasNuoAIkiSusitikimo * 95) + (atstumas - atstumasNuoAIkiSusitikimo) * 95;
 
-            Console.WriteLine($"Transporto priemonės susitiks po {atstumasNuoAIkiSusitikimo} metrų.");
-            Console.WriteLine($"Transporto priemonės susitiks po {laikasPoKurioSusitiks} sekundžių.");
-            Console.WriteLine($"Pirma transporto priemonė pasieks galutinį tašką po {laikasIkiTasko1} minučių.");
-            Console.WriteLine($"Antra transporto priemonė pasieks galutinį tašką po {laikasIkiTasko2} minučių.");
+            Console.WriteLine($"Transporto priemonės susitiks po {atstumasNuoAIkiSusitikimo * ((float)5 / 18)} metrų.");
+            Console.WriteLine($"Transporto priemonės susitiks po {laikasPoKurioSusitiks * 3600} sekundžių.");
+            Console.WriteLine($"Pirma transporto priemonė pasieks galutinį tašką po {laikasIkiTasko1 * 60} minučių.");
+            Console.WriteLine($"Antra transporto priemonė pasieks galutinį tašką po {laikasIkiTasko2 * 60} minučių.");
             Console.WriteLine($"Abi kartu transporto priemonės įveikdamos visą atstumą išskyrė {transportPriemCo2Visas} gramus CO2.");
             Console.WriteLine($"Abi kartu transporto priemonės įveikdamos atstumą iki susitikimo išskyrė {transportPriemCo2IkiTasko} gramus CO2.");
 
