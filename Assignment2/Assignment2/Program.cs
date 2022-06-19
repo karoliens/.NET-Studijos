@@ -42,7 +42,7 @@
                             |        `---'       |
                             |____________________|
             */
-            /*
+            
             Console.WriteLine("Įveskite temperatūrą pagal Celsijų:");
             var tempC = double.Parse(Console.ReadLine());
             var tempF = tempC * 1.8 + 32; //Įvestos temperatūros pagal Celcijų konvertavimas į temperatūrą pagal Farenheitą
@@ -88,7 +88,7 @@
             Console.WriteLine("|        '***`       |");
             Console.WriteLine("|       (*****)      |");
             Console.WriteLine("|        `---'       |");
-            Console.WriteLine("|____________________|");*/
+            Console.WriteLine("|____________________|");
 
             Console.WriteLine("Įveskite atstumą tarp taškų A ir B kilometrais:");
             var atstumas = int.Parse(Console.ReadLine());
@@ -130,7 +130,7 @@
 
             var transportPriemCo2IkiTasko = (atstumasNuoAIkiSusitikimo * 95) + (atstumas - atstumasNuoAIkiSusitikimo) * 95;
 
-            Console.WriteLine($"Transporto priemonės susitiks po {atstumasNuoAIkiSusitikimo * ((float)5 / 18)} metrų.");
+            Console.WriteLine($"Transporto priemonės susitiks po {atstumasNuoAIkiSusitikimo} metrų.");
             Console.WriteLine($"Transporto priemonės susitiks po {laikasPoKurioSusitiks * 3600} sekundžių.");
             Console.WriteLine($"Pirma transporto priemonė pasieks galutinį tašką po {laikasIkiTasko1 * 60} minučių.");
             Console.WriteLine($"Antra transporto priemonė pasieks galutinį tašką po {laikasIkiTasko2 * 60} minučių.");
@@ -145,6 +145,11 @@
             |----------------------------------------------------------------100km-----------------------------------------------------------------------|        
             >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 90min >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30min <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            */
+
+            /*
+            Nesugalvojau kaip nupiešti be loop, todėl naudojau loop, tačiau vistiek neveikia gerai.
+            Taip pat susidūriau su sunkumaisskaičiuojant po kokio atstumo susitko transporto priemonės.
             */
 
             var laikasPoKurioSusitiksH = atstumas / (greitis1 + greitis2);
