@@ -140,10 +140,11 @@
 
             var laikasPoKurioSusitiksH = atstumas / (greitis1 + greitis2);
             var atstumasNuoAIkiSusitikimoKm = greitis1 * laikasPoKurioSusitiksH;
+            var segmentai = atstumas / 20;
             
             for (var i = 0; i < 20; i++)
             {
-                Console.Write("| 5km  ");
+                Console.Write($"| {segmentai}km  ");
             }
             
             Console.WriteLine("|");
