@@ -15,7 +15,7 @@
 
             var skaicius = int.Parse(Console.ReadLine());
 
-            if (skaicius % 2 == 0 && skaicius !=0)
+            if (skaicius % 2 == 0 && skaicius != 0)
             {
                 Console.WriteLine("Skaičius yra lyginis");
             }    
