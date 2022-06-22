@@ -66,6 +66,35 @@ Rezultatas gali atrodyti taip:
 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
            */
+
+            Console.WriteLine("Įveskite vardą ir pavardę:");
+            var vardasIrPavarde = Console.ReadLine();
+
+            Console.WriteLine("Įveskite asmens kodą:");
+            var asmensKodas = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Įveskite amžių:");
+            var amzius = Console.ReadLine();
+
+
+
+            //Spausdinimas
+
+            DateTime data = DateTime.Today;
+            Console.WriteLine($"ATASKAITA APIE ASMENĮ\n{data.ToString("d")}");
+            Console.WriteLine($"Vardas, pavardė {vardasIrPavarde}");
+            //Console.WriteLine($"Lytis {lytis}");
+            if (asmensKodas.ToString().Length < 11 || asmensKodas.ToString().Length < 11)
+            {
+                Console.WriteLine("Klaida");
+            }
+            else
+            {
+                Console.WriteLine($"Asmens kodas {asmensKodas}");
+            }
+
+            Console.WriteLine($"Amžius {amzius}");
+            //Console.WriteLine($"Gimimo data {gimimoData}");
         }
     }
 }
