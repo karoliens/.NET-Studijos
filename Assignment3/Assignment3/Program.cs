@@ -83,7 +83,11 @@ Rezultatas gali atrodyti taip:
             DateTime data = DateTime.Today;
             Console.WriteLine($"ATASKAITA APIE ASMENĮ\n{data.ToString("d")}");
             Console.WriteLine($"Vardas, pavardė {vardasIrPavarde}");
+            
+            
             //Console.WriteLine($"Lytis {lytis}");
+            
+            
             if (asmensKodas.ToString().Length < 11 || asmensKodas.ToString().Length < 11)
             {
                 Console.WriteLine("Klaida");
