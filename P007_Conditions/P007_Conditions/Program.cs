@@ -207,7 +207,7 @@
             - naudokite if
             - naudokite switch
             */
-
+            /*
             Console.WriteLine("Įveskite du skaičius:");
 
             var pirmasSkaicius = int.Parse(Console.ReadLine());
@@ -249,6 +249,66 @@
             <Hint> ieškant jauniausio, seniausio naudoti if sąlygos sakinius ir naudoti tik elementus ir
             konstrukcijas kurias iki šiol išėjome.
             */
+            /*
+            Console.WriteLine("Įveskite draugo vardą:");
+
+            var draugoVardas1 = Console.ReadLine();
+
+            Console.WriteLine("Įveskite draugo amžių:");
+
+            var draugoAmzius1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Įveskite draugo vardą:");
+
+            var draugoVardas2 = Console.ReadLine();
+
+            Console.WriteLine("Įveskite draugo amžių:");
+
+            var draugoAmzius2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Įveskite draugo vardą:");
+
+            var draugoVardas3 = Console.ReadLine();
+
+            Console.WriteLine("Įveskite draugo amžių:");
+
+            var draugoAmzius3 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Pirmo draugo vardas yra {draugoVardas1} ir jam yra {draugoAmzius1} metai");
+            Console.WriteLine($"Antro draugo vardas yra {draugoVardas2} ir jam yra {draugoAmzius2} metai");
+            Console.WriteLine($"Trečio draugo vardas yra {draugoVardas3} ir jam yra {draugoAmzius3} metai");
+            Console.WriteLine($"Amžiaus vidurkis {(float)(draugoAmzius1 + draugoAmzius2 + draugoAmzius3) / 3}");
+
+            if (draugoAmzius1 < draugoAmzius2 && draugoAmzius1 < draugoAmzius3)
+            {
+                Console.WriteLine($"Jauniausias draugas yra: {draugoVardas1} ir jam yra {draugoAmzius1}");
+            }
+
+            else if (draugoAmzius2 < draugoAmzius1 && draugoAmzius2 < draugoAmzius3)
+            {
+                Console.WriteLine($"Jauniausias draugas yra: {draugoVardas2} ir jam yra {draugoAmzius2}");
+            }
+
+            else if (draugoAmzius3 < draugoAmzius1 && draugoAmzius3 < draugoAmzius2)
+            {
+                Console.WriteLine($"Jauniausias draugas yra: {draugoVardas3} ir jam yra {draugoAmzius3}");
+            }
+
+
+            if (draugoAmzius1 > draugoAmzius2 && draugoAmzius1 > draugoAmzius3)
+            {
+                Console.WriteLine($"Vyriausias draugas yra: {draugoVardas1} ir jam yra {draugoAmzius1}");
+            }
+
+            else if (draugoAmzius2 > draugoAmzius1 && draugoAmzius2 > draugoAmzius3)
+            {
+                Console.WriteLine($"Vyriausias draugas yra: {draugoVardas2} ir jam yra {draugoAmzius2}");
+            }
+
+            else if (draugoAmzius3 > draugoAmzius1 && draugoAmzius3 > draugoAmzius2)
+            {
+                Console.WriteLine($"Vyriausias draugas yra: {draugoVardas3} ir jam yra {draugoAmzius3}");
+            }
 
             /*
             ** Kalėdų sausainiai **
