@@ -96,7 +96,7 @@
             - Parašykite programą kuri į ekraną išves neigiamą/teigiamą skaičiaus reikšmę
             - Pavyzdžio atsakymas 5 -> -5; 15 -> -15; -25 -> 25; 0 -> N/A;
             */
-
+            /*
             Console.WriteLine("Įveskite betkokius 4 sveikus skaičius:");
             var skaicius1 = int.Parse(Console.ReadLine());
             var skaicius2 = int.Parse(Console.ReadLine());
@@ -174,6 +174,30 @@
             - JEI NAUDOTOJAS ĮVEDĖ PER DIDELĮ SKAIČIŲ - IŠVEDAMAS PRANEŠIMAS "SKAIČIUS YRA MAŽESNIS"
             nutraukiant programos vykdymą Environment.Exit(0) ar pan. naudoti negalima. Naudoti if.
             */
+
+            var betKoksSkaicius = 5;
+
+            Console.WriteLine("Įveskite skaičių nuo 1 iki 20:");
+            var spetasSkaicius = int.Parse(Console.ReadLine());
+
+            if (betKoksSkaicius == spetasSkaicius)
+            {
+                Console.WriteLine("TESINGAI");
+            }
+
+            else if (betKoksSkaicius > spetasSkaicius && spetasSkaicius > 0)
+            {
+                Console.WriteLine("SKAIČIUS YRA DIDESNIS");
+            }
+
+            else if (spetasSkaicius <= 0)
+            {
+                Console.WriteLine("SKAIČIUS NEPATENKA Į INTERVALĄ");
+            }
+            else
+            {
+                Console.WriteLine("SKAIČIUS YRA MAŽESNIS");
+            }
 
             /*
             * SKAIČIUOTUVAS *
