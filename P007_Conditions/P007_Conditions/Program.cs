@@ -174,10 +174,11 @@
             - JEI NAUDOTOJAS ĮVEDĖ PER DIDELĮ SKAIČIŲ - IŠVEDAMAS PRANEŠIMAS "SKAIČIUS YRA MAŽESNIS"
             nutraukiant programos vykdymą Environment.Exit(0) ar pan. naudoti negalima. Naudoti if.
             */
-
+            /*
             var betKoksSkaicius = 5;
 
             Console.WriteLine("Įveskite skaičių nuo 1 iki 20:");
+
             var spetasSkaicius = int.Parse(Console.ReadLine());
 
             if (betKoksSkaicius == spetasSkaicius)
@@ -206,6 +207,37 @@
             - naudokite if
             - naudokite switch
             */
+
+            Console.WriteLine("Įveskite du skaičius:");
+
+            var pirmasSkaicius = int.Parse(Console.ReadLine());
+            var antrasSkaicius = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Pasirinkti skaičiai: {pirmasSkaicius} ir {antrasSkaicius}");
+
+            Console.WriteLine("Įveskite matematinę operaciją: +, -, *, /");
+
+            var matematineOperacija = Console.ReadLine();
+
+            if (matematineOperacija == "+")
+            {
+                Console.WriteLine($"Skaičių {pirmasSkaicius} ir {antrasSkaicius } sudėties rezultatas: {pirmasSkaicius + antrasSkaicius}");
+            }
+
+            if (matematineOperacija == "-")
+            {
+                Console.WriteLine($"Skaičių {pirmasSkaicius} ir {antrasSkaicius} atimties rezultatas: {pirmasSkaicius - antrasSkaicius}");
+            }
+
+            if (matematineOperacija == "*")
+            {
+                Console.WriteLine($"Skaičių {pirmasSkaicius} ir {antrasSkaicius} daugybos rezultatas: {pirmasSkaicius * antrasSkaicius}");
+            }
+
+            if (matematineOperacija == "/")
+            {
+                Console.WriteLine($"Skaičių {pirmasSkaicius} ir {antrasSkaicius} dalybos rezultatas: {pirmasSkaicius / antrasSkaicius}");
+            }
         }
     }
 }
