@@ -238,6 +238,27 @@
             {
                 Console.WriteLine($"Skaičių {pirmasSkaicius} ir {antrasSkaicius} dalybos rezultatas: {pirmasSkaicius / antrasSkaicius}");
             }
+
+            /*
+            * Trys draugai *
+            - Sukurti metodą, kuris paprašytų vartotojo įvesti tris jo draugų vardus bei kiekvieno amžių.
+            - Nuskaičius duomenis atskirose eilutėse atspausdinti draugo vardą ir amžių.
+            - Atspausdinti draugų amžiaus vidurkį
+            - Surasti ir atspausdinti jauniausią draugą (vardą ir amžių).
+            - Surasti ir atspausdinti vyriausią draugą (vardą ir amžių).
+            <Hint> ieškant jauniausio, seniausio naudoti if sąlygos sakinius ir naudoti tik elementus ir
+            konstrukcijas kurias iki šiol išėjome.
+            */
+
+            /*
+            ** Kalėdų sausainiai **
+            - Paprašykite vartotojo įvesti betkokias 4 datas (tarkim 2013-12-24, 2020-12-22, 3000-12-24, 2021-03-03)
+            - Parašykite programą kuri nustato ar tarp įvestų datų yra kalėdos (gruodžio 24).
+            - Ir jei yra kalėdų data, išveda - "Jums priklauso nemokami kalėdiniai sausainiai"
+            - Jei nėra išveda - "Palaukite kalėdų"
+            Pavyzdzio atsakymas: "Jums priklauso nemokami kalėdų sausainiai"
+            <Hint> metodai data.Month ir data.Day
+            */
         }
     }
 }
