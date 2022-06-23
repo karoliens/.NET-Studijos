@@ -15,7 +15,7 @@
             9: LABAI GERAI
             10: PUIKIAI
             */
-            
+            /*
             Console.WriteLine("Įveskite egzamino pažymį:");
             var pazymys = int.Parse(Console.ReadLine());
 
@@ -66,7 +66,7 @@
             - Pavyzdžio atsakymas: "pirkėjui priklauso 2 nemokami puodeliai"
             - Alternatyvus atsakymas: "Pirkėjui nepriklauso nemokama kava"
             */
-
+            /*
             var puodeliuKiekis = -2;
             var nemokamiPuodeliai = puodeliuKiekis / 3;
 
@@ -96,6 +96,74 @@
             - Parašykite programą kuri į ekraną išves neigiamą/teigiamą skaičiaus reikšmę
             - Pavyzdžio atsakymas 5 -> -5; 15 -> -15; -25 -> 25; 0 -> N/A;
             */
+
+            Console.WriteLine("Įveskite betkokius 4 sveikus skaičius:");
+            var skaicius1 = int.Parse(Console.ReadLine());
+            var skaicius2 = int.Parse(Console.ReadLine());
+            var skaicius3 = int.Parse(Console.ReadLine());
+            var skaicius4 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"{skaicius1}; {skaicius2}; {skaicius3}; {skaicius4}");
+
+            if (skaicius1 > 0)
+            {
+                Console.WriteLine($"{0 - skaicius1}");
+            }
+
+            else if (skaicius1 == 0)
+            {
+                Console.WriteLine("N/A");
+            }
+
+            else 
+            {
+                Console.WriteLine($"{skaicius1 * -1}");
+            }
+
+            if (skaicius2 > 0)
+            {
+                Console.WriteLine($"{0 - skaicius2}");
+            }
+
+            else if (skaicius2 == 0)
+            {
+                Console.WriteLine("N/A");
+            }
+
+            else
+            {
+                Console.WriteLine($"{skaicius2 * -1}");
+            }
+
+            if (skaicius3 > 0)
+            {
+                Console.WriteLine($"{0 - skaicius3}");
+            }
+
+            else if (skaicius3 == 0)
+            {
+                Console.WriteLine("N/A");
+            }
+
+            else
+            {
+                Console.WriteLine($"{skaicius3 * -1}");
+            }
+
+            if (skaicius4 > 0)
+            {
+                Console.WriteLine($"{0 - skaicius4}");
+            }
+
+            else if (skaicius4 == 0)
+            {
+                Console.WriteLine("N/A");
+            }
+
+            else
+            {
+                Console.WriteLine($"{skaicius4 * -1}");
+            }
 
             /*
             ŽAIDIMAS ATSPĖK SKAIČIŲ
