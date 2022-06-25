@@ -319,6 +319,8 @@
             Pavyzdzio atsakymas: "Jums priklauso nemokami kalėdų sausainiai"
             <Hint> metodai data.Month ir data.Day
             */
+
+
         }
     }
 }

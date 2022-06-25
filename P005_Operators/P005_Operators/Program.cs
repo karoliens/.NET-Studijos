@@ -50,7 +50,7 @@
             */
 
             //Kanalo A atskirų elementų priskyrimas kintamiesiems
-
+            /*
             var kanalasA = "__---___---___---___---___";
             var kanalasB = "____---___---___---___---_";
 
@@ -731,6 +731,16 @@
             1  0     1
             1  1     1
             */
+
+            Console.WriteLine("A:");
+
+            bool a = bool.Parse(Console.ReadLine());
+
+            Console.WriteLine("B:");
+
+            bool b = bool.Parse(Console.ReadLine());
+
+            Console.WriteLine(a || b);
 
             /*
             A  B   F(A,B)

@@ -71,34 +71,126 @@ Rezultatas gali atrodyti taip:
             var vardasIrPavarde = Console.ReadLine();
 
             Console.WriteLine("Įveskite asmens kodą:");
-            var asmensKodas = int.Parse(Console.ReadLine());
+            var asmensKodas = (Console.ReadLine());
 
             Console.WriteLine("Įveskite amžių:");
-            var amzius = Console.ReadLine();
+            var amziusIvestas = Console.ReadLine();
 
+            Console.WriteLine("Įveskite gimimo datą YYYY-MM-DD:");
+            var gimimoDataIvesta = Console.ReadLine();
+
+
+            var pirmasAkSkaicius = int.Parse(asmensKodas.ToString()[..1]);
+
+            var gimimoDataIsAk18 = asmensKodas.ToString()[..1].Replace("1", "18").Replace("2", "18");
+            var gimimoDataIsAk19 = asmensKodas.ToString()[..1].Replace("3", "19").Replace("4", "19");
+            var gimimoDataIsAk20 = asmensKodas.ToString()[..1].Replace("5", "20").Replace("6", "21");
+
+            var gimimoDataIsAk18Pilna = int.Parse(gimimoDataIsAk18 + asmensKodas.Substring(1, 6));
+            var gimimoDataIsAk19Pilna = int.Parse(gimimoDataIsAk19 + asmensKodas.Substring(1, 6));
+            var gimimoDataIsAk20Pilna = int.Parse(gimimoDataIsAk20 + asmensKodas.Substring(1, 6));
+
+            Console.WriteLine(gimimoDataIsAk19Pilna);
+
+            var data = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
+
+            var amziusIsAk19 = (data - gimimoDataIsAk19Pilna) / 10000;
+
+            Console.WriteLine(amziusIsAk19);
 
 
             //Spausdinimas
-
-            DateTime data = DateTime.Today;
-            Console.WriteLine($"ATASKAITA APIE ASMENĮ\n{data.ToString("d")}");
+            /*
+            Console.WriteLine($"ATASKAITA APIE ASMENĮ\n{data:d}");
             Console.WriteLine($"Vardas, pavardė {vardasIrPavarde}");
-            
-            
-            //Console.WriteLine($"Lytis {lytis}");
-            
-            
+
+            //Lyties nustatymas
+            /*
+            if (pirmasAkSkaicius == 1 || pirmasAkSkaicius == 3 || pirmasAkSkaicius == 5)
+            {
+                var lytis = "Vyras";
+                Console.WriteLine($"Lytis {lytis}");
+            }
+
+            else
+            {
+                var lytis = "Moteris";
+                Console.WriteLine($"Lytis {lytis}");
+            }*/
+           
+            //Asmens kodo simbolių apribojimas
+            /*
             if (asmensKodas.ToString().Length < 11 || asmensKodas.ToString().Length < 11)
             {
                 Console.WriteLine("Klaida");
             }
+
             else
             {
                 Console.WriteLine($"Asmens kodas {asmensKodas}");
             }
+            */
 
-            Console.WriteLine($"Amžius {amzius}");
-            //Console.WriteLine($"Gimimo data {gimimoData}");
+            //Console.WriteLine("Amžiaus patikimumas");
+
+            if (!string.IsNullOrEmpty(amziusIvestas) && !string.IsNullOrEmpty(gimimoDataIvesta)) //Šitas blokas tikrina kas įvesta
+            {
+                Console.WriteLine("Įvestas ir amžius ir gimimo data");
+                if (pirmasAkSkaicius == 1 || pirmasAkSkaicius == 3 || pirmasAkSkaicius == 5) //Šitas blokas nustato lytį
+                {
+                    Console.WriteLine($"Lytis: Vyras");
+
+                    if (pirmasAkSkaicius == 1) //Šitas blokas nustato gimimo datą
+                    {
+                        Console.WriteLine("18");
+                    }
+
+                    else if (pirmasAkSkaicius == 3)
+                    {
+                        Console.WriteLine("19");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("20");
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine($"Lytis Moteris");
+
+                    if (pirmasAkSkaicius == 2)
+                    {
+                        Console.WriteLine("18");
+                    }
+
+                    else if (pirmasAkSkaicius == 4)
+                    {
+                        Console.WriteLine("19");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("20");
+                    }
+                }
+            }
+
+            else if (!string.IsNullOrEmpty(amziusIvestas) || !string.IsNullOrEmpty(gimimoDataIvesta)) //Tikrina kas įvesta
+            {
+                Console.WriteLine("Įvestas arba amžius arba gimimo data");
+            }
+
+            else
+            {
+                Console.WriteLine("Patikimumui trūksta duomenų"); //Jei niekas neįvesta
+            }
+
+            
+            //Console.WriteLine($"Amžius {amzius}");
+            
+            //Console.WriteLine($"Gimimo data {gimimoData}");*/
         }
     }
 }
