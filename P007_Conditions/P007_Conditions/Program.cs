@@ -15,7 +15,7 @@
             9: LABAI GERAI
             10: PUIKIAI
             */
-            /*
+            
             Console.WriteLine("Įveskite egzamino pažymį:");
             var pazymys = int.Parse(Console.ReadLine());
 
@@ -66,7 +66,7 @@
             - Pavyzdžio atsakymas: "pirkėjui priklauso 2 nemokami puodeliai"
             - Alternatyvus atsakymas: "Pirkėjui nepriklauso nemokama kava"
             */
-            /*
+            
             var puodeliuKiekis = -2;
             var nemokamiPuodeliai = puodeliuKiekis / 3;
 
@@ -96,7 +96,7 @@
             - Parašykite programą kuri į ekraną išves neigiamą/teigiamą skaičiaus reikšmę
             - Pavyzdžio atsakymas 5 -> -5; 15 -> -15; -25 -> 25; 0 -> N/A;
             */
-            /*
+            
             Console.WriteLine("Įveskite betkokius 4 sveikus skaičius:");
             var skaicius1 = int.Parse(Console.ReadLine());
             var skaicius2 = int.Parse(Console.ReadLine());
@@ -174,7 +174,7 @@
             - JEI NAUDOTOJAS ĮVEDĖ PER DIDELĮ SKAIČIŲ - IŠVEDAMAS PRANEŠIMAS "SKAIČIUS YRA MAŽESNIS"
             nutraukiant programos vykdymą Environment.Exit(0) ar pan. naudoti negalima. Naudoti if.
             */
-            /*
+            
             var betKoksSkaicius = 5;
 
             Console.WriteLine("Įveskite skaičių nuo 1 iki 20:");
@@ -207,7 +207,7 @@
             - naudokite if
             - naudokite switch
             */
-            /*
+            
             Console.WriteLine("Įveskite du skaičius:");
 
             var pirmasSkaicius = int.Parse(Console.ReadLine());
@@ -249,7 +249,7 @@
             <Hint> ieškant jauniausio, seniausio naudoti if sąlygos sakinius ir naudoti tik elementus ir
             konstrukcijas kurias iki šiol išėjome.
             */
-            /*
+            
             Console.WriteLine("Įveskite draugo vardą:");
 
             var draugoVardas1 = Console.ReadLine();
@@ -320,7 +320,30 @@
             <Hint> metodai data.Month ir data.Day
             */
 
+            Console.WriteLine("Įveskite 4 datas formatu yyyy-MM-dd, po kiekvieno įvedimo spauskite Enter:");
 
+            var data1 = DateTime.Parse(Console.ReadLine());
+            var data2 = DateTime.Parse(Console.ReadLine());
+            var data3 = DateTime.Parse(Console.ReadLine());
+            var data4 = DateTime.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Įvesta {data1.ToString("yyyy-MM-dd")} {data2.ToString("yyyy-MM-dd")} {data3.ToString("yyyy-MM-dd")} {data4.ToString("yyyy-MM-dd")}");
+
+
+            if (data1.Month == 12 && data1.Day == 24)
+                Console.WriteLine("Jums priklauso nemokami kalėdų sausainiai");
+
+            else if (data2.Month == 12 && data2.Day == 24)
+                Console.WriteLine("Jums priklauso nemokami kalėdų sausainiai");
+
+            else if (data3.Month == 12 && data3.Day == 24)
+                Console.WriteLine("Jums priklauso nemokami kalėdų sausainiai");
+            
+            else if (data4.Month == 12 && data4.Day == 24)
+                Console.WriteLine("Jums priklauso nemokami kalėdų sausainiai");
+
+            else
+                Console.WriteLine("Palaukite kalėdų");
         }
     }
 }
