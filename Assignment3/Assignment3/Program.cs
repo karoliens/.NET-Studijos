@@ -67,7 +67,6 @@ Rezultatas gali atrodyti taip:
 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
           */
 
-
             Console.WriteLine("Įveskite vardą ir pavardę:");
             var vardasIrPavarde = Console.ReadLine();
 
@@ -82,16 +81,13 @@ Rezultatas gali atrodyti taip:
 
 
             var pirmasAkSkaicius = int.Parse(asmensKodas.ToString()[..1]);
-            var paskutinisAkSkaicius = int.Parse(asmensKodas.Substring(10));
-
 
             var data = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
 
             var lytis = pirmasAkSkaicius switch
             {
                 1 or 3 or 5 => "Vyras",
-                2 or 4 or 6 => "Moteris",
-                _ => "Nežinoma"
+                2 or 4 or 6 => "Moteris"
             };
 
             var gimimoData = pirmasAkSkaicius switch
@@ -103,99 +99,24 @@ Rezultatas gali atrodyti taip:
 
             var amzius = (data - int.Parse(gimimoData)) / 10000;
 
-            //Kintamieji, reikalingi asmenens kodo validavimui
-            var index0 = int.Parse(asmensKodas.Substring(0, 1));
-            var index1 = int.Parse(asmensKodas.Substring(1, 1));
-            var index2 = int.Parse(asmensKodas.Substring(2, 1));
-            var index3 = int.Parse(asmensKodas.Substring(3, 1));
-            var index4 = int.Parse(asmensKodas.Substring(4, 1));
-            var index5 = int.Parse(asmensKodas.Substring(5, 1));
-            var index6 = int.Parse(asmensKodas.Substring(6, 1));
-            var index7 = int.Parse(asmensKodas.Substring(7, 1));
-            var index8 = int.Parse(asmensKodas.Substring(8, 1));
-            var index9 = int.Parse(asmensKodas.Substring(9, 1));
-
-            var suma1 = index0 * 1 + index1 * 2 + index2 * 3 + index3 * 4 + index4 * 5 + index5 * 6 + index6 * 7 + index7 * 8 + index8 * 9 + index9 * 1;
-            var suma2 = index0 * 3 + index1 * 4 + index2 * 5 + index3 * 6 + index4 * 7 + index5 * 8 + index6 * 9 + index7 * 1 + index8 * 2 + index9 * 3;
-
-            var liekana1 = suma1 % 11;
-            var liekana2 = suma2 % 11;
-
-            var kontrolinisSkaicius = 0;
-
-
-            /*
-            Kontrolinis skaičius
-            Jei asmens kodas užrašomas ABCDEFGHIJK, tai:
-
-            S = A*1 + B*2 + C*3 + D*4 + E*5 + F*6 + G*7 + H*8 + I*9 + J*1
-
-            Suma S dalinama iš 11, ir jei liekana nelygi 10, ji yra asmens kodo kontrolinis skaičius K. Jei liekana lygi 10, tuomet skaičiuojama nauja suma su tokiais svertiniais koeficientais:
-
-            S = A*3 + B*4 + C*5 + D*6 + E*7 + F*8 + G*9 + H*1 + I*2 + J*3
-
-            Ši suma S vėl dalinama iš 11, ir jei liekana nelygi 10, ji yra asmens kodo kontrolinis skaičius K. Jei vėl liekana yra 10, kontrolinis skaičius K yra 0.
-            */
-
 
             //Spausdinimas
 
             Console.WriteLine("ATASKAITA APIE ASMENĮ");
             Console.WriteLine(data);
-            Console.WriteLine($"\nVardas, pavardė:    \t{vardasIrPavarde}");
-            Console.WriteLine($"\nLytis:              \t{lytis}");
-
-            //Asmens kodo validavimas
-
-            if (liekana1 != 10)
-            {
-                kontrolinisSkaicius = liekana1;
-                //Console.WriteLine(kontrolinisSkaicius);
-            }
-
-            else
-            {
-
-                if (liekana2 != 10)
-                {
-                    kontrolinisSkaicius = liekana2;
-                    //Console.WriteLine(kontrolinisSkaicius);
-                }
-
-                else
-                {
-                    kontrolinisSkaicius = 0;
-                    //Console.WriteLine(kontrolinisSkaicius);
-                }
-            }
-
-            if (paskutinisAkSkaicius == kontrolinisSkaicius)
-            {
-                Console.WriteLine($"\nAsmens kodas:   \t{asmensKodas}");
-            }
-
-            else
-            {
-                Console.WriteLine("\nAsmens kodas:    \tkodas neteisingas");
-            }
-
-            Console.WriteLine($"\nAmžius:             \t{amziusIvestas}");
-            Console.WriteLine($"\nGimimo data:        \t{gimimoDataIvesta}");
-            Console.Write("\nAmžiaus patikimumas:    ");
+            Console.WriteLine($"Vardas, pavardė {vardasIrPavarde}");
+            Console.WriteLine($"Lytis: {lytis}");
+            Console.WriteLine($"Asmens kodas {asmensKodas}");
+            Console.WriteLine($"Amžius {amziusIvestas}");
+            Console.WriteLine($"Gimimo data {gimimoDataIvesta}");
+            Console.Write("Amžiaus patikimumas ");
 
             //Tikrina kas įvesta - tik amžius, tik gimimo data, abu, nieko
             //Įvesta ir amžius, ir gimimo data
-
-            if (paskutinisAkSkaicius != kontrolinisSkaicius)
-            {
-                Console.WriteLine("patikimumui trūksta duomenų");
-            }
-
-            else if (!string.IsNullOrEmpty(amziusIvestas) && !string.IsNullOrEmpty(gimimoDataIvesta))
+            if (!string.IsNullOrEmpty(amziusIvestas) && !string.IsNullOrEmpty(gimimoDataIvesta))
             {
 
                 //Įvesto amžiaus ir gimimo datos tikrinimas pagal asmens kodą
-
                 if (int.Parse(amziusIvestas) == amzius && gimimoDataIvesta == gimimoData)
                 {
                     Console.WriteLine("amžius tikras");
@@ -213,12 +134,10 @@ Rezultatas gali atrodyti taip:
             }
 
             //Įvestas tik amžius
-
             else if (!string.IsNullOrEmpty(amziusIvestas) && string.IsNullOrEmpty(gimimoDataIvesta))
             {
 
                 //Įvesto amžiaus tikrinimas pagal asmens kodą
-
                 if (int.Parse(amziusIvestas) == amzius)
                 {
                     Console.WriteLine("amžius patikimas");
@@ -231,12 +150,10 @@ Rezultatas gali atrodyti taip:
             }
 
             //Įvesta tik gimimo data
-
             else if (string.IsNullOrEmpty(amziusIvestas) && !string.IsNullOrEmpty(gimimoDataIvesta))
             {
 
                 //Įvestos gimimo datos tikrinimas pagal asmens kodą
-
                 if (gimimoDataIvesta == gimimoData)
                 {
                     Console.WriteLine("amžius patikimas");
@@ -249,11 +166,10 @@ Rezultatas gali atrodyti taip:
             }
 
             //Neįvestas nei amžius, nei gimimo data
-
             else
             {
                 Console.WriteLine("Patikimumui trūksta duomenų");
             }
-            }
         }
     }
+}
