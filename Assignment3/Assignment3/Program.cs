@@ -142,8 +142,8 @@ Rezultatas gali atrodyti taip:
 
             Console.WriteLine("ATASKAITA APIE ASMENĮ");
             Console.WriteLine(data);
-            Console.WriteLine($"Vardas, pavardė:    \t{vardasIrPavarde}");
-            Console.WriteLine($"Lytis:              \t{lytis}");
+            Console.WriteLine($"\nVardas, pavardė:    \t{vardasIrPavarde}");
+            Console.WriteLine($"\nLytis:              \t{lytis}");
 
             //Asmens kodo validavimas
 
@@ -171,17 +171,17 @@ Rezultatas gali atrodyti taip:
 
             if (paskutinisAkSkaicius == kontrolinisSkaicius)
             {
-                Console.WriteLine($"Asmens kodas:   \t{asmensKodas}");
+                Console.WriteLine($"\nAsmens kodas:   \t{asmensKodas}");
             }
 
             else
             {
-                Console.WriteLine("Asmens kodas:    \tkodas neteisingas");
+                Console.WriteLine("\nAsmens kodas:    \tkodas neteisingas");
             }
 
-            Console.WriteLine($"Amžius:             \t{amziusIvestas}");
-            Console.WriteLine($"Gimimo data:        \t{gimimoDataIvesta}");
-            Console.Write("Amžiaus patikimumas:    ");
+            Console.WriteLine($"\nAmžius:             \t{amziusIvestas}");
+            Console.WriteLine($"\nGimimo data:        \t{gimimoDataIvesta}");
+            Console.Write("\nAmžiaus patikimumas:    ");
 
             //Tikrina kas įvesta - tik amžius, tik gimimo data, abu, nieko
             //Įvesta ir amžius, ir gimimo data
