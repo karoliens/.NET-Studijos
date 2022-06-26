@@ -82,257 +82,92 @@ Rezultatas gali atrodyti taip:
 
             var pirmasAkSkaicius = int.Parse(asmensKodas.ToString()[..1]);
 
-            var gimimoDataIsAk18 = asmensKodas.ToString()[..1].Replace("1", "18").Replace("2", "18");
-            var gimimoDataIsAk19 = asmensKodas.ToString()[..1].Replace("3", "19").Replace("4", "19");
-            var gimimoDataIsAk20 = asmensKodas.ToString()[..1].Replace("5", "20").Replace("6", "21");
-
-            var gimimoDataIsAk18Pilna = int.Parse(gimimoDataIsAk18 + asmensKodas.Substring(1, 6));
-            var gimimoDataIsAk19Pilna = int.Parse(gimimoDataIsAk19 + asmensKodas.Substring(1, 6));
-            var gimimoDataIsAk20Pilna = int.Parse(gimimoDataIsAk20 + asmensKodas.Substring(1, 6));
-
             var data = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
 
-            var amziusIsAk18 = (data - gimimoDataIsAk18Pilna) / 10000;
-            var amziusIsAk19 = (data - gimimoDataIsAk19Pilna) / 10000;
-            var amziusIsAk20 = (data - gimimoDataIsAk20Pilna) / 10000;
+            var lytis = pirmasAkSkaicius switch
+            {
+                1 or 3 or 5 => "Vyras",
+                2 or 4 or 6 => "Moteris"
+            };
+
+            var gimimoData = pirmasAkSkaicius switch
+            {
+                1 or 2 => "18" + asmensKodas.Substring(1, 6),
+                3 or 4 => "19" + asmensKodas.Substring(1, 6),
+                5 or 6 => "20" + asmensKodas.Substring(1, 6),
+            };
+
+            var amzius = (data - int.Parse(gimimoData)) / 10000;
 
 
             //Spausdinimas
 
-
             Console.WriteLine("ATASKAITA APIE ASMENĮ");
             Console.WriteLine(data);
-            Console.WriteLine(vardasIrPavarde);
+            Console.WriteLine($"Vardas, pavardė {vardasIrPavarde}");
+            Console.WriteLine($"Lytis: {lytis}");
+            Console.WriteLine($"Asmens kodas {asmensKodas}");
+            Console.WriteLine($"Amžius {amziusIvestas}");
+            Console.WriteLine($"Gimimo data {gimimoDataIvesta}");
+            Console.Write("Amžiaus patikimumas ");
 
-            //Tikrina kas įvesta - tik amžius, tik gimimoa data, abu, nieko
-
-
+            //Tikrina kas įvesta - tik amžius, tik gimimo data, abu, nieko
             //Įvesta ir amžius, ir gimimo data
             if (!string.IsNullOrEmpty(amziusIvestas) && !string.IsNullOrEmpty(gimimoDataIvesta))
             {
-                //Console.WriteLine("Įvestas ir amžius ir gimimo data");
-                //Tikrina lytį
-                if (pirmasAkSkaicius == 1 || pirmasAkSkaicius == 3 || pirmasAkSkaicius == 5)
+
+                //Įvesto amžiaus ir gimimo datos tikrinimas pagal asmens kodą
+                if (int.Parse(amziusIvestas) == amzius && gimimoDataIvesta == gimimoData)
                 {
-                    Console.WriteLine($"Lytis: Vyras");
-                    Console.WriteLine($"Asmens kodas {asmensKodas}");
-                    Console.WriteLine($"Amžius {amziusIvestas}");
-                    Console.WriteLine($"Gimimo data {gimimoDataIvesta}");
-
-                    //Tikrina ar įvestas vyro amžius ir gimimo data patikimi
-                    if (amziusIvestas.Equals(amziusIsAk18.ToString()) && gimimoDataIvesta.Equals(gimimoDataIsAk18Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius tikras");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk19.ToString()) && gimimoDataIvesta.Equals(gimimoDataIsAk19Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius tikras");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk20.ToString()) && gimimoDataIvesta.Equals(gimimoDataIsAk20Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius tikras");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk18.ToString()) || gimimoDataIvesta.Equals(gimimoDataIsAk18Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius nepatikimas");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk19.ToString()) || gimimoDataIvesta.Equals(gimimoDataIsAk19Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius nepatikimas");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk20.ToString()) || gimimoDataIvesta.Equals(gimimoDataIsAk20Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius nepatikimas");
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("amžius pameluotas");
-                    }
-
+                    Console.WriteLine("amžius tikras");
                 }
+
+                else if (int.Parse(amziusIvestas) == amzius || gimimoDataIvesta == gimimoData)
+                {
+                    Console.WriteLine("amžius nepatikimas");
+                }
+
                 else
                 {
-                    Console.WriteLine($"Lytis Moteris");
-                    Console.WriteLine($"Asmens kodas {asmensKodas}");
-                    Console.WriteLine($"Amžius {amziusIvestas}");
-                    Console.WriteLine($"Gimimo data {gimimoDataIvesta}");
-
-                    //Tikrina ar įvestas  moters amžius ir gimimo data patikimi
-                    if (amziusIvestas.Equals(amziusIsAk18.ToString()) && gimimoDataIvesta.Equals(gimimoDataIsAk18Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius tikras");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk19.ToString()) && gimimoDataIvesta.Equals(gimimoDataIsAk19Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius tikras");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk20.ToString()) && gimimoDataIvesta.Equals(gimimoDataIsAk20Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius tikras");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk18.ToString()) || gimimoDataIvesta.Equals(gimimoDataIsAk18Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius nepatikimas");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk19.ToString()) || gimimoDataIvesta.Equals(gimimoDataIsAk19Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius nepatikimas");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk20.ToString()) || gimimoDataIvesta.Equals(gimimoDataIsAk20Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius nepatikimas");
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("amžius pameluotas");
-                    }
+                    Console.WriteLine("amžius pameluotas");
                 }
             }
 
             //Įvestas tik amžius
             else if (!string.IsNullOrEmpty(amziusIvestas) && string.IsNullOrEmpty(gimimoDataIvesta))
             {
-                //Console.WriteLine("Įvestas tik amžius");
-                //Tikrina lytį
-                if (pirmasAkSkaicius == 1 || pirmasAkSkaicius == 3 || pirmasAkSkaicius == 5)
+
+                //Įvesto amžiaus tikrinimas pagal asmens kodą
+                if (int.Parse(amziusIvestas) == amzius)
                 {
-                    Console.WriteLine($"Lytis: Vyras");
-                    Console.WriteLine($"Asmens kodas {asmensKodas}");
-                    Console.WriteLine($"Amžius {amziusIvestas}");
-                    Console.WriteLine($"Gimimo data {gimimoDataIvesta}");
-
-                    //Tikrina ar įvestas vyro amžius patikimas. Lygina amžių.
-                    if (amziusIvestas.Equals(amziusIsAk18.ToString()))
-                    {
-                        Console.WriteLine("amžius patikimas");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk19.ToString()))
-                    {
-                        Console.WriteLine("amžius patikimas");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk20.ToString()))
-                    {
-                        Console.WriteLine("amžius patikimas");
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("amžius pameluotas");
-                    }
-
+                    Console.WriteLine("amžius patikimas");
                 }
+
                 else
                 {
-                    Console.WriteLine($"Lytis Moteris");
-                    Console.WriteLine($"Asmens kodas {asmensKodas}");
-                    Console.WriteLine($"Amžius {amziusIvestas}");
-                    Console.WriteLine($"Gimimo data {gimimoDataIvesta}");
-
-                    //Tikrina ar įvestas moters amžius patikimas. Lygina amžių.
-                    if (amziusIvestas.Equals(amziusIsAk18.ToString()))
-                    {
-                        Console.WriteLine("amžius patikimas");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk19.ToString()))
-                    {
-                        Console.WriteLine("amžius patikimas");
-                    }
-
-                    else if (amziusIvestas.Equals(amziusIsAk20.ToString()))
-                    {
-                        Console.WriteLine("amžius patikimas");
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("amžius pameluotas");
-                    }
+                    Console.WriteLine("amžius pameluotas");
                 }
             }
 
             //Įvesta tik gimimo data
             else if (string.IsNullOrEmpty(amziusIvestas) && !string.IsNullOrEmpty(gimimoDataIvesta))
             {
-                //Console.WriteLine("Įvesta tik gimimo data");
-                //Tikrina lytį
 
-                if (pirmasAkSkaicius == 1 || pirmasAkSkaicius == 3 || pirmasAkSkaicius == 5)
+                //Įvestos gimimo datos tikrinimas pagal asmens kodą
+                if (gimimoDataIvesta == gimimoData)
                 {
-                    Console.WriteLine($"Lytis: Vyras");
-                    Console.WriteLine($"Asmens kodas {asmensKodas}");
-                    Console.WriteLine($"Amžius {amziusIvestas}");
-                    Console.WriteLine($"Gimimo data {gimimoDataIvesta}");
-
-                    //Tikrina ar įvestas vyro amžius patikimas. lygina gimimo datą.
-                    if (gimimoDataIvesta.Equals(gimimoDataIsAk18Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius patikimas");
-                    }
-
-                    else if (gimimoDataIvesta.Equals(gimimoDataIsAk19Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius patikimas");
-                    }
-
-                    else if (gimimoDataIvesta.Equals(gimimoDataIsAk20Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius patikimas");
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("amžius pameluotas");
-                    }
-
+                    Console.WriteLine("amžius patikimas");
                 }
+
                 else
                 {
-                    Console.WriteLine($"Lytis Moteris");
-                    Console.WriteLine($"Asmens kodas {asmensKodas}");
-                    Console.WriteLine($"Amžius {amziusIvestas}");
-                    Console.WriteLine($"Gimimo data {gimimoDataIvesta}");
-
-                    //Tikrina ar įvestas moters amžius patikimas. Lygina gimimo datą.
-                    if (gimimoDataIvesta.Equals(gimimoDataIsAk18Pilna.ToString()))
-                    {
-                        Console.WriteLine("Amžiaus patikimumas amžius patikimas");
-                    }
-
-                    else if (gimimoDataIvesta.Equals(gimimoDataIsAk19Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius patikimas");
-                    }
-
-                    else if (gimimoDataIvesta.Equals(gimimoDataIsAk20Pilna.ToString()))
-                    {
-                        Console.WriteLine("amžius patikimas");
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("amžius pameluotas");
-                    }
+                    Console.WriteLine("amžius pameluotas");
                 }
             }
 
+            //Neįvestas nei amžius, nei gimimo data
             else
             {
-                //Neįvestas nei amžius, nei gimimo data
                 Console.WriteLine("Patikimumui trūksta duomenų");
             }
         }
