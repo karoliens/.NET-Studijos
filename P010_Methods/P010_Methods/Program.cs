@@ -17,8 +17,10 @@
 
             Console.WriteLine($"Tarpų kiekis yra: {TarpuKiekis(tekstas)}");
             Console.WriteLine($"Teksto ilgis yra: {TekstoIlgis(tekstas)}");
+            Console.WriteLine($"Žodžių kiekis yra: {ZodziuKiekis(tekstas)}");
+            Console.WriteLine($"Žodžių kiekis yra: {TarpaiGale(tekstas)}");
 
-            Linkejimas();
+            //Linkejimas();
         }
 
         /*
@@ -109,6 +111,41 @@
         public static int TekstoIlgis(string tekstas)
         {
             return tekstas.Trim().Length;
+        }
+
+        /*
+        Parašykite programą kurioje yra vienas metodas priimantis vieną argumentą. 
+        - Main metode naudotojo paprašome įvesti betkokį tekstą su tarpais 
+        - Įvestas tekstas metodui perduodamas per parametrus ir grąžina žodžių kiekį 
+        - Main metode į ekraną išveskite žodžių kiekį
+        Pvz: 
+        > Iveskite teksta:
+        _ as mokausi programuoti
+        > Zodziu kiekis yra: 3
+        */
+
+        public static int ZodziuKiekis(string tekstas)
+        {
+            return tekstas.Split(" ").Count();
+        }
+
+        /*
+        Parašykite programą kurioje vienas metodas. 
+        - Naudotojo paprašome įvesti betkokį tekstą Main metode. 
+        - Metodas grąžina tarpų kiekį teksto gale
+        - Main į ekraną išveda rezultatą
+        Pvz: 
+        > Iveskite teksta:
+        _ ' as mokausi      '
+        > Gale yra tarpų: 6
+        */
+
+        public static int TarpaiGale(string tekstas)
+        {
+            var pilnasTekstas = tekstas.Length;
+            var nukirptasGalas = tekstas.TrimEnd().Length;
+
+            return pilnasTekstas - nukirptasGalas;
         }
     }
 }
