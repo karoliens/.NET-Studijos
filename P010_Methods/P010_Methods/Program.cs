@@ -1,6 +1,6 @@
 ﻿namespace P010_Methods
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -18,9 +18,12 @@
             Console.WriteLine($"Tarpų kiekis yra: {TarpuKiekis(tekstas)}");
             Console.WriteLine($"Teksto ilgis yra: {TekstoIlgis(tekstas)}");
             Console.WriteLine($"Žodžių kiekis yra: {ZodziuKiekis(tekstas)}");
-            Console.WriteLine($"Žodžių kiekis yra: {TarpaiGale(tekstas)}");
+            Console.WriteLine($"Gale yra tarpų: {TarpaiGale(tekstas)}");
+            Console.WriteLine($"Pradžioje yra tarpų: {TarpaiPradzioj(tekstas)}");
 
-            //Linkejimas();
+            Console.WriteLine($"Pradžioje yra tarpų: {TarpaiPradziojeGale(Console.ReadLine(), out int tarpaiGale)}");
+            Console.WriteLine($"Gale yra tarpų: {tarpaiGale}");
+            Console.WriteLine($"'a' raidžių kiekis yra: {aKiekis(tekstas)}");
         }
 
         /*
@@ -146,6 +149,63 @@
             var nukirptasGalas = tekstas.TrimEnd().Length;
 
             return pilnasTekstas - nukirptasGalas;
+        }
+        /*
+        Parašykite programą kurioje vienas metodas. 
+        - Naudotojo paprašome įvesti betkokį tekstą Main metode. 
+        - Metodas grąžina tarpų kiekį teksto pradžioje
+        - Main į ekraną išveda rezultatą
+        Pvz: 
+        > Iveskite teksta:
+        _ ' as mokausi      '
+        > Pradžioje yra tarpų: 1
+        */
+
+        public static int TarpaiPradzioj(string tekstas)
+        {
+            var pilnasTekstas = tekstas.Length;
+            var nukirptaPradzia = tekstas.TrimStart().Length;
+
+            return pilnasTekstas - nukirptaPradzia;
+        }
+
+        /*
+        Parašykite programą kurioje vienas metodas. 
+        - Naudotojo paprašome įvesti betkokį tekstą Main metode. 
+        - Metodas grąžina dvi reikšmes pirmoji - tarpų kiekį teksto pradžioje, antroji - tarpų kiekį teksto gale
+        <hint> naudoti out 
+        - Main į ekraną išveda rezultatą
+        Pvz: 
+        > Iveskite teksta:
+        _ ' as mokausi      '
+        > Pradžioje yra tarpų: 1
+        > Gale yra tarpų: 6
+        */
+
+        public static int TarpaiPradziojeGale(string tekstas1, out int tarpaiGale)
+        {
+            tarpaiGale = tekstas1.Length - tekstas1.TrimEnd().Length;
+
+            return tekstas1.Length - tekstas1.TrimStart().Length;
+        }
+
+        /*
+        Parašykite programą kurioje yra vienas metodas. 
+        - Main metode Naudotojo paprašome įvesti betkokį tekstą su tarpais 
+        - Įvestas teikstas kaip argumentas perduodamas metodui. Metodas grąžina 'a' raidžių kiekį tekste.
+        - Main metode į ekraną išveskite metodo darbo rezultatą
+        Pvz: 
+        > Iveskite teksta:
+        _ as mokausi programuoti
+        > 'a' raidžių kiekis yra: 3
+        */
+
+        public static int aKiekis(string tekstas)
+        {
+            var pilnasTekstas = tekstas.Length;
+            var tekstasBeA = tekstas.Replace("a", "").Length;
+
+            return pilnasTekstas - tekstasBeA;
         }
     }
 }
