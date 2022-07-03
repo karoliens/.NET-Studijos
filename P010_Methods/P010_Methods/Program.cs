@@ -265,12 +265,21 @@
 
         public static string TaipArbaNeNesulipes(string tekstas)
         {
-            if (tekstas.Contains(" mokausi ") || tekstas.Contains("mokausi ") || tekstas.Contains(" mokausi") || tekstas.Contains("(mokausi)"))
+            if (tekstas.Contains(" mokausi "))
+                return "taip";
+                
+            else if (tekstas.Contains(" mokausi" + "!") || tekstas.Contains(" mokausi" + "?") || tekstas.Contains(" mokausi" + ","))
+                return "taip";
+
+            else if (tekstas.Contains("mokausi ") && (tekstas.IndexOf("m")) == 0)
+                return "taip";
+
+            else if (tekstas.Contains("(mokausi)") || tekstas.Contains("\"mokausi\""))
                 return "taip";
 
             else
                 return "ne";
-            
+
             /*
             tekstas.Replace("mokausi", " mokausi ");
 

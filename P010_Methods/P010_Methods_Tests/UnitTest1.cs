@@ -268,5 +268,32 @@ namespace P010_Methods_Tests
             var actual = P010_Methods.Program.TaipArbaNeNesulipes(fake);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TaipArbaNeNesulipes9()
+        {
+            var fake = "Aš mokausilabaisunkiai.";
+            var expected = "ne";
+            var actual = P010_Methods.Program.TaipArbaNeNesulipes(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TaipArbaNeNesulipes10()
+        {
+            var fake = "Labaimokausi programuoti.";
+            var expected = "ne";
+            var actual = P010_Methods.Program.TaipArbaNeNesulipes(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TaipArbaNeNesulipes11()
+        {
+            var fake = "Aš \"mokausi\" programuoti ";
+            var expected = "taip";
+            var actual = P010_Methods.Program.TaipArbaNeNesulipes(fake);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
