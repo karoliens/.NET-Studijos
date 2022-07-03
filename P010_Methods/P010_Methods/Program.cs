@@ -20,10 +20,12 @@
             Console.WriteLine($"Žodžių kiekis yra: {ZodziuKiekis(tekstas)}");
             Console.WriteLine($"Gale yra tarpų: {TarpaiGale(tekstas)}");
             Console.WriteLine($"Pradžioje yra tarpų: {TarpaiPradzioj(tekstas)}");
-
-            Console.WriteLine($"Pradžioje yra tarpų: {TarpaiPradziojeGale(Console.ReadLine(), out int tarpaiGale)}");
+            Console.WriteLine($"Pradžioje yra tarpų: {TarpaiPradziojeGale(tekstas, out int tarpaiGale)}");
             Console.WriteLine($"Gale yra tarpų: {tarpaiGale}");
-            Console.WriteLine($"'a' raidžių kiekis yra: {aKiekis(tekstas)}");
+            Console.WriteLine($"'a' raidžių kiekis yra: {AKiekis(tekstas)}");
+            Console.WriteLine($"Ar yra mokausi: {TaipArbaNe(tekstas)}");
+            Console.WriteLine($"'a' raidės vieta yra: {PirmosARaidesIndex(tekstas)}");
+            Console.WriteLine($"Ar yra mokausi: {TaipArbaNeNesulipes(tekstas)}");
         }
 
         /*
@@ -129,7 +131,7 @@
 
         public static int ZodziuKiekis(string tekstas)
         {
-            return tekstas.Split(" ").Count();
+            return tekstas.Split(" ", StringSplitOptions.RemoveEmptyEntries).Length;
         }
 
         /*
@@ -181,12 +183,12 @@
         > Pradžioje yra tarpų: 1
         > Gale yra tarpų: 6
         */
-
-        public static int TarpaiPradziojeGale(string tekstas1, out int tarpaiGale)
+        
+        public static int TarpaiPradziojeGale(string tekstas, out int tarpaiGale)
         {
-            tarpaiGale = tekstas1.Length - tekstas1.TrimEnd().Length;
+            tarpaiGale = tekstas.Length - tekstas.TrimEnd().Length;
 
-            return tekstas1.Length - tekstas1.TrimStart().Length;
+            return tekstas.Length - tekstas.TrimStart().Length;
         }
 
         /*
@@ -200,12 +202,84 @@
         > 'a' raidžių kiekis yra: 3
         */
 
-        public static int aKiekis(string tekstas)
+        public static int AKiekis(string tekstas)
         {
             var pilnasTekstas = tekstas.Length;
             var tekstasBeA = tekstas.Replace("a", "").Length;
 
             return pilnasTekstas - tekstasBeA;
+        }
+
+        /*
+        Parašykite programą kurioje vienas metodas. 
+        - Naudotojo paprašome įvesti betkokį tekstą Main metode. 
+        - Metodas grąžina žodžius Taip arba Ne ar tekste rado žodį 'mokausi'. N.B. grąžinama string, o ne bool.
+        -  Išvesti rezultatą Main metode.
+        Pvz: 
+        > Iveskite teksta:
+        _ ' as labai mokausi programuoti     '
+        > Ar yra mokausi: Taip
+        */
+
+        public static string TaipArbaNe(string tekstas)
+        {
+            if (tekstas.Contains("mokausi"))
+
+                return "taip";
+            else
+                return "ne";
+        }
+
+        /*
+        Parašykite programą kurioje yra vienas metodas. 
+        - Main metode Naudotojo paprašome įvesti betkokį tekstą su tarpais 
+        - Įvestas teikstas kaip argumentas perduodamas metodui. Metodas grąžina pirmos 'a' raidės vietą tekste.
+        - Main metode į ekraną išveskite metodo darbo rezultatą
+        Pvz: 
+        > Iveskite teksta:
+        _ as mokausi programuoti
+        > 'a' raides vieta yra: 0
+        */
+
+        public static int PirmosARaidesIndex(string tekstas)
+        {
+            return tekstas.IndexOf("a");
+        }
+
+        /*
+        Parašykite programą kurioje vienas metodas. 
+        - Naudotojo paprašome įvesti betkokį tekstą Main metode. 
+        - Metodas grąžina žodžius Taip arba Ne ar tekste rado žodį 'mokausi'. 
+        Bet tik tuo atveju jei žodis 'mokausi' nesulipęs su kitu žodžiu.
+        N.B. grąžinama string, o ne bool.
+        -  Išvesti rezultatą Main metode.
+        Pvz: 
+        > Iveskite teksta:
+        _ ' as labai mokausi programuoti     '
+        > Ar yra mokausi: Taip
+        Pvz: 
+        > Iveskite teksta:
+        _ ' as_labai_mokausi_programuoti     '
+        > Ar yra mokausi: Ne
+        */
+
+        public static string TaipArbaNeNesulipes(string tekstas)
+        {
+            if (tekstas.Contains(" mokausi ") || tekstas.Contains("mokausi ") || tekstas.Contains(" mokausi") || tekstas.Contains("(mokausi)"))
+                return "taip";
+
+            else
+                return "ne";
+            
+            /*
+            tekstas.Replace("mokausi", " mokausi ");
+
+            if (tekstas.Contains("mokausi"))
+                return "taip";
+
+            else
+                return "ne";
+            */
         }
     }
 }
