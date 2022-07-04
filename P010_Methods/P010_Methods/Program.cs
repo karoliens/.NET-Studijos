@@ -267,7 +267,7 @@
         {
             if (tekstas.Contains(" mokausi "))
                 return "taip";
-                
+
             else if (tekstas.Contains(" mokausi" + "!") || tekstas.Contains(" mokausi" + "?") || tekstas.Contains(" mokausi" + ","))
                 return "taip";
 
