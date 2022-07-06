@@ -4,38 +4,33 @@
     {
         static void Main(string[] args)
         {
-            /*
-            Tarkime turime DNR grandinę užkoduotą tekstu var txt =" T CG-TAC- gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ".
-            Galimos bazės: Adenine, Thymine, Cytosine, Guanine
-            Parašykite programą kurioje atsiranda MENIU kuriame naudotojas gali pasirinkti:
-            1. Atlikti DNR grandinės normalizavimo veiksmus:
-             - pašalina tarpus.
-             - visas raides keičia didžiosiomis.
-            
-            2. Atlikti grandinės validaciją
-             - patikrina ar nėra kitų nei ATCG raidžių
-            
-            3. Atlieka veiksmus su DNR grandine (tik tuo atveju jei grandinė yra normalizuota ir validi). Nuspaudus 3 įeinama į sub-meniu
-              - Jeigu grandinė yra validi, tačiau nenormalizuota programa pasiūlo naudotojui
-              1) normalizuoti grandinę
-              2) išeiti iš programos
-              
-            - jei grandinė normalizuota arba kai buvo atlikta normalizacija
-              1) GCT pakeis į AGG
-              2) Išvesti ar yra tekste CAT
-              3) Išvesti trečia ir penktą grandinės segmentus (naudoti Substring()).
-              4) Išvesti raidžių kiekį tekste (naudoti string composition)
-              5) Išvesti ar yra tekste ir kiek kartų pasikartoja iš klaviatūros įvestas segmento kodas
-              6) Prie grandinės galo pridėti iš klaviatūros įvesta segmentą  
-                  (reikalinga validacija ar nėra kitų kaip ATCG ir 3 raidės)
-              7) Iš grandinės pašalinti pasirinką elementą  
-              8) Pakeisti pasirinkti segmentą įvestu iš klaviatūros  
-                  (reikalinga validacija ar nėra kitų kaip ATCG ir 3 raidės)
-              9) Gryžti į ankstesnį meniu
-             Visoms operacijoms reikalingi testai.
-            */
-
             var txt = " T CG-TAC- gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ";
+            //PasalinaTarpus(txt);
+            //KeiciaIDidziasias(txt);
+            Console.WriteLine(Validacija(txt));
+        }
+
+        public static void PasalinaTarpus(string txt)
+        {
+            Console.WriteLine(txt.Replace(" ", ""));
+        }
+
+        public static void KeiciaIDidziasias(string txt)
+        {
+            Console.WriteLine(txt.ToUpper());
+        }
+
+        public static string Validacija(string txt)
+        {
+            PasalinaTarpus(txt);
+            
+            txt = txt.Replace("a", "-", StringComparison.OrdinalIgnoreCase);
+            txt = txt.Replace("t", "-", StringComparison.OrdinalIgnoreCase);
+            txt = txt.Replace("c", "-", StringComparison.OrdinalIgnoreCase);
+            txt = txt.Replace("g", "-", StringComparison.OrdinalIgnoreCase);
+            txt = txt.Replace(" ", "-");
+
+            return txt;
         }
     }
 }
