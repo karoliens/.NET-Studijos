@@ -1,6 +1,6 @@
 ﻿namespace P011_Methods
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -8,17 +8,6 @@
             var pirmasSkaicius = int.Parse(Console.ReadLine());
             var antrasSkaicius = int.Parse(Console.ReadLine());
 
-            Menu(pirmasSkaicius, antrasSkaicius);
-
-            //var menuPasirinkimas = Console.ReadLine();
-
-            //if ()
-
-
-
-
-
-            /*
             Console.WriteLine($"Sudėtis: {Suma(pirmasSkaicius, antrasSkaicius)}");
             Console.WriteLine($"Atimtis: {Atimtis(pirmasSkaicius, antrasSkaicius)}");
             Console.WriteLine($"Daugyba: {Daugyba(pirmasSkaicius, antrasSkaicius)}");
@@ -32,31 +21,54 @@
             var matematinisVeiksmas = Console.ReadLine();
 
             Console.WriteLine(Skaiciuotuvas(pirmasSkaicius1, antrasSkaicius1, matematinisVeiksmas));
-
+            
             Console.WriteLine("Įveskite taisiklingojo daugiakampio kraštinių kiekį (n):");
             var krastiniuKiekis = int.Parse(Console.ReadLine());
             Console.WriteLine("Įveskite taisiklingojo daugiakampio kraštinės ilgį (b):");
             var krastiniuIlgis = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Plotas: {PlotoSkaiciavimas(krastiniuKiekis, krastiniuIlgis)}");
-            Console.WriteLine($"Vidinių kampų suma: {VidiniuKampuSuma(krastiniuKiekis)}");*/
+            if(IsTrikampis(krastiniuKiekis))
+            {
+                Console.WriteLine("Įveskite aukštį (h):");
+                var aukstis = int.Parse(Console.ReadLine());
+                Console.WriteLine($"Plotas: {TrikampioPlotas(krastiniuIlgis, aukstis)}");
+            }
+
+            else if (IsKeturkampis(krastiniuKiekis))
+            {
+                Console.WriteLine($"Plotas: {KeturkampioPlotas(krastiniuKiekis, krastiniuIlgis)}");
+            }
+
+            else if (IsVisaKita(krastiniuKiekis))
+            {
+                Console.WriteLine("Įveskite statmenį (r):");
+                var statmuo = int.Parse(Console.ReadLine());
+                Console.WriteLine($"Plotas: {VisuKituPlotas(krastiniuKiekis, krastiniuIlgis, statmuo)}");
+            }
+
+            else
+            {
+                Console.WriteLine("Neatpažinta figūra");
+            }
+                
+            Console.WriteLine($"Vidinių kampų suma: {VidiniuKampuSuma(krastiniuKiekis)}");
         }
 
         /*
         UŽDUOTIS 1
-      1. Sukurti metodus Suma, Atimtis, Daugyba, Dalyba.
-      - Main metode paprašykite įvesti 2 skaičius
-      - Kiekvienas matematinis veiksmas turi turėti savo metodą 
+        1. Sukurti metodus Suma, Atimtis, Daugyba, Dalyba.
+        - Main metode paprašykite įvesti 2 skaičius
+        - Kiekvienas matematinis veiksmas turi turėti savo metodą 
         metodas turi priimti 2 int tipo parametrus ir grąžinti atlikto veiksmo rezultatą.
-      - Kiekvieno metodo darbo rezultatus atspausdinti Main metode.
-      - Visų gautų rezultatų sumą atspausdinti Main metode.
+        - Kiekvieno metodo darbo rezultatus atspausdinti Main metode.
+        - Visų gautų rezultatų sumą atspausdinti Main metode.
 
-     2. Skaičiuotuvas. Naudoti pirmos dalies matematinius metodus.
-      - Main metode paprašykite įvesti 2 skaičius ir matematinį veiksmą
-      - Metodas 'Skaiciuotuvas' turi priimti tris parametrus du skaičius ir veiksmą. 
-      - Metodas 'Skaiciuotuvas' turi parinkti reikiamą matematinį metodą ir grąžinti rezultatą (naudoti switch)
-      - parašyti testus
-      - gautą rezultatą atspausdinti į ekraną Main metode.
+        2. Skaičiuotuvas. Naudoti pirmos dalies matematinius metodus.
+        - Main metode paprašykite įvesti 2 skaičius ir matematinį veiksmą
+        - Metodas 'Skaiciuotuvas' turi priimti tris parametrus du skaičius ir veiksmą. 
+        - Metodas 'Skaiciuotuvas' turi parinkti reikiamą matematinį metodą ir grąžinti rezultatą (naudoti switch)
+        - parašyti testus
+        - gautą rezultatą atspausdinti į ekraną Main metode.
         */
 
         public static int Suma(int pirmasSkaicius, int antrasSkaicius)
@@ -99,17 +111,17 @@
         /*
         Paprašyti naudotojo įvesti taisyklingojo daugiakampio kraštių kiekį (n) ir kraštinės ilgį (b)., 
          metodo parinkimui naudoti switch expression
-       1. Kai įvestas trikampis, 
-       - paprašyti įvesti aukšį h
-       - A=1/2bh
-       2. Kai įvestas keturkampis,
-       - A=b*b
-       3. Kai įvestas penkiakampis, šešiakampis ir t.t.,
-       - paprašyti įvesti statmenį r
-       - A=n/2 * b * r
-       4. išvesti betkokio poligono vidinių kampų sumą
-       - 180 * (n - 2)
-       N.B! atkreipkite dėmesį į metodų testuojamumą. 
+        1. Kai įvestas trikampis, 
+        - paprašyti įvesti aukšį h
+        - A=1/2bh
+        2. Kai įvestas keturkampis,
+        - A=b*b
+        3. Kai įvestas penkiakampis, šešiakampis ir t.t.,
+        - paprašyti įvesti statmenį r
+        - A=n/2 * b * r
+        4. išvesti betkokio poligono vidinių kampų sumą
+        - 180 * (n - 2)
+        N.B! atkreipkite dėmesį į metodų testuojamumą. 
         visi atvejai 1,2,3 ir 4 turi būti atskiruose metoduose ir metodai turi būti testuojami
         */
 
@@ -142,22 +154,19 @@
             return 180 * (krastiniuKiekis - 2);
         }
 
-        public static double PlotoSkaiciavimas(int krastiniuKiekis, int krastiniuIlgis)
+        public static double KeturkampioPlotas(int krastiniuKiekis, double krastiniuIlgis)
         {
-            if (IsTrikampis(krastiniuKiekis))
-                Console.WriteLine("Įveskite aukštį (h):");
-                var aukstis = Console.ReadLine();
-                    return (1 / (double)2) * krastiniuIlgis * krastiniuKiekis;
+            return krastiniuKiekis * (double)krastiniuIlgis;
+        }
 
-            if (IsKeturkampis(krastiniuKiekis))
-                    return krastiniuIlgis * krastiniuIlgis;
+        public static double TrikampioPlotas(double krastiniuIlgis, double aukstis)
+        {
+            return 1 / (double)2 * krastiniuIlgis * aukstis;
+        }
 
-            if (IsVisaKita(krastiniuKiekis))
-                Console.WriteLine("Įveskite statmenį (r):");
-                var statmuo = int.Parse(Console.ReadLine());
-                    return (krastiniuKiekis / (double)2) * krastiniuIlgis * statmuo;
-   
-                return 0;
+        public static double VisuKituPlotas(int krastiniuKiekis, double krastiniuIlgis, double statmuo)
+        {
+            return krastiniuKiekis / (double)2 * krastiniuIlgis * statmuo;
         }
 
         /*
@@ -209,62 +218,5 @@
         {
             return pirmasSkaicius * pirmasSkaicius * pirmasSkaicius;
         }
-
-        public static bool YraKablelis(string pirmasSkaicius, string antrasSkaicius)
-        {
-            if (pirmasSkaicius.Contains(",") && antrasSkaicius.Contains(","));
-                return true;
-            
-            return
-                    false;
-        }
-
-        public static void Menu(int pirmasSkaicius, int antrasSkaicius)
-        {
-            Console.WriteLine("Pasirinkite matematinį veiksmą:");
-            var pasirinkimas = Console.ReadLine();
-
-            var menuPasirinkimas = pasirinkimas switch
-            {
-                "1)" or "+" => Suma(pirmasSkaicius, antrasSkaicius),
-                "2)" or "-" => Atimtis(pirmasSkaicius, antrasSkaicius),
-                "3)" or "*" => Daugyba(pirmasSkaicius, antrasSkaicius),
-                "4)" or "/" => Dalyba(pirmasSkaicius, antrasSkaicius),
-                "5)" or "a^2" => KelimasKvadratu(pirmasSkaicius),
-                "6)" or "a^3" => KelimasKubu(pirmasSkaicius),
-            };
-
-            //return menuPasirinkimas;
-        }
-
-        /*
-        Tarkime turime DNR grandinę užkoduotą tekstu var txt =" T CG-TAC- gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ".
-        Galimos bazės: Adenine, Thymine, Cytosine, Guanine
-         Parašykite programą kurioje atsiranda MENIU kuriame naudotojas gali pasirinkti:
-         1. Atlikti DNR grandinės normalizavimo veiksmus:
-            - pašalina tarpus.
-            - visas raides keičia didžiosiomis. 
-         2. Atlikti grandinės validaciją
-            - patikrina ar nėra kitų nei ATCG raidžių
-         3. Atlieka veiksmus su DNR grandine (tik tuo atveju jei grandinė yra normalizuota ir validi). Nuspaudus 3 įeinama į sub-meniu
-             - Jeigu grandinė yra validi, tačiau nenormalizuota programa pasiūlo naudotojui 
-             1) normalizuoti grandinę
-             2) išeiti iš programos
-             - jei grandinė normalizuota arba kai buvo atlikta normalizacija
-             1) GCT pakeis į AGG
-             2) Išvesti ar yra tekste CAT 
-             3) Išvesti trečia ir penktą grandinės segmentus (naudoti Substring()).
-             4) Išvesti raidžių kiekį tekste (naudoti string composition)
-             5) Išvesti ar yra tekste ir kiek kartų pasikartoja iš klaviatūros įvestas segmento kodas 
-             6) Prie grandinės galo pridėti iš klaviatūros įvesta segmentą  
-                 (reikalinga validacija ar nėra kitų kaip ATCG ir 3 raidės) 
-             7) Iš grandinės pašalinti pasirinką elementą  
-             8) Pakeisti pasirinkti segmentą įvestu iš klaviatūros  
-                 (reikalinga validacija ar nėra kitų kaip ATCG ir 3 raidės) 
-             9) Gryžti į ankstesnį meniu
-       Visoms operacijoms reikalingi testai.
-         
-         
-         */
     }
 }
