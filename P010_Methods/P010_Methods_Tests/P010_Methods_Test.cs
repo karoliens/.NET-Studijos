@@ -29,8 +29,6 @@ namespace P010_Methods_Tests
              Assert.AreEqual(expected, actual);
         }
 
-
-
         [TestMethod]
         public void TarpuKiekis_Test1()
         {
@@ -60,7 +58,7 @@ namespace P010_Methods_Tests
 
 
         [TestMethod]
-        public void TekstoIlgis1()
+        public void TekstoIlgis1_Test1()
         {
             var fake = "as mokausi programuoti";
             var expected = 22;
@@ -69,7 +67,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TekstoIlgis2()
+        public void TekstoIlgis_Test2()
         {
             var fake = " as mokausi programuoti ";
             var expected = 22;
@@ -78,7 +76,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TekstoIlgis3()
+        public void TekstoIlgis_Test3()
         {
             var fake = " as mokausi programuoti     ";
             var expected = 22;
@@ -87,7 +85,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TarpaiGalle1()
+        public void TarpaiGale_Test1()
         {
             var fake = "as mokausi programuoti";
             var expected = 0;
@@ -96,7 +94,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TarpaiGale2()
+        public void TarpaiGale_Test2()
         {
             var fake = " as mokausi programuoti ";
             var expected = 1;
@@ -105,7 +103,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TarpaiGale3()
+        public void TarpaiGale_Test3()
         {
             var fake = " as mokausi programuoti     ";
             var expected = 5;
@@ -113,10 +111,8 @@ namespace P010_Methods_Tests
             Assert.AreEqual(expected, actual);
         }
 
-
-
         [TestMethod]
-        public void TarpaiPradzioj1()
+        public void TarpaiPradzioj_Test1()
         {
             var fake = "as mokausi programuoti";
             var expected = 0;
@@ -125,7 +121,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TarpaiPradzioj2()
+        public void TarpaiPradzioj_Test2()
         {
             var fake = " as mokausi programuoti ";
             var expected = 1;
@@ -134,7 +130,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TarpaiPradzioj3()
+        public void TarpaiPradzioj_Test3()
         {
             var fake = "    as mokausi programuoti     ";
             var expected = 4;
@@ -144,7 +140,7 @@ namespace P010_Methods_Tests
 
 
         [TestMethod]
-        public void AKiekis1()
+        public void AKiekis_Test1()
         {
             var fake = "as mokausi programuoti";
             var expected = 3;
@@ -153,7 +149,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void AKiekis2()
+        public void AKiekis_Test2()
         {
             var fake = " as  aa mokausi programuoti ";
             var expected = 5;
@@ -162,7 +158,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void AKiekis3()
+        public void AKiekis_Test3()
         {
             var fake = "a    as mokausi programuoti     a";
             var expected = 5;
@@ -171,7 +167,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNe1()
+        public void TaipArbaNe_Test1()
         {
             var fake = " as labai mokausi programuoti     ";
             var expected = "taip";
@@ -180,7 +176,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNe2()
+        public void TaipArbaNe_Test2()
         {
             var fake = " as labai mokausiprogramuoti     ";
             var expected = "taip";
@@ -189,7 +185,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void PirmosARaidesIndex1()
+        public void PirmosARaidesIndex_Test1()
         {
             var fake = " as labai mokausiprogramuoti     ";
             var expected = 1;
@@ -198,7 +194,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNeNesulipes1()
+        public void TaipArbaNeNesulipes_Test1()
         {
             var fake = " as labai mokausi programuoti     ";
             var expected = "taip";
@@ -207,7 +203,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNeNesulipes2()
+        public void TaipArbaNeNesulipes_Test2()
         {
             var fake = "aslabaimokausiprogramuoti";
             var expected = "ne";
@@ -216,7 +212,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNeNesulipes3()
+        public void TaipArbaNeNesulipes_Test3()
         {
             var fake = "mokausi programuoti labai    ";
             var expected = "taip";
@@ -225,7 +221,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNeNesulipes4()
+        public void TaipArbaNeNesulipes_Test4()
         {
             var fake = "as mokausi, labai stipriai";
             var expected = "taip";
@@ -234,7 +230,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNeNesulipes5()
+        public void TaipArbaNeNesulipes_Test5()
         {
             var fake = "as mokausi!";
             var expected = "taip";
@@ -243,7 +239,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNeNesulipes6()
+        public void TaipArbaNeNesulipes_Test6()
         {
             var fake = "as mokausi?";
             var expected = "taip";
@@ -252,7 +248,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNeNesulipes7()
+        public void TaipArbaNeNesulipes_Test7()
         {
             var fake = "as studijuoju (mokausi)";
             var expected = "taip";
@@ -261,7 +257,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNeNesulipes8()
+        public void TaipArbaNeNesulipes_Test8()
         {
             var fake = "as studijuojumokausi)";
             var expected = "ne";
@@ -270,7 +266,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNeNesulipes9()
+        public void TaipArbaNeNesulipes_Test9()
         {
             var fake = "Aš mokausilabaisunkiai.";
             var expected = "ne";
@@ -279,7 +275,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNeNesulipes10()
+        public void TaipArbaNeNesulipes_Test10()
         {
             var fake = "Labaimokausi programuoti.";
             var expected = "ne";
@@ -288,7 +284,7 @@ namespace P010_Methods_Tests
         }
 
         [TestMethod]
-        public void TaipArbaNeNesulipes11()
+        public void TaipArbaNeNesulipes_Test11()
         {
             var fake = "Aš \"mokausi\" programuoti ";
             var expected = "taip";
