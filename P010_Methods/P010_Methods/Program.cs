@@ -279,6 +279,16 @@
 
             else
                 return "ne";
+
+            /*
+            tekstas.Replace("mokausi", " mokausi ");
+
+            if (tekstas.Contains("mokausi"))
+                return "taip";
+
+            else
+                return "ne";
+            */
         }
     }
 }
