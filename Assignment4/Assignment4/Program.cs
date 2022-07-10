@@ -4,12 +4,12 @@
     {
         static void Main(string[] args)
         {
-            var txt = " T CG-TAC- gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ";
+            var dnrString = " T CG-TAC- gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ";
 
-            Console.WriteLine($"DNR grandinė {txt}");
+            Console.WriteLine($"DNR grandinė {dnrString}");
             Console.WriteLine("Pasirinkite veiksmą:");
             PagrindinioMenuSpausdinimas();
-            PagrindinioMenuNavigacija(txt);
+            PagrindinioMenuNavigacija(dnrString);
         }
 
         public static string PasalinaTarpus(string txt)
@@ -97,7 +97,7 @@
             switch (Console.ReadLine())
             {
                 case "1":
-                    Normalizuoja(txt);
+                    var normalizuotasTxt = Normalizuoja(txt);
                     SubMenu2Spausdinimas();
                     SubMenu2Navigacija(txt);
                     break;
@@ -152,6 +152,7 @@
                     Console.WriteLine("Įveskite segmentą:");
                     ivestasSegmentas = Console.ReadLine();
                     Console.WriteLine(IeskoIvestoSegmento(txt, ivestasSegmentas));
+                    Console.WriteLine(SkaiciuojaPasikartojimus(txt, ivestasSegmentas));
                     break;
                 case "6":
                     Console.WriteLine("Įveskite segmentą:");
@@ -256,6 +257,11 @@
             {
                 return "Segmentą turi sudaryt trys raidės ir tik ATCG";
             }
+        }
+
+        public static int SkaiciuojaPasikartojimus(string txt, string ivestasSegmentas)
+        {
+            return (Normalizuoja(txt).Replace("-", "").Length - Normalizuoja(txt).Replace("-", "").Replace(Normalizuoja(ivestasSegmentas), "").Length) / 3;
         }
     }   
 }
