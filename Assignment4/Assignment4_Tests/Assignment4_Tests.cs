@@ -64,6 +64,16 @@
         }
 
         [TestMethod]
+        public void IeskoTrecioIrPenktoSegmento2()
+        {
+            var txt = " T CG-TAC- Tta-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ";
+            var expected = "TTA TAC";
+            var actual = Assignment4.Program.IeskoTrecioIrPenktoSegmento(txt);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void IsvedaRaidziuKieki1()
         {
             var txt = " T CG-TAC- gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ";
@@ -72,7 +82,17 @@
 
             Assert.AreEqual(expected, actual);
         }
-        
+
+        [TestMethod]
+        public void IsvedaRaidziuKieki2()
+        {
+            var txt = " T CG-TAC- gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT   TTA ";
+            var expected = 42;
+            var actual = Assignment4.Program.IsvedaRaidziuKieki(txt);
+
+            Assert.AreEqual(expected, actual);
+        }
+
         [TestMethod]
         public void IeskoIvestoSegmento1()
         {
@@ -83,7 +103,29 @@
 
             Assert.AreEqual(expected, actual);
         }
-        
+
+        [TestMethod]
+        public void IeskoIvestoSegmento2()
+        {
+            var txt = " T CG-TAC- gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ";
+            var ivestasSegmentas = "cGT";
+            var expected = "Įvestas segmentas yra DNR grandinėje";
+            var actual = Assignment4.Program.IeskoIvestoSegmento(txt, ivestasSegmentas);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void IeskoIvestoSegmento3()
+        {
+            var txt = " T CG-TAC- gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ";
+            var ivestasSegmentas = "TTT";
+            var expected = "Įvesto segmento nėra DNR grandinėje";
+            var actual = Assignment4.Program.IeskoIvestoSegmento(txt, ivestasSegmentas);
+
+            Assert.AreEqual(expected, actual);
+        }
+
         [TestMethod]
         public void PridedaIGala1()
         {
@@ -94,7 +136,18 @@
 
             Assert.AreEqual(expected, actual);
         }
-        
+
+        [TestMethod]
+        public void PridedaIGala2()
+        {
+            var txt = " T CG-TAC- gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    ";
+            var ivestasSegmentas = "123";
+            var expected = "Segmentą turi sudaryt trys raidės ir tik ATCG";
+            var actual = Assignment4.Program.PridedaIGala(txt, ivestasSegmentas);
+
+            Assert.AreEqual(expected, actual);
+        }
+
         [TestMethod]
         public void PasalinaSegmenta1()
         {
