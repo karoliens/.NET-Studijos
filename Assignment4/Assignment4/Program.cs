@@ -53,34 +53,34 @@
             switch (Console.ReadLine())
             {
                 case "1":
-                    Console.WriteLine(Normalizuoja(txt));
-                    break;
+                Console.WriteLine(Normalizuoja(txt));
+                break;
                 case "2":
-                    if (Validuoja(txt))
-                    {
-                        Console.WriteLine("DNR grandinė yra validi");
-                    }
+                if (Validuoja(txt))
+                {
+                    Console.WriteLine("DNR grandinė yra validi");
+                }
 
-                    else
-                    {
-                        Console.WriteLine("DNR grandinė yra nevalidi");
-                    }
-                    break;
+                else
+                {
+                    Console.WriteLine("DNR grandinė yra nevalidi");
+                }
+                break;
                 case "3":
-                    if (Validuoja(txt) && !(Normalizuoja(txt) == txt))
-                    {
-                        SubMenu1Spausdinimas();
-                        SubMenu1Navigacija(txt);
-                    }
+                if (Validuoja(txt) && !(Normalizuoja(txt) == txt))
+                {
+                    SubMenu1Spausdinimas();
+                    SubMenu1Navigacija(txt);
+                }
 
-                    else
-                    {
-                        Console.WriteLine("DNR grandinė nėra validi");
-                    }
-                    break;
+                else
+                {
+                    Console.WriteLine("DNR grandinė nėra validi");
+                }
+                break;
                 default:
-                    Console.WriteLine("Pasirinkite 1, 2 arba 3");
-                    break;
+                Console.WriteLine("Pasirinkite 1, 2 arba 3");
+                break;
             }
         }
 
@@ -97,16 +97,16 @@
             switch (Console.ReadLine())
             {
                 case "1":
-                    var normalizuotasTxt = Normalizuoja(txt);
-                    SubMenu2Spausdinimas();
-                    SubMenu2Navigacija(txt);
-                    break;
+                var normalizuotasTxt = Normalizuoja(txt);
+                SubMenu2Spausdinimas();
+                SubMenu2Navigacija(txt);
+                break;
                 case "2":
-                    Environment.Exit(0);
-                    break;
+                Environment.Exit(0);
+                break;
                 default:
-                    Console.WriteLine("Pasirinkite 1 arba 2");
-                    break;
+                Console.WriteLine("Pasirinkite 1 arba 2");
+                break;
             }
         }
 
@@ -133,54 +133,54 @@
             switch (Console.ReadLine())
             {
                 case "1":
-                    Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
-                    Console.WriteLine($"Pakeista DNR grandinė: {KeiciaGCTiAGG(txt)}");
-                    break;
+                Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
+                Console.WriteLine($"Pakeista DNR grandinė: {KeiciaGCTiAGG(txt)}");
+                break;
                 case "2":
-                    Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
-                    Console.WriteLine($"Pakeista DNR grandinė: {IeskoCAT(txt)}");
-                    break;
+                Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
+                Console.WriteLine($"Pakeista DNR grandinė: {IeskoCAT(txt)}");
+                break;
                 case "3":
-                    Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
-                    Console.WriteLine($"Pakeista DNR grandinė: {IeskoTrecioIrPenktoSegmento(txt)}");
-                    break;
+                Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
+                Console.WriteLine($"Pakeista DNR grandinė: {IeskoTrecioIrPenktoSegmento(txt)}");
+                break;
                 case "4":
-                    Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
-                    Console.WriteLine($"Pakeista DNR grandinė: {IsvedaRaidziuKieki(txt)}");
-                    break;
+                Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
+                Console.WriteLine($"Pakeista DNR grandinė: {IsvedaRaidziuKieki(txt)}");
+                break;
                 case "5":
-                    Console.WriteLine("Įveskite segmentą:");
-                    ivestasSegmentas = Console.ReadLine();
-                    Console.WriteLine(IeskoIvestoSegmento(txt, ivestasSegmentas));
-                    Console.WriteLine(SkaiciuojaPasikartojimus(txt, ivestasSegmentas));
-                    break;
+                Console.WriteLine("Įveskite segmentą:");
+                ivestasSegmentas = Console.ReadLine();
+                Console.WriteLine(IeskoIvestoSegmento(txt, ivestasSegmentas));
+                Console.WriteLine(SkaiciuojaPasikartojimus(txt, ivestasSegmentas));
+                break;
                 case "6":
-                    Console.WriteLine("Įveskite segmentą:");
-                    ivestasSegmentas = Console.ReadLine();
-                    Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
-                    Console.WriteLine($"Pakeista DNR grandinė: {PridedaIGala(txt, ivestasSegmentas)}");
-                    break;
+                Console.WriteLine("Įveskite segmentą:");
+                ivestasSegmentas = Console.ReadLine();
+                Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
+                Console.WriteLine($"Pakeista DNR grandinė: {PridedaIGala(txt, ivestasSegmentas)}");
+                break;
                 case "7":
-                    Console.WriteLine("Įveskite segmentą:");
-                    ivestasSegmentas = Console.ReadLine();
-                    Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
-                    Console.WriteLine($"Pakeista DNR grandinė: {PasalinaSegmenta(txt, ivestasSegmentas)}");
-                    break;
+                Console.WriteLine("Įveskite segmentą:");
+                ivestasSegmentas = Console.ReadLine();
+                Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
+                Console.WriteLine($"Pakeista DNR grandinė: {PasalinaSegmenta(txt, ivestasSegmentas)}");
+                break;
                 case "8":
-                    Console.WriteLine("Pasirinkite segmentą, kurį norite pakeisti:");
-                    pasirinktasSegmentas = Console.ReadLine();
-                    Console.WriteLine("Pasirinkite segmentą:");
-                    keitimas = Console.ReadLine();
-                    Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
-                    Console.WriteLine($"Pakeista DNR grandinė: {PakeiciaSegmenta(txt, pasirinktasSegmentas, keitimas)}");
-                    break;
+                Console.WriteLine("Pasirinkite segmentą, kurį norite pakeisti:");
+                pasirinktasSegmentas = Console.ReadLine();
+                Console.WriteLine("Pasirinkite segmentą:");
+                keitimas = Console.ReadLine();
+                Console.WriteLine($"Normalizuota grandinė: {Normalizuoja(txt)}");
+                Console.WriteLine($"Pakeista DNR grandinė: {PakeiciaSegmenta(txt, pasirinktasSegmentas, keitimas)}");
+                break;
                 case "9":
-                    SubMenu1Spausdinimas();
-                    SubMenu1Navigacija(txt);
-                    break;
+                SubMenu1Spausdinimas();
+                SubMenu1Navigacija(txt);
+                break;
                 default:
-                    Console.WriteLine("Pasirinkite nuo 1 iki 9");
-                    break;
+                Console.WriteLine("Pasirinkite nuo 1 iki 9");
+                break;
             }
         }
 
@@ -207,7 +207,7 @@
             var treciasSegmentas = Normalizuoja(txt).Replace("-", "").Substring(6, 3);
             var penktasSegmentas = Normalizuoja(txt).Replace("-", "").Substring(12, 3);
 
-            return $"{treciasSegmentas} {penktasSegmentas}";         
+            return $"{treciasSegmentas} {penktasSegmentas}";
         }
 
         public static int IsvedaRaidziuKieki(string txt)
@@ -261,7 +261,7 @@
 
         public static int SkaiciuojaPasikartojimus(string txt, string ivestasSegmentas)
         {
-            return (Normalizuoja(txt).Replace("-", "").Length - Normalizuoja(txt).Replace("-", "").Replace(Normalizuoja(ivestasSegmentas), "").Length) / 3;
+            return (Normalizuoja(txt).Length - Normalizuoja(txt).Replace(Normalizuoja(ivestasSegmentas), "").Length) / 3;
         }
-    }   
+    }
 }

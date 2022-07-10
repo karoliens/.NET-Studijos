@@ -209,7 +209,7 @@
         [TestMethod]
         public void SkaiciuojaPasikartojimus2()
         {
-            var txt = "TCG-TAC-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT";
+            var txt = "-TCG-TAC-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT-";
             var ivestasSegmentas = "agA";
             var expected = 1;
             var actual = Assignment4.Program.SkaiciuojaPasikartojimus(txt, ivestasSegmentas);
