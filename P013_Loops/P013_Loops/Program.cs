@@ -1,4 +1,6 @@
-﻿namespace P013_Loops
+﻿using System.Text;
+
+namespace P013_Loops
 {
     internal class Program
     {
@@ -10,6 +12,8 @@
             // PakeltiLaipsniu();
             // SkaiciuTrikampis();
             // SkaiciuPiramide();
+            // DidejanciuSkaiciuStatusTrikampis();
+             DidejanciuSkaiciuPiramide();
         }
 
         /*
@@ -183,57 +187,160 @@
             var arTeisingaskaicius = false;
 
             while (!arTeisingaskaicius)
-
             {
-                int skaiciusEiluteje;
-                int skaiciusStulpelyje;
-
+                int i;
+                int j;
+                
                 if (ivestasSkaicius > 1 || ivestasSkaicius <= 9)
                 {
-                    for (skaiciusStulpelyje = 0; skaiciusStulpelyje < ivestasSkaicius; skaiciusStulpelyje++)
+                    StringBuilder sb = new StringBuilder();
+                    
+                    for (i = 0; i < ivestasSkaicius; i++)
                     {
-
-                        for (skaiciusEiluteje = 0; skaiciusEiluteje < skaiciusStulpelyje + 1; skaiciusEiluteje++)
-                        {
-                            Console.Write(ivestasSkaicius);
-                        }
-
-                        Console.WriteLine();
+                        sb.Append(ivestasSkaicius);
+                        Console.WriteLine(sb.ToString());
+                        
                         arTeisingaskaicius = true;
                     }
+
+                    for (i = ivestasSkaicius; i >= 1; i--)
+                    {
+                        sb.Remove(0, 1);
+                        Console.WriteLine(sb.ToString());
+
+                        arTeisingaskaicius = true;
+                    }
+
                 }
 
                 if (ivestasSkaicius < 1 || ivestasSkaicius > 9)
                 {
                     Console.WriteLine("Netinkamas skaičius");
-                    Console.Write("Įveskite skaičių nuo 1 iki 9:");
+                    Console.Write("Įveskite skaičių nuo 1 iki 9: ");
                     ivestasSkaicius = int.Parse(Console.ReadLine());
                 }
             }
-
-            /*
-            Sukurti metodą DidejanciuSkaiciuStatusTrikampis, kuri paprašo vartotojo įvesti skaičių nuo 1 iki 9 
-            (jeigu įveda netinkamą skaičių prašo įvesti vėl, kol įves tinkamą )). 
-            Programa turi grąžinti atitinkamą statųjį trikampį.
-            1
-            22
-            333
-            4444
-            55555
-            */
-
-            /*
-            Sukurti metodą DidejanciuSkaiciuPiramide, kuri paprašo vartotojo įvesti skaičių nuo 1 iki 9 
-            (jeigu įveda netinkamą skaičių prašo įvesti vėl, kol įves tinkamą )). 
-            Metodas turi grąžinti atitinkamą lygiašonį trikampį (ivestas skaičius 4).
-            1
-            22
-            333
-            4444
-            333
-            22
-            1
-            */
         }
+
+        /*
+        Sukurti metodą DidejanciuSkaiciuStatusTrikampis, kuri paprašo vartotojo įvesti skaičių nuo 1 iki 9 
+        (jeigu įveda netinkamą skaičių prašo įvesti vėl, kol įves tinkamą )). 
+        Programa turi grąžinti atitinkamą statųjį trikampį.
+        1
+        22
+        333
+        4444
+        55555
+        */
+
+        public static void DidejanciuSkaiciuStatusTrikampis()
+        {
+            Console.Write("Įveskite skaičių nuo 1 iki 9: ");
+            var ivestasSkaicius = int.Parse(Console.ReadLine());
+
+            var arTeisingaskaicius = false;
+
+            while (!arTeisingaskaicius)
+            {
+                int i;
+                int j;
+
+                if (ivestasSkaicius > 1 || ivestasSkaicius <= 9)
+                {
+                    StringBuilder sb = new StringBuilder();
+
+                    /*
+                    for (i = 1; i <= ivestasSkaicius; i++)
+                    {
+
+                        for (j = 1; j <= i; j++) 
+                        {
+                            Console.Write(i);
+                        }
+
+                        Console.Write("\n");
+
+                        arTeisingaskaicius = true;
+                    }*/
+
+                    
+                    for (i = 1; i <= ivestasSkaicius; i++)
+                    {
+                        sb.Append(ivestasSkaicius);
+
+                        for (j = 1; j <= i; j++) 
+                        {
+                            sb.Replace(ivestasSkaicius.ToString(), (i.ToString()));
+                        }
+
+                    Console.WriteLine(sb.ToString());
+
+                    arTeisingaskaicius = true;
+                    }
+
+                }
+
+                if (ivestasSkaicius < 1 || ivestasSkaicius > 9)
+                {
+                    Console.WriteLine("Netinkamas skaičius");
+                    Console.Write("Įveskite skaičių nuo 1 iki 9: ");
+                    ivestasSkaicius = int.Parse(Console.ReadLine());
+                }
+            }
+        }
+
+        /*
+        Sukurti metodą DidejanciuSkaiciuPiramide, kuri paprašo vartotojo įvesti skaičių nuo 1 iki 9 
+        (jeigu įveda netinkamą skaičių prašo įvesti vėl, kol įves tinkamą )). 
+        Metodas turi grąžinti atitinkamą lygiašonį trikampį (ivestas skaičius 4).
+        1
+        22
+        333
+        4444
+        333
+        22
+        1
+        */
+
+        public static void DidejanciuSkaiciuPiramide()
+        {
+            Console.Write("Įveskite skaičių nuo 1 iki 9: ");
+            var ivestasSkaicius = int.Parse(Console.ReadLine());
+
+            var arTeisingaskaicius = false;
+
+            while (!arTeisingaskaicius)
+
+            {
+                int i;
+                int j;
+
+                if (ivestasSkaicius > 1 || ivestasSkaicius <= 9)
+                {
+
+                    for (i = 1; i <= ivestasSkaicius; i++)
+                    {
+
+                        for (j = 1; j <= i; j++)
+                        {
+                            Console.Write(i);
+                        }
+
+                        Console.Write("\n");
+
+                        arTeisingaskaicius = true;
+                    }
+
+                }
+
+                if (ivestasSkaicius < 1 || ivestasSkaicius > 9)
+                {
+                    Console.WriteLine("Netinkamas skaičius");
+                    Console.Write("Įveskite skaičių nuo 1 iki 9: ");
+                    ivestasSkaicius = int.Parse(Console.ReadLine());
+                }
+            }
+        }
+
     }
 }
