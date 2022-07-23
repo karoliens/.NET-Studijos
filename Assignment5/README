@@ -1,0 +1,36 @@
+Sukurti skaičiuotuvą. Įjungus programą mes turėtume gauti pranešimus:
+
+1. Nauja operacija;  
+2. Išeiti. 
+
+Pasirinkus 'Nauja operacija' turėtų leisti pasirinkti:
+
+1. Sudėtis;
+2. Atimtis;
+3. Daugyba;
+4. Dalyba.
+
+Pasirinkus vieną iš operacijų, programa turėtų paprašyti naudotoją įvesti pirmą ir antrą skaičius. 
+Įvedus skaičius, išvesti rezultatą ir paklausti ar naudotojas nori atlikti naują operaciją ar tęsti su rezultatu.
+
+Sudėties pvz:
+
+"1
+15
+45
+
+Rezultatas: 60
+1. Nauja operacija 2. Tęsti su rezultatu 3. Išeiti"
+
+
+Pasirinkus 'Tęsti su rezultatu', programa turėtų paprašyti įvesti kokia operacija turėtų būti atliekama ir paprašyti tik sekančio skaitmens.
+Pasirinkus 'Išeiti', programa turėtų išsijungti. Visa kita turėtų veikti tokiu pat būdu.
+
+BONUS1: Iškelkite operacijas į metodus
+BONUS2: Parašykite operacijoms validacijas įvestiems neteisingiems skaičiams. Pvz:
+
+dalyba iš nulio;
+neteisingų įvesčių prevencija kai tikimasi gauti skaičių, bet įvedamas char arba string.
+
+BONUS3: Parašyti Unit Tests, kad užtikrinti operacijų veikimą
+BONUS4: Parašyti laipsnio pakėlimo ir šaknies traukimo operacijas
