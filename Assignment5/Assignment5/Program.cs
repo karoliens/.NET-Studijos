@@ -30,9 +30,42 @@
 
         public static double DalinaSkaicius(int skaicius1, int skaicius2)
         {
-            int dalyba = skaicius1 / skaicius2;
+            double dalyba = (double)skaicius1 / skaicius2;
 
             return dalyba;
         }
+
+        public static string TikrinaArDalinamaIsNulio(int skaicius)
+        {
+            if (skaicius == 0)
+            {
+                return "Dalyba iš 0 negalima";
+            }
+
+            else
+            {
+                return null;
+            } 
+        }
+
+        public static bool TikrinaArIvestasSkaicius(string skaicius1, string skaicius2)
+        {
+            if (int.TryParse(skaicius1, out _) && int.TryParse(skaicius2, out _))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+        /*
+        public static double PakeliaSkaiciuLaipsniu(int skaicius, int laipsnis)
+        {
+
+        }
+
+        public static double IstraukiaSkaiciausSakni(int skaicius, int laipsnis)
+        {
+
+        }*/
     }
 }
