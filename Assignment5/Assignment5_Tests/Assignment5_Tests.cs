@@ -60,44 +60,85 @@ namespace Assignment5_Tests
         [TestMethod]
         public void TikrinaArIvestasSkaicius1()
         {
-            var fake1 = "k";
-            var fake2 = "0";
+            var fake = "k";
             var expected = false;
 
-            var actual = Assignment5.Program.TikrinaArIvestasSkaicius(fake1, fake2);
+            var actual = Assignment5.Program.TikrinaArIvestasSkaicius(fake);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TikrinaArIvestasSkaicius2()
         {
-            var fake1 = "0";
-            var fake2 = "k";
-            var expected = false;
+            var fake = "0";
+            var expected = true;
 
-            var actual = Assignment5.Program.TikrinaArIvestasSkaicius(fake1, fake2);
+            var actual = Assignment5.Program.TikrinaArIvestasSkaicius(fake);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void TikrinaArIvestasSkaicius3()
         {
-            var fake1 = "0";
-            var fake2 = "abc";
+            var fake = "abc";
             var expected = false;
 
-            var actual = Assignment5.Program.TikrinaArIvestasSkaicius(fake1, fake2);
+            var actual = Assignment5.Program.TikrinaArIvestasSkaicius(fake);
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TikrinaArIvestasSkaicius4()
+        public void PakeliaSkaiciuLaipsniu1()
         {
-            var fake1 = "abc";
-            var fake2 = "5";
-            var expected = false;
+            var skaicius = 0;
+            var laipsnis = 2;
+            var expected = 0;
 
-            var actual = Assignment5.Program.TikrinaArIvestasSkaicius(fake1, fake2);
+            var actual = Assignment5.Program.PakeliaSkaiciuLaipsniu(skaicius, laipsnis);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PakeliaSkaiciuLaipsniu2()
+        {
+            var skaicius = 5;
+            var laipsnis = 1;
+            var expected = 5;
+
+            var actual = Assignment5.Program.PakeliaSkaiciuLaipsniu(skaicius, laipsnis);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PakeliaSkaiciuLaipsniu3()
+        {
+            var skaicius = 10;
+            var laipsnis = 0;
+            var expected = 1;
+
+            var actual = Assignment5.Program.PakeliaSkaiciuLaipsniu(skaicius, laipsnis);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PakeliaSkaiciuLaipsniu4()
+        {
+            var skaicius = 3;
+            var laipsnis = 3;
+            var expected = 27;
+
+            var actual = Assignment5.Program.PakeliaSkaiciuLaipsniu(skaicius, laipsnis);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PakeliaSkaiciuLaipsniu5()
+        {
+            var skaicius = 4;
+            var laipsnis = 5;
+            var expected = 1024;
+
+            var actual = Assignment5.Program.PakeliaSkaiciuLaipsniu(skaicius, laipsnis);
             Assert.AreEqual(expected, actual);
         }
         /*
