@@ -10,14 +10,11 @@
             Console.WriteLine("3. VALSTYBĖS");
             Console.WriteLine("4. KITA");
 
-
-            string[] vardai = { "Jolanta", "Rolandas", "Ieva", "Greta", "Eglė", "Jonas", "Giedrė", "Jonas", "Tomas", "Armandas" };
-            string[] lietuvosMiestai = { "Šiauliai", "Vilnius", "Klaipėda", "Kaunas", "Mažeikiai", "Marijampolė", "Utena", "Joniškis", "Kelmė", "Pakruojis" };
-            string[] valstybes = { "Lietuva", "Vokietija", "Danija", "Latvija", "Norvegija", "Švedija", "Estija", "Lenkija", "Italija", "Portugalija" };
-            string[] kita = { "Šuo", "Katė", "Televizorius", "Langas", "Durys", "Šaldytuvas", "Automobilis", "Laikrodis", "Namas", "Garažas" };
-            
-
-
+            List<string> vardai = new List<string> { "Jolanta", "Rolandas", "Ieva", "Greta", "Eglė", "Jonas", "Giedrė", "Jonas", "Tomas", "Armandas" };
+            List<string> lietuvosMiestai = new List<string> { "Šiauliai", "Vilnius", "Klaipėda", "Kaunas", "Mažeikiai", "Marijampolė", "Utena", "Joniškis", "Kelmė", "Pakruojis" };
+            List<string> valstybes = new List<string> { "Lietuva", "Vokietija", "Danija", "Latvija", "Norvegija", "Švedija", "Estija", "Lenkija", "Italija", "Portugalija" };
+            List<string> kita = new List<string> { "Šuo", "Katė", "Televizorius", "Langas", "Durys", "Šaldytuvas", "Automobilis", "Laikrodis", "Namas", "Garažas" };
+            /*
             switch (Console.ReadLine())
             {
                 case "1":
@@ -36,8 +33,8 @@
                     {
 
                     var gyvybes = 7;
-                    var ivestaRaideArZodis = Ivedimas();
-
+                    // var ivestaRaideArZodis = Ivedimas();
+                    /*
                     for (int i = 0; i < randomZodisArr.Length; i++)
                     {
                         
@@ -78,37 +75,37 @@
                 default:
                     Console.WriteLine("temos nėra, bandykite iš naujo");
                     break;
-            }
+            }*/
         }
 
-        public static string ParenkaAtsitiktiniElementa(string[] sarasas)
+        public static string ParenkaAtsitiktiniElementa(List<string> sarasas)
         {
             Random random = new Random();
 
-            int atsitiktinisElementas = random.Next(sarasas.Length);
+            int atsitiktinisElementas = random.Next(sarasas.Count);
 
             return sarasas[atsitiktinisElementas];
         }
 
         public static char[] PakeiciaIBruksnelius(string zodis)
         {
-            char[] rodymas =  new char [zodis.Length];
+            char[] pakeistasZodis =  new char [zodis.Length];
 
             for (int i = 0; i < zodis.Length; i++)
             {
-                rodymas[i] = ('_');
+                pakeistasZodis[i] = ('_');
             }
 
-            return rodymas;
+            return pakeistasZodis;
         }
 
-        public static string Ivedimas()
+        public static string TikrinaMenuPasirinkima(string ivedimas)
         {
-            Console.WriteLine("\n\nSpėkite raidę ar žodį:");
-
-            var ivedimas = Console.ReadLine();
-
-            return ivedimas.ToLower();
+            if (ivedimas != "1" || ivedimas != "2" || ivedimas != "3" || ivedimas != "4")
+            {
+                return $"{ivedimas} temos nėra, bandykite iš naujo";
+            }
+            return null;
         }
 
         public static string SpausdinaPiesini(int gyvybiuSkaicius)
@@ -188,6 +185,19 @@ _ _ _ _" };
             }
 
             return null;
+        }
+
+        public static List<string> PanaikinaZodiIsSaraso(string zodis, List<string> sarasas)
+        {
+            foreach (string elementas in sarasas)
+            {
+                if (elementas == zodis)
+                {
+                    sarasas.Remove(elementas);
+                }
+            }
+
+            return sarasas;
         }
     }
 }
