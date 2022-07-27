@@ -10,10 +10,10 @@
             Console.WriteLine("3. VALSTYBĖS");
             Console.WriteLine("4. KITA");
 
-            List<string> vardai = new List<string> { "Jolanta", "Rolandas", "Ieva", "Greta", "Eglė", "Jonas", "Giedrė", "Jonas", "Tomas", "Armandas" };
-            List<string> lietuvosMiestai = new List<string> { "Šiauliai", "Vilnius", "Klaipėda", "Kaunas", "Mažeikiai", "Marijampolė", "Utena", "Joniškis", "Kelmė", "Pakruojis" };
-            List<string> valstybes = new List<string> { "Lietuva", "Vokietija", "Danija", "Latvija", "Norvegija", "Švedija", "Estija", "Lenkija", "Italija", "Portugalija" };
-            List<string> kita = new List<string> { "Šuo", "Katė", "Televizorius", "Langas", "Durys", "Šaldytuvas", "Automobilis", "Laikrodis", "Namas", "Garažas" };
+            string[] vardai = { "Jolanta", "Rolandas", "Ieva", "Greta", "Eglė", "Jonas", "Giedrė", "Jonas", "Tomas", "Armandas" };
+            string[] lietuvosMiestai = { "Šiauliai", "Vilnius", "Klaipėda", "Kaunas", "Mažeikiai", "Marijampolė", "Utena", "Joniškis", "Kelmė", "Pakruojis" };
+            string[] valstybes = { "Lietuva", "Vokietija", "Danija", "Latvija", "Norvegija", "Švedija", "Estija", "Lenkija", "Italija", "Portugalija" };
+            string[] kita = { "Šuo", "Katė", "Televizorius", "Langas", "Durys", "Šaldytuvas", "Automobilis", "Laikrodis", "Namas", "Garažas" };
             /*
             switch (Console.ReadLine())
             {
@@ -78,11 +78,11 @@
             }*/
         }
 
-        public static string ParenkaAtsitiktiniElementa(List<string> sarasas)
+        public static string ParenkaAtsitiktiniElementa(string[] sarasas)
         {
             Random random = new Random();
 
-            int atsitiktinisElementas = random.Next(sarasas.Count);
+            int atsitiktinisElementas = random.Next(sarasas.Length);
 
             return sarasas[atsitiktinisElementas];
         }
@@ -187,17 +187,59 @@ _ _ _ _" };
             return null;
         }
 
-        public static List<string> PanaikinaZodiIsSaraso(string zodis, List<string> sarasas)
+        
+        public static string[] PanaikinaZodiIsSaraso(string zodis, string[] sarasas)
         {
+            var zodzioIndeksas = Array.IndexOf(sarasas, zodis);
+
+            List<string> laikinas = new List<string>(sarasas);
+            laikinas.RemoveAt(zodzioIndeksas);
+            sarasas = laikinas.ToArray();
+
+
+            /*
             foreach (string elementas in sarasas)
             {
                 if (elementas == zodis)
                 {
-                    sarasas.Remove(elementas);
+                    sarasas
                 }
             }
-
+            */
             return sarasas;
+        }
+
+        public static char SpausdinaSpetasRaides(string zodis, char raide)
+        {
+            char spetaRaide = ' ';
+
+            // Console.WriteLine("Spėtos raidės:  ");
+
+            if (zodis.Contains(raide))
+            {
+                spetaRaide = ' ';
+            }
+
+            else
+            {
+                spetaRaide = raide;
+            }
+
+            /*
+            for (int i = 0; i < zodis.Length; i++)
+            {
+                if (zodis[i] == raide)
+                {
+                    spetaRaide = spetaRaide;
+                }
+
+                else if (zodis[i] != spetaRaide)
+                {
+                    spetaRaide = zodis[i];
+                }
+            }
+            */
+            return spetaRaide;
         }
     }
 }
