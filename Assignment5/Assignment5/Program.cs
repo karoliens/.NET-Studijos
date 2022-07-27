@@ -101,17 +101,17 @@
             switch (Console.ReadLine())
             {
                 case "1":
-                SubMenu1Iskvietimas();
-                break;
+                    SubMenu1Iskvietimas();
+                    break;
                 case "2":
-                SubMenu1Iskvietimas();
-                break;
+                    SubMenu1Iskvietimas();
+                    break;
                 case "3":
                 Environment.Exit(0);
-                break;
-                default:
+                    break;
+                    default:
                 Console.WriteLine("Neteisingai pasirinkta");
-                break;
+                    break;
             }
         }
 
