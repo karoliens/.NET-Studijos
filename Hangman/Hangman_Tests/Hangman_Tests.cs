@@ -84,5 +84,16 @@ _ _ _ _";
             var actual = Hangman.Program.SpausdinaSpetasRaides(fake1, fake2);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TikrinaArRaideYraZodyje1()
+        {
+            var fake1 = "karolis";
+            var fake2 = 'k';
+            var expected = true;
+
+            var actual = Hangman.Program.TikrinaArRaideYraZodyje(fake1, fake2);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

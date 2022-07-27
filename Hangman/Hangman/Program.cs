@@ -14,7 +14,7 @@
             string[] lietuvosMiestai = { "Šiauliai", "Vilnius", "Klaipėda", "Kaunas", "Mažeikiai", "Marijampolė", "Utena", "Joniškis", "Kelmė", "Pakruojis" };
             string[] valstybes = { "Lietuva", "Vokietija", "Danija", "Latvija", "Norvegija", "Švedija", "Estija", "Lenkija", "Italija", "Portugalija" };
             string[] kita = { "Šuo", "Katė", "Televizorius", "Langas", "Durys", "Šaldytuvas", "Automobilis", "Laikrodis", "Namas", "Garažas" };
-            /*
+            
             switch (Console.ReadLine())
             {
                 case "1":
@@ -32,37 +32,12 @@
                     while (zaidimasTesiasi == true)
                     {
 
-                    var gyvybes = 7;
-                    // var ivestaRaideArZodis = Ivedimas();
-                    /*
-                    for (int i = 0; i < randomZodisArr.Length; i++)
-                    {
-                        
-                        if (randomZodisArr[i] == char.Parse(ivestaRaideArZodis))
-                            {
-                                rodymas[i] = char.Parse(ivestaRaideArZodis);
-                            }
-
-                        if (randomZodisArr[i] != char.Parse(ivestaRaideArZodis))
-                            {
-                                Console.WriteLine("Tokios raidės nėra");
-                                gyvybes -= 1;
-                            }
-
-                        zaidimasTesiasi = false;
-                    }
-                        // Console.WriteLine(piesiniai[gyvybes]);
-                        Console.WriteLine(string.Join(" ", rodymas));
                     }
                     break;
-
-
-
 
                 case "2":
                     Console.Clear();
                     Console.WriteLine(" TEMA: LIETUVOS MIESTAI");
-                    Console.WriteLine(ParenkaAtsitiktiniElementa(lietuvosMiestai));
                     break;
                 case "3":
                     Console.Clear();
@@ -73,9 +48,12 @@
                     Console.WriteLine(" TEMA: KITA");
                     break;
                 default:
-                    Console.WriteLine("temos nėra, bandykite iš naujo");
+                    while (TikrinaArPasirinktasMenu(Console.ReadLine()))
+                    {
+                        Console.WriteLine("temos nėra, bandykite iš naujo");
+                    }
                     break;
-            }*/
+            }
         }
 
         public static string ParenkaAtsitiktiniElementa(string[] sarasas)
@@ -99,13 +77,13 @@
             return pakeistasZodis;
         }
 
-        public static string TikrinaMenuPasirinkima(string ivedimas)
+        public static bool TikrinaArPasirinktasMenu(string ivedimas)
         {
             if (ivedimas != "1" || ivedimas != "2" || ivedimas != "3" || ivedimas != "4")
             {
-                return $"{ivedimas} temos nėra, bandykite iš naujo";
+                return false;
             }
-            return null;
+            return true;
         }
 
         public static string SpausdinaPiesini(int gyvybiuSkaicius)
@@ -196,24 +174,12 @@ _ _ _ _" };
             laikinas.RemoveAt(zodzioIndeksas);
             sarasas = laikinas.ToArray();
 
-
-            /*
-            foreach (string elementas in sarasas)
-            {
-                if (elementas == zodis)
-                {
-                    sarasas
-                }
-            }
-            */
             return sarasas;
         }
 
         public static char SpausdinaSpetasRaides(string zodis, char raide)
         {
             char spetaRaide = ' ';
-
-            // Console.WriteLine("Spėtos raidės:  ");
 
             if (zodis.Contains(raide))
             {
@@ -224,22 +190,17 @@ _ _ _ _" };
             {
                 spetaRaide = raide;
             }
-
-            /*
-            for (int i = 0; i < zodis.Length; i++)
-            {
-                if (zodis[i] == raide)
-                {
-                    spetaRaide = spetaRaide;
-                }
-
-                else if (zodis[i] != spetaRaide)
-                {
-                    spetaRaide = zodis[i];
-                }
-            }
-            */
             return spetaRaide;
+        }
+
+        public static bool TikrinaArRaideYraZodyje(string zodis, char raide)
+        {
+            if (zodis.Contains(raide))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
