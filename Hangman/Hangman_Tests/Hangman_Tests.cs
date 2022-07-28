@@ -72,7 +72,7 @@ _ _ _ _";
             var fake2 = 'k';
             var expected = true;
 
-            var actual = Hangman.Program.TikrinaArRaideYraZodyje(fake1, fake2);
+            var actual = Hangman.Program.ArRaideYraZodyje(fake1, fake2);
             Assert.AreEqual(expected, actual);
         }
 
@@ -84,6 +84,56 @@ _ _ _ _";
 
             var actual = Hangman.Program.ParenkaSarasa(fake);
             CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TikrinaArChar1()
+        {
+            var fake = "karolis";
+            var expected = false;
+
+            var actual = Hangman.Program.ArChar(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TikrinaArChar2()
+        {
+            var fake = "k";
+            var expected = true;
+
+            var actual = Hangman.Program.ArChar(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TikrinaArChar3()
+        {
+            string fake = null;
+            string expected = null;
+
+            var actual = Hangman.Program.ArChar(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ArSkaicius1()
+        {
+            var fake = "1";
+            var expected = true;
+
+            var actual = Hangman.Program.ArSkaicius(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ArSkaicius2()
+        {
+            string fake = null;
+            var expected = false;
+
+            var actual = Hangman.Program.ArSkaicius(fake);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
