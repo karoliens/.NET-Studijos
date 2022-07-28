@@ -10,87 +10,53 @@
             Console.WriteLine("3. VALSTYBĖS");
             Console.WriteLine("4. KITA");
 
-            string[] vardai = { "Jolanta", "Rolandas", "Ieva", "Greta", "Eglė", "Jonas", "Giedrė", "Jonas", "Tomas", "Armandas" };
-            string[] lietuvosMiestai = { "Šiauliai", "Vilnius", "Klaipėda", "Kaunas", "Mažeikiai", "Marijampolė", "Utena", "Joniškis", "Kelmė", "Pakruojis" };
-            string[] valstybes = { "Lietuva", "Vokietija", "Danija", "Latvija", "Norvegija", "Švedija", "Estija", "Lenkija", "Italija", "Portugalija" };
-            string[] kita = { "Šuo", "Katė", "Televizorius", "Langas", "Durys", "Šaldytuvas", "Automobilis", "Laikrodis", "Namas", "Garažas" };
-
             bool zaidimasTesiasi = true;
-
+            
             while(zaidimasTesiasi)
             {
-                switch (Console.ReadLine())
+                var menuPasirinkimas = Console.ReadLine();
+                var atsitiktinisZodis = ParenkaAtsitiktiniElementa(ParenkaSarasa(menuPasirinkimas));
+                var rodymas = PakeiciaIBruksnelius(atsitiktinisZodis);
+
+                Console.Clear();
+                Console.WriteLine(SpausdinaMenu(menuPasirinkimas));
+                Console.WriteLine(SpausdinaPiesini(7));
+                Console.WriteLine($"\nŽodis: {string.Join(" ", rodymas)}");
+                Console.WriteLine("\nSpėkite raidę ar žodį:");
+
+                while (zaidimasTesiasi)
                 {
-                    case "1":
-                    Console.Clear();
-                    Console.WriteLine(" \nTEMA: VARDAI");
+                    var spejimas = Console.ReadLine().ToLower();
+                    var gyvybes = 7;
 
-                    var randomZodis = ParenkaAtsitiktiniElementa(vardai).ToLower();
-                    var randomZodisArr = randomZodis.ToCharArray();
-                    var rodymas = PakeiciaIBruksnelius(randomZodis);
-
-                    Console.WriteLine(SpausdinaPiesini(7)); 
-
-                    Console.WriteLine($"Žodis: {string.Join(" ", rodymas)}");
-
-                    Console.WriteLine("Spėkite raidę ar žodį:");
-
-                    
-
-                    while (zaidimasTesiasi)
+                    if (spejimas == atsitiktinisZodis)
                     {
-                        var spejimas = Console.ReadLine();
-                        // Console.Clear();
-
-                        if (spejimas == randomZodis)
-                        {
-                            Console.WriteLine(" !!! SVEIKINIMAI !!!");
-                        }
-
-                        else if (TikrinaArRaideYraZodyje(randomZodis, char.Parse(spejimas)))
-                        {
-                            Console.WriteLine("geras spejimas");
-                        }
-
-                        else
-                        {
-                            var gyvybes = 7;
-                            Console.WriteLine($"Spėtos raidės {SpausdinaSpetasRaides(randomZodis, char.Parse(spejimas))}");
-                            
-                            for (int i = 7; i >= 0; i--)
-                            {
-                                gyvybes = i;
-                            }
-                            
-                            // gyvybes = gyvybes - 1;
-                            Console.WriteLine($"{SpausdinaPiesini(gyvybes)}");
-                        }
+                        Console.WriteLine(" !!! SVEIKINIMAI !!!");
                     }
 
+                    else if (spejimas != atsitiktinisZodis && spejimas.Length > 1)
+                    {
+                        Console.WriteLine($":( PALAIMEJOTE :(\nZodis buvo: {atsitiktinisZodis}\nPakartoti zaidima T / N ? ");
+                        // zaidimasTesiasi = false;
+                    }
 
-                    // bool zaidimasTesiasi = true;
+                    else if (spejimas != atsitiktinisZodis)
+                    {
+                        char spetosRaides;
+                        gyvybes = gyvybes - 1;
+                        spetosRaides = SpausdinaSpetasRaides(atsitiktinisZodis, char.Parse(spejimas));
 
-                     //while (zaidimasTesiasi == true)
-                     // {
+                        Console.WriteLine($"{SpausdinaPiesini(gyvybes)}");
+                        Console.WriteLine($"\nSpėtos raidės: {spetosRaides}");
+                        Console.WriteLine($"\nŽodis: {string.Join(" ", rodymas)}");
+                    }
 
-                     //}
-                    break;
-
-                    case "2":
-                    Console.Clear();
-                    Console.WriteLine(" TEMA: LIETUVOS MIESTAI");
-                    break;
-                    case "3":
-                    Console.Clear();
-                    Console.WriteLine(" TEMA: VALSTYBĖS");
-                    break;
-                    case "4":
-                    Console.Clear();
-                    Console.WriteLine(" TEMA: KITA");
-                    break;
-                    default:
-                    Console.WriteLine($"temos nėra, bandykite iš naujo");
-                    break;
+                    else if (TikrinaArRaideYraZodyje(atsitiktinisZodis, char.Parse(spejimas)))
+                    {
+                        Console.WriteLine(SpausdinaPiesini(7));
+                        // Console.WriteLine($"Žodis: {string.Join(" ", rodymas)}");
+                        Console.WriteLine("Spėkite raidę ar žodį:");
+                    }
                 }
             }
         }
@@ -114,15 +80,6 @@
             }
 
             return pakeistasZodis;
-        }
-
-        public static bool TikrinaArPasirinktasMenu(string ivedimas)
-        {
-            if (ivedimas != "1" || ivedimas != "2" || ivedimas != "3" || ivedimas != "4")
-            {
-                return false;
-            }
-            return true;
         }
 
         public static string SpausdinaPiesini(int gyvybiuSkaicius)
@@ -204,7 +161,6 @@ _ _ _ _" };
             return null;
         }
 
-        
         public static string[] PanaikinaZodiIsSaraso(string zodis, string[] sarasas)
         {
             var zodzioIndeksas = Array.IndexOf(sarasas, zodis);
@@ -240,6 +196,66 @@ _ _ _ _" };
             }
 
             return false;
+        }
+
+        public static string SpausdinaMenu(string pasirinkimas)
+        {
+            if (pasirinkimas == "1")
+            {
+                return " TEMA: VARDAI";
+            }
+
+            else if (pasirinkimas == "2")
+            {
+                return " TEMA: LIETUVOS MIESTAI";
+            }
+
+            else if (pasirinkimas == "3")
+            {
+                return " TEMA: VALSTYBĖS";
+            }
+
+            else if (pasirinkimas == "4")
+            {
+                return " TEMA: KITA";
+            }
+
+            else
+            {
+                return $"{pasirinkimas} temos nėra, bandykite iš naujo";
+            }
+
+            return null;
+        }
+
+        public static string[] ParenkaSarasa(string pasirinkimas)
+        {
+            string[] vardai = { "Jolanta", "Rolandas", "Ieva", "Greta", "Eglė", "Jonas", "Giedrė", "Jonas", "Tomas", "Armandas" };
+            string[] lietuvosMiestai = { "Šiauliai", "Vilnius", "Klaipėda", "Kaunas", "Mažeikiai", "Marijampolė", "Utena", "Joniškis", "Kelmė", "Pakruojis" };
+            string[] valstybes = { "Lietuva", "Vokietija", "Danija", "Latvija", "Norvegija", "Švedija", "Estija", "Lenkija", "Italija", "Portugalija" };
+            string[] kita = { "Šuo", "Katė", "Televizorius", "Langas", "Durys", "Šaldytuvas", "Automobilis", "Laikrodis", "Namas", "Garažas" };
+
+            if (pasirinkimas == "1")
+            {
+                return vardai;
+            }
+
+            else if (pasirinkimas == "2")
+            {
+                return lietuvosMiestai;
+            }
+
+            else if (pasirinkimas == "3")
+            {
+                return valstybes;
+            }
+
+            else if (pasirinkimas == "4")
+            {
+                return kita;
+            }
+
+            return null;
         }
     }
 }

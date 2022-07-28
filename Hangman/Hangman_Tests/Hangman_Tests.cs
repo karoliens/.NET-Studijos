@@ -32,26 +32,6 @@ _ _ _ _";
         }
 
         [TestMethod]
-        public void TikrinaMenuPasirinkima1()
-        {
-            var fake = "5";
-            var expected = "5 temos nėra, bandykite iš naujo";
-
-            var actual = Hangman.Program.TikrinaArPasirinktasMenu(fake);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void TikrinaMenuPasirinkima2()
-        {
-            var fake = "a";
-            var expected = "a temos nėra, bandykite iš naujo";
-
-            var actual = Hangman.Program.TikrinaArPasirinktasMenu(fake);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
         public void PanaikinaZodiIsSaraso1()
         {
             var fake1 = "Tomas";
@@ -94,6 +74,16 @@ _ _ _ _";
 
             var actual = Hangman.Program.TikrinaArRaideYraZodyje(fake1, fake2);
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ParenkaSarasa1()
+        {
+            var fake = "1";
+            var expected = new string[] { "Jolanta", "Rolandas", "Ieva", "Greta", "Eglė", "Jonas", "Giedrė", "Jonas", "Tomas", "Armandas" };
+
+            var actual = Hangman.Program.ParenkaSarasa(fake);
+            CollectionAssert.AreEqual(expected, actual);
         }
     }
 }
