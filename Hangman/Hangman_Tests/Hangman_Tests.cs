@@ -150,8 +150,8 @@ _ _ _ _";
         public void AtverciaRaides1()
         {
             var fake1 = "karolis";
-            var fake2 = 'k';
-            var expected = new char[] { 'k', '_', '_', '_', '_', '_', '_' };
+            var fake2 = new List<char> { 'k' };
+            var expected = new List<char> { 'k', '_', '_', '_', '_', '_', '_' };
 
             var actual = Hangman.Program.AtverciaRaides(fake1, fake2);
             CollectionAssert.AreEqual(expected, actual);
@@ -161,8 +161,8 @@ _ _ _ _";
         public void AtverciaRaides2()
         {
             var fake1 = "karolis";
-            var fake2 = 'r';
-            var expected = new char[] { '_', '_', 'r', '_', '_', '_', '_' };
+            var fake2 = new List<char> { 'r' };
+            var expected = new List<char> { '_', '_', 'r', '_', '_', '_', '_' };
 
             var actual = Hangman.Program.AtverciaRaides(fake1, fake2);
             CollectionAssert.AreEqual(expected, actual);
