@@ -22,16 +22,6 @@ _ _ _ _";
         }
 
         [TestMethod]
-        public void PakeiciaIBruksnelius1()
-        {
-            var fake = "karolis";
-            var expected = new char[] { '_', '_', '_', '_', '_', '_', '_' };
-
-            var actual = Hangman.Program.PakeiciaIBruksnelius(fake);
-            CollectionAssert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
         public void PanaikinaZodiIsSaraso1()
         {
             var fake1 = "Tomas";
@@ -40,29 +30,6 @@ _ _ _ _";
 
             var actual = Hangman.Program.PanaikinaZodiIsSaraso(fake1, fake2);
             CollectionAssert.AreEqual(expected, actual);
-        }
-        
-
-        [TestMethod]
-        public void SpausdinaSpetasRaides1()
-        {
-            var fake1 = "karolis";
-            var fake2 = 'x';
-            var expected = 'x';
-
-            var actual = Hangman.Program.SpausdinaSpetasRaides(fake1, fake2);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void SpausdinaSpetasRaides2()
-        {
-            var fake1 = "karolis";
-            var fake2 = 'k';
-            var expected = ' ';
-
-            var actual = Hangman.Program.SpausdinaSpetasRaides(fake1, fake2);
-            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -84,66 +51,6 @@ _ _ _ _";
 
             var actual = Hangman.Program.ParenkaSarasa(fake);
             CollectionAssert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void ArChar1()
-        {
-            var fake = "karolis";
-            var expected = false;
-
-            var actual = Hangman.Program.ArChar(fake);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void ArChar2()
-        {
-            var fake = "k";
-            var expected = true;
-
-            var actual = Hangman.Program.ArChar(fake);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void ArChar3()
-        {
-            string fake = "";
-            var expected = false;
-
-            var actual = Hangman.Program.ArChar(fake);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void ArChar4()
-        {
-            string fake = null;
-            var expected = false;
-
-            var actual = Hangman.Program.ArChar(fake);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void ArSkaicius1()
-        {
-            var fake = "1";
-            var expected = true;
-
-            var actual = Hangman.Program.ArSkaicius(fake);
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void ArSkaicius2()
-        {
-            string fake = null;
-            var expected = false;
-
-            var actual = Hangman.Program.ArSkaicius(fake);
-            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]

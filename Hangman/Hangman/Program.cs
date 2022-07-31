@@ -14,10 +14,13 @@ namespace Hangman
                 var menuPasirinkimas = GautiMenuPasirinkima();
                 var parinktasSarasas = ParenkaSarasa(menuPasirinkimas);
                 var atsitiktinisZodis = ParenkaAtsitiktiniElementa(parinktasSarasas);
+
                 PanaikinaZodiIsSaraso(atsitiktinisZodis, parinktasSarasas);
                 Zaisti(atsitiktinisZodis, menuPasirinkimas);
 
-                Console.WriteLine("\nPakartoti žaidimą T / N ? ");
+                // Galimas naujo žaidimo pradžios scenarijus.
+
+                Console.WriteLine("Pakartoti žaidimą T / N ? ");
                 var ivestis = Console.ReadLine().ToLower();
 
                 if (ivestis != "t")
@@ -40,18 +43,6 @@ namespace Hangman
             {
                 return sarasas[random.Next(sarasas.Length)];
             }
-        }
-
-        public static char[] PakeiciaIBruksnelius(string zodis)
-        {
-            char[] pakeistasZodis = new char[zodis.Length];
-
-            for (int i = 0; i < zodis.Length; i++)
-            {
-                pakeistasZodis[i] = ('_');
-            }
-
-            return pakeistasZodis;
         }
 
         public static string SpausdinaPiesini(int gyvybiuSkaicius)
@@ -144,50 +135,28 @@ _ _ _ _" };
             return sarasas;
         }
 
-        public static char SpausdinaSpetasRaides(string zodis, char raide)
-        {
-            char spetaRaide = ' ';
-
-            if (zodis.Contains(raide))
-            {
-                spetaRaide = ' ';
-            }
-
-            else
-            {
-                spetaRaide = raide;
-            }
-
-            return spetaRaide;
-        }
-
         public static bool ArRaideYraZodyje(string zodis, char raide) => zodis.Contains(raide);
 
-        public static string SpausdinaPasirinktaTema(string pasirinkimas)
+        public static void SpausdinaPasirinktaTema(string pasirinkimas)
         {
             if (pasirinkimas == "1")
             {
-                return " TEMA: VARDAI";
+                Console.WriteLine(" TEMA: VARDAI");
             }
 
             else if (pasirinkimas == "2")
             {
-                return " TEMA: LIETUVOS MIESTAI";
+                Console.WriteLine(" TEMA: LIETUVOS MIESTAI");
             }
 
             else if (pasirinkimas == "3")
             {
-                return " TEMA: VALSTYBĖS";
+                Console.WriteLine(" TEMA: VALSTYBĖS");
             }
 
             else if (pasirinkimas == "4")
             {
-                return " TEMA: KITA";
-            }
-
-            else
-            {
-                return $"{pasirinkimas} temos nėra, bandykite iš naujo";
+                Console.WriteLine(" TEMA: KITA");
             }
         }
 
@@ -219,32 +188,6 @@ _ _ _ _" };
             }
 
             return null;
-        }
-
-        public static bool ArChar(string? ivedimas)
-        {
-            if (ivedimas != null && ivedimas.Length == 1)
-            {
-                return true;
-            }
-
-            else
-            {
-                return false;
-            }
-        }
-
-        public static bool ArSkaicius(string ivedimas)
-        {
-            if (int.TryParse(ivedimas, out _))
-            {
-                return true;
-            }
-
-            else
-            {
-                return false;
-            }
         }
 
         public static List<char> AtverciaRaides(string zodis, List<char> raides )
@@ -310,7 +253,7 @@ _ _ _ _" };
 
         public static string GautiSpejima()
         {
-            Console.WriteLine("\nSpėkite raidę ar žodį:");
+            Console.WriteLine("Spėkite raidę ar žodį:");
 
             var spejimas = Console.ReadLine();
 
@@ -330,6 +273,8 @@ _ _ _ _" };
 
             return spejimas;
         }
+
+        // Tikrina įvestą spėjamą raidę. Negalimas ne raidžių bei nieko įvedimas.
 
         public static bool ArSpejimasValidus(string spejimas)
         {
@@ -358,39 +303,49 @@ _ _ _ _" };
                 var rodymas = AtverciaRaides(atsitiktinisZodis.ToLower(), atspetosRaides);
 
                 Console.Clear();
-                Console.WriteLine(SpausdinaPasirinktaTema(menuPasirinkimas));
-                Console.WriteLine(SpausdinaPiesini(gyvybes));
-                Console.WriteLine($"\nSpėtos raidės: {string.Join(", ", neatspetosRaides)}");
-                Console.WriteLine($"\nŽodis: {string.Join(" ", rodymas)}");
+                SpausdinaPasirinktaTema(menuPasirinkimas);
+                Console.WriteLine($"{SpausdinaPiesini(gyvybes)}\n");
+                Console.WriteLine($"Spėtos raidės: {string.Join(", ", neatspetosRaides)}");
+                Console.WriteLine($"Žodis: {string.Join(" ", rodymas)}\n");
+
+                // Žaidimo pabaigos scenarijus.
 
                 if (!zaidimasTesiasi)
                 {
                     if (gyvybes == 0)
                     {
-                        Console.WriteLine($":( PRALAIMĖJOTE :(\nŽodis buvo: {atsitiktinisZodis}");
+                        Console.WriteLine("PRALAIMĖJOTE");
+                        Console.WriteLine($"Žodis buvo: {atsitiktinisZodis}\n");
                     }
 
                     else
                     {
-                        Console.WriteLine(" !!! SVEIKINIMAI !!!");
+                        Console.WriteLine("!!! LIMĖJOTE !!!");
                     }
 
                     return;
                 }
+
                 var spejimas = GautiSpejima().ToLower();
                
-
-                if (ArChar(spejimas))
+                if (ArSpejimasValidus(spejimas))
                 {
+                    // Jei geras raidės spėjimas, ją įdeda į atspetosRaides List.
+
                     if (ArRaideYraZodyje(atsitiktinisZodis.ToLower(), char.Parse(spejimas)))
                     {
                         atspetosRaides.Add(char.Parse(spejimas));
                     }
 
+                    // Jei blogas raidės spėjimas, sumažinamas gyvybių skaičius ir raidė įdedama į neatspetosRaides List.
+
                     else
                     {
-                        gyvybes--;
-                        neatspetosRaides.Add(char.Parse(spejimas));
+                        if (!neatspetosRaides.Contains(char.Parse(spejimas)))
+                        {
+                            gyvybes--;
+                            neatspetosRaides.Add(char.Parse(spejimas));
+                        }
 
                         if (gyvybes == 0)
                         {
@@ -398,6 +353,8 @@ _ _ _ _" };
                         }
                     }
                 }
+
+                // Jei spėjimas nėra validus t.y. daugiau negu vienas char tikrinama ar įvestas string sutampa su atsitiktiniu žodžiu.
 
                 else
                 {
