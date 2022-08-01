@@ -134,5 +134,45 @@ _ _ _ _";
             var actual = Hangman.Program.ArSpejimasValidus(fake);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void ArChar1()
+        {
+            var fake = "karolis";
+            var expected = false;
+
+            var actual = Hangman.Program.ArChar(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ArChar2()
+        {
+            var fake = "k";
+            var expected = true;
+
+            var actual = Hangman.Program.ArChar(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ArChar3()
+        {
+            string fake = "";
+            var expected = false;
+
+            var actual = Hangman.Program.ArChar(fake);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ArChar4()
+        {
+            string fake = null;
+            var expected = false;
+
+            var actual = Hangman.Program.ArChar(fake);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

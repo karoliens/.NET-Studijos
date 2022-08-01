@@ -291,6 +291,19 @@ _ _ _ _" };
             return true;
         }
 
+        public static bool ArChar(string? ivedimas)
+        {
+            if (ivedimas != null && ivedimas.Length == 1)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
         public static void Zaisti(string atsitiktinisZodis, string menuPasirinkimas)
         {
             List<char> neatspetosRaides = new List<char>();
@@ -328,13 +341,18 @@ _ _ _ _" };
 
                 var spejimas = GautiSpejima().ToLower();
                
-                if (ArSpejimasValidus(spejimas))
+                if (ArChar(spejimas))
                 {
                     // Jei geras raidės spėjimas, ją įdeda į atspetosRaides List.
 
                     if (ArRaideYraZodyje(atsitiktinisZodis.ToLower(), char.Parse(spejimas)))
                     {
                         atspetosRaides.Add(char.Parse(spejimas));
+
+                        if (atspetosRaides.ToString().ToLower() == atsitiktinisZodis)
+                        {
+                            Console.WriteLine("!!! LIMĖJOTE !!!");
+                        }
                     }
 
                     // Jei blogas raidės spėjimas, sumažinamas gyvybių skaičius ir raidė įdedama į neatspetosRaides List.
