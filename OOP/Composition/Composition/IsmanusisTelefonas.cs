@@ -24,28 +24,76 @@ namespace Composition
             set { svoris = value; }
         }
 
-        private int stiklas;
+        private string stiklas;
 
-        public int Stiklas
+        public string Stiklas
         {
             get { return stiklas; }
             set { stiklas = value; }
         }
 
-        private int rezoliucija;
+        private string rezoliucija;
 
-        public int Rezoliucija
+        public string Rezoliucija
         {
             get { return rezoliucija; }
             set { rezoliucija = value; }
         }
 
-        private int atmintis;
+        private double atmintis;
 
-        public int Atmintis
+        public double Atmintis
         {
             get { return atmintis; }
             set { atmintis = value; }
+        }
+
+        private string modelis;
+
+        public string Modelis
+        {
+            get { return modelis; }
+            set { modelis = value; }
+        }
+
+        private string operacineSistema;
+
+        public string OperacineSistema
+        {
+            get { return operacineSistema; }
+            set { operacineSistema = value; }
+        }
+
+        private int baterija;
+
+        public int Baterija
+        {
+            get { return baterija; }
+            set { baterija = value; }
+        }
+
+        private string kamera;
+
+        public string Kamera
+        {
+            get { return kamera; }
+            set { kamera = value; }
+        }
+
+        private string gamintojas;
+
+        public string Gamintojas
+        {
+            get { return gamintojas; }
+            set { gamintojas = value; }
+        }
+
+        private Dekliukas dekliukas;
+
+        public Dekliukas Dekliukas
+        {
+            get { return dekliukas; }
+            set { dekliukas = value; }
         }
     }
 }

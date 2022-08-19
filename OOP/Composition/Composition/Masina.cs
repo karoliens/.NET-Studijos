@@ -19,5 +19,11 @@ namespace Composition
         public double EmisijuKiekis { get; set; }
         public int DidziausiasGreitis { get; set; }
         public int Pagreitis { get; set; }
+        public string Spalva { get; set; }
+        public int Aukstis { get; set; }
+        public int Plotis { get; set; }
+        public int Ilgis { get; set; }
+        public int KedziuKiekis { get; set; }
+        public ApsaugosSistema ApsaugosSistema { get; set; } = new ApsaugosSistema();
     }
 }

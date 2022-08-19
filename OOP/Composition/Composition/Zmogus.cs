@@ -20,5 +20,6 @@ namespace Composition
         public double pinigai;
         public string issilavinimas;
         public List<string> masinos;
+        public Augintinis augintinis;
     }
 }

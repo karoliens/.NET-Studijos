@@ -32,6 +32,12 @@ namespace Composition
             set { autorius = value; }
         }
 
-        public Bukle bukle;
+        private Bukle bukle;
+
+        public Bukle Bukle
+        {
+            get { return bukle; }
+            set { bukle = value; }
+        }
     }
 }
