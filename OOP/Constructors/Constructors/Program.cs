@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            /*
+            Uzduotis 3: Aprasykite kiekvienai is klasiu aprasytu 1 uzduotyje (P030) po 3 konstruktorius
+            */
         }
     }
 }
