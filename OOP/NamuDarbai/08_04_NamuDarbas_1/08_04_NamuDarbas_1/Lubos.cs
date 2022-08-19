@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment6
+namespace Ass_08_04_NamuDarbas_1ignment6
 {
     internal class Lubos
     {

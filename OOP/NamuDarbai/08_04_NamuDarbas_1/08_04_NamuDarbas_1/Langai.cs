@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment6
+namespace Assign_08_04_NamuDarbas_1ment6
 {
     internal class Langai
     {

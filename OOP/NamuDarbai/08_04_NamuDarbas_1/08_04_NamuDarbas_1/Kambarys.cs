@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment6
+namespace _08_04_NamuDarbas_1
 {
     internal class Kambarys
     {
