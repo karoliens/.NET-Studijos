@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            /*
+            1.    OopMetodai – Parasykite klase Kalbejimas, kuri turetu string „garsas“ konstruktoriu          *  ir turetu metoda „Kalbeti“, kuri i ekrana isvestu musu zodzius
+            */
         }
     }
 }
