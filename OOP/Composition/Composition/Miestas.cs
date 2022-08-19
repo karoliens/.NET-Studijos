@@ -31,6 +31,5 @@ namespace Composition
             get { return pavadinimas; }
             set { pavadinimas = value; }
         }
-
     }
 }
