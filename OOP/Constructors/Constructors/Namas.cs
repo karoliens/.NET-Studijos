@@ -29,9 +29,16 @@ namespace Constructors
             this.vieta = vieta;
         }
 
+        private Stogas stogas;
+
+        public Stogas Stogas
+        {
+            get { return stogas; }
+            set { stogas = value; }
+        }
+
         public int plotas;
         public string vieta;
         public int kambariuSkaicius;
-        public Stogas stogas;
     }
 }
