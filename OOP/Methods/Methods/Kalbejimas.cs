@@ -15,10 +15,12 @@ namespace Methods
 
         public Kalbejimas(string garsas)
         {
-            Garsas = garsas;
+            garsas = garsas;
         }
 
         public string Garsas { get; set; }
+
+        // private string garsas;
 
         public void Kalbeti()
         {
