@@ -10,9 +10,13 @@ namespace TowerOfHanoi.Domain.Models
     {
         // constructors
         public Stack() { }
+        public Stack(int selectedStack)
+        {
+            SelectedStack = selectedStack;
+        }
 
         // methods
-        public void SelectStack(int selectedStack)
+        public void SelectStack(int selection)
         {
             SelectedStack = selectedStack;
         }
@@ -23,7 +27,9 @@ namespace TowerOfHanoi.Domain.Models
         }
 
         // properties
-        public int SelectedStack { get; set; } // [1], [2], [3]
+        public Disk FirstStack { get; set; } // [1]
+        public Disk SecondStack { get; set; } // [2]
+        public Disk ThirdStack { get; set; } // [3]
         public List<Disk> Disks { get; set; }
     }
 }

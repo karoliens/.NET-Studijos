@@ -10,11 +10,21 @@ namespace TowerOfHanoi.Domain.Models
     {
         // constructors
         public Disk() { }
+        public Disk(int diskSize, int diskLocation)
+        {
+            DiskSize = diskSize;
+            DiskLocation = diskLocation;
+        }
 
         // methods
         public void Move(int fromStack, int toStack)
         {
             Console.WriteLine($"Moving disk from stack {fromStack} to stack {toStack}");
+        }
+
+        public void GetDiskSize()
+        {
+
         }
 
         // properties
