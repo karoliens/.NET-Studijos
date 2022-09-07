@@ -24,7 +24,7 @@ namespace TowerOfHanoi
               Pagalbai paspauskite 'H' 
               Pasirinkite stulpelį iš kurio paimti
             */
-
+            /*
             Console.WriteLine("Pasirinkite stulpelį iš kurio paimti");
 
             var from = Console.ReadLine();
@@ -52,7 +52,7 @@ namespace TowerOfHanoi
             {
                 Console.WriteLine("Klaida! Neteisinga įvestis");
             }
-
+            */
             Game newGame = new Game();
             var firstStack = newGame.FirstStack;
             var secondStack = newGame.SecondStack;
@@ -67,8 +67,12 @@ namespace TowerOfHanoi
             firstStack.AddDisk(disk2);
             firstStack.AddDisk(disk3);
             firstStack.AddDisk(disk4);
+            firstStack.RemoveDisk(disk3);
+            secondStack.AddDisk(disk4);
 
-            // firstStack.CountDisks();
+            Console.WriteLine(firstStack.CountDisks().ToString());
+            Console.WriteLine(secondStack.CountDisks().ToString());
+            Console.WriteLine(thirdStack.CountDisks().ToString());
         }
     }
 }

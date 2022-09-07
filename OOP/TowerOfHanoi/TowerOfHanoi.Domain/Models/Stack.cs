@@ -35,6 +35,6 @@ namespace TowerOfHanoi.Domain.Models
         }
 
         // properties
-        public List<Disk> Disks { get; set; }
+        public List<Disk> Disks { get; set; } = new List<Disk> { };
     }
 }
