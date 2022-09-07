@@ -11,12 +11,17 @@ namespace TowerOfHanoi.Domain.Models
         // constructors
         public Stack() { }
 
+        public Stack(List<Disk> disks)
+        {
+            Disks = disks;
+        }
+
         // methods
         public int CountDisks()
         {
+            var result = Disks.Count();
 
-
-            return;
+            return result;
         }
 
         public void RemoveDisk(Disk disk)

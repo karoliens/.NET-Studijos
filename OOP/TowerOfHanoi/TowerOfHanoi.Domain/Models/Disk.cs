@@ -10,6 +10,7 @@ namespace TowerOfHanoi.Domain.Models
     {
         // constructors
         public Disk() { }
+
         public Disk(int diskSize)
         {
             DiskSize = diskSize;

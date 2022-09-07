@@ -54,6 +54,21 @@ namespace TowerOfHanoi
             }
 
             Game newGame = new Game();
+            var firstStack = newGame.FirstStack;
+            var secondStack = newGame.SecondStack;
+            var thirdStack = newGame.ThirdStack;
+
+            Disk disk1 = new Disk(2);
+            Disk disk2 = new Disk(4);
+            Disk disk3 = new Disk(6);
+            Disk disk4 = new Disk(8);
+
+            firstStack.AddDisk(disk1);
+            firstStack.AddDisk(disk2);
+            firstStack.AddDisk(disk3);
+            firstStack.AddDisk(disk4);
+
+            // firstStack.CountDisks();
         }
     }
 }
