@@ -10,26 +10,26 @@ namespace TowerOfHanoi.Domain.Models
     {
         // constructors
         public Stack() { }
-        public Stack(int selectedStack)
-        {
-            SelectedStack = selectedStack;
-        }
 
         // methods
-        public void SelectStack(int selection)
+        public int CountDisks()
         {
-            SelectedStack = selectedStack;
+
+
+            return;
         }
 
-        public void CountDisksOnTheStack()
+        public void RemoveDisk(Disk disk)
         {
+            Disks.Remove(disk);
+        }
 
+        public void AddDisk(Disk disk)
+        {
+            Disks.Add(disk);
         }
 
         // properties
-        public Disk FirstStack { get; set; } // [1]
-        public Disk SecondStack { get; set; } // [2]
-        public Disk ThirdStack { get; set; } // [3]
         public List<Disk> Disks { get; set; }
     }
 }

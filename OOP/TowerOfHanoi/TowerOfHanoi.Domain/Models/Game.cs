@@ -8,6 +8,8 @@ namespace TowerOfHanoi.Domain.Models
 {
     public class Game
     {
-
+        public Stack FirstStack { get; set; } = new Stack();
+        public Stack SecondStack { get; set; } = new Stack();
+        public Stack ThirdStack { get; set; } = new Stack();   
     }
 }

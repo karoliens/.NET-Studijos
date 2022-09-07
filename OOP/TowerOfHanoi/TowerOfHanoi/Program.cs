@@ -53,11 +53,7 @@ namespace TowerOfHanoi
                 Console.WriteLine("Klaida! Neteisinga įvestis");
             }
 
-            var selectedStack = new Stack();
-            selectedStack.GetSelectedStack(1);
-
-            var disk = new Disk();
-            disk.Move(4, from, to);
+            Game newGame = new Game();
         }
     }
 }
