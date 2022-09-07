@@ -53,10 +53,20 @@ namespace TowerOfHanoi
                 Console.WriteLine("Klaida! Neteisinga įvestis");
             }
             */
+
+            Console.WriteLine("Tower Of Hanoi");
+
+            Console.WriteLine("Ėjimas");
+
+            Console.WriteLine("Diskas rankoje:");
+
+            Console.WriteLine("Pasirinkite stulpelį iš kurio paimti");
+
+
             Game newGame = new Game();
-            var firstStack = newGame.FirstStack;
-            var secondStack = newGame.SecondStack;
-            var thirdStack = newGame.ThirdStack;
+            Stack firstStack = newGame.FirstStack;
+            Stack secondStack = newGame.SecondStack;
+            Stack thirdStack = newGame.ThirdStack;
 
             Disk disk1 = new Disk(2);
             Disk disk2 = new Disk(4);
@@ -67,12 +77,39 @@ namespace TowerOfHanoi
             firstStack.AddDisk(disk2);
             firstStack.AddDisk(disk3);
             firstStack.AddDisk(disk4);
+
             firstStack.RemoveDisk(disk3);
             secondStack.AddDisk(disk4);
 
-            Console.WriteLine(firstStack.CountDisks().ToString());
-            Console.WriteLine(secondStack.CountDisks().ToString());
-            Console.WriteLine(thirdStack.CountDisks().ToString());
+            var input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                // firstStack
+                    Console.WriteLine($"{disk1.DiskSize.ToString()}");
+                    Console.WriteLine($"{disk2.DiskSize.ToString()}");
+                    Console.WriteLine($"{disk3.DiskSize.ToString()}");
+                    Console.WriteLine($"{disk4.DiskSize.ToString()}");
+                    break;
+                case "2":
+                    // secondStack
+                case "3":
+                    // thirdStack
+                default:
+                    Console.WriteLine("Klaida! Neteisinga įvestis");
+                break;
+            }
+
+
+            // Console.WriteLine(firstStack.CountDisks().ToString());
+            // Console.WriteLine(secondStack.CountDisks().ToString());
+            // Console.WriteLine(thirdStack.CountDisks().ToString());
+
+            if (firstStack.CountDisks() == null)
+            {
+                Console.WriteLine("Stulpelyje nėra disko");
+            }
         }
     }
 }
