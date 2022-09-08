@@ -4,7 +4,35 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            /*
+            Uzduotis 1: Sarase “List<int> { 9, 78, 85, 115, 39, 49, 55, 100, 523, 95 }” isfiltruokite skaicius, kurie butu didesni arba lygus 35, bet mazesni arba lygus 99. Istestuokite.
+
+            Uzduotis 2:Parasykite programa, kuri is spalvu saraso “List<string> { "Red", "Green", "Blue", "Teal", "Grey", "Purple", “Magenta”, “Tomato”, “Cyan” }” istrauktu spalvas, kuriu ilgis yra didesnis 4 raides, projekcijos pagalba padarykite, kad visus rezultatus grazintu didziosiomis raidemis. Istestuokite.
+            */
+
+            List<string> colours = new List<string>() { "Red", "Green", "Blue", "Teal", "Grey", "Purple", "Magenta", "Tomato", "Cyan" };
+
+            List<int> numbers = new List<int>(){ 9, 78, 85, 115, 39, 49, 55, 100, 523, 95 };
+
+        }
+
+        public static List<int> FilterNumbers(List<int> list)
+        {
+            list = list
+
+                .Where(x => x >= 35 && x <= 99).ToList();
+
+            return list;
+        }
+
+        public static List<string> FilterColours(List<string> list)
+        {
+            list = list
+                .Where(x => x.Length > 4)
+                .Select(x => x.ToUpper())
+                .ToList();
+
+            return list.ToList();
         }
     }
 }
