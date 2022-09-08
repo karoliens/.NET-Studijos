@@ -8,11 +8,15 @@
             Uzduotis 1: Sarase “List<int> { 9, 78, 85, 115, 39, 49, 55, 100, 523, 95 }” isfiltruokite skaicius, kurie butu didesni arba lygus 35, bet mazesni arba lygus 99. Istestuokite.
 
             Uzduotis 2:Parasykite programa, kuri is spalvu saraso “List<string> { "Red", "Green", "Blue", "Teal", "Grey", "Purple", “Magenta”, “Tomato”, “Cyan” }” istrauktu spalvas, kuriu ilgis yra didesnis 4 raides, projekcijos pagalba padarykite, kad visus rezultatus grazintu didziosiomis raidemis. Istestuokite.
+
+            Uzduotis 3:Parasykite programa, kuri is zodziu kratinio “List<string> {“dangus”, “afro”, “vanduo”, “darzelis”, “darzove”, “kremas”, “valdiklis”,”daumantas”, “mokinys”, “pazymys”,”danguole”} isvestu I ekrana zodzius, kurie prasideda raide “d” ir baigiasi raide “s”. Istestuokite.
             */
 
             List<string> colours = new List<string>() { "Red", "Green", "Blue", "Teal", "Grey", "Purple", "Magenta", "Tomato", "Cyan" };
 
             List<int> numbers = new List<int>(){ 9, 78, 85, 115, 39, 49, 55, 100, 523, 95 };
+
+            List<string> randomWords = new List<string>() { "dangus", "afro", "vanduo", "darzelis", "darzove", "kremas", "valdiklis", "daumantas", "mokinys", "pazymys", "danguole" };
 
         }
 
@@ -30,6 +34,16 @@
             list = list
                 .Where(x => x.Length > 4)
                 .Select(x => x.ToUpper())
+                .ToList();
+
+            return list.ToList();
+        }
+
+        public static List<string> FilterStrings(List<string> list)
+        {
+            list = list
+                .Where((x) => x.StartsWith("d"))
+                .Where((x) => x.EndsWith("s"))
                 .ToList();
 
             return list.ToList();
