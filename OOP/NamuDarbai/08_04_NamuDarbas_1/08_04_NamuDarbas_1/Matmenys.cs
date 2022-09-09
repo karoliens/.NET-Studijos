@@ -31,13 +31,5 @@ namespace Assign_08_04_NamuDarbas_1ment6
             get { return ilgis; }
             set { ilgis = value; }
         }
-
-        private int myVar;
-
-        public int MyProperty
-        {
-            get { return myVar; }
-            set { myVar = value; }
-        }
     }
 }

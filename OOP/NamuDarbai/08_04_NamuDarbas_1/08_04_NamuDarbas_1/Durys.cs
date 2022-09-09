@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assign_08_04_NamuDarbas_1ment6;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,6 +49,6 @@ namespace _08_04_NamuDarbas_1
             set { gamintojas = value; }
         }
 
-        public Matmenys matmenys;
+        public Matmenys Matmenys { get; set; }
     }
 }
