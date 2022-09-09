@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Constructors
+namespace Composition
 {
     internal class Miestas
     {
@@ -31,6 +31,5 @@ namespace Constructors
             get { return pavadinimas; }
             set { pavadinimas = value; }
         }
-
     }
 }

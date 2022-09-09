@@ -10,6 +10,8 @@
             Uzduotis 2:Parasykite programa, kuri is spalvu saraso “List<string> { "Red", "Green", "Blue", "Teal", "Grey", "Purple", “Magenta”, “Tomato”, “Cyan” }” istrauktu spalvas, kuriu ilgis yra didesnis 4 raides, projekcijos pagalba padarykite, kad visus rezultatus grazintu didziosiomis raidemis. Istestuokite.
 
             Uzduotis 3:Parasykite programa, kuri is zodziu kratinio “List<string> {“dangus”, “afro”, “vanduo”, “darzelis”, “darzove”, “kremas”, “valdiklis”,”daumantas”, “mokinys”, “pazymys”,”danguole”} isvestu I ekrana zodzius, kurie prasideda raide “d” ir baigiasi raide “s”. Istestuokite.
+
+            Uzduotis 4:     *  Naudojant CharacterInitialData užpildyti žmonių(Human) sąrašą.            - Žmonių sąrašui užpildyti implementuokite interfeisą IHumanFactory su metodu Bind()                 Metodas Bind() iškoduoja DataSeed ir grąžina reikiamą objektą            - Užpildytą sąrašą išvesti į konsolę
             */
 
             List<string> colours = new List<string>() { "Red", "Green", "Blue", "Teal", "Grey", "Purple", "Magenta", "Tomato", "Cyan" };
