@@ -15,11 +15,26 @@ namespace TowerOfHanoi.Domain.Models
         {
             DiskSize = diskSize;
         }
-
+        
         // methods
+        public override string ToString()
+        {
+            int hashSize = DiskSize / 2;
+            int emptySpaceSize = 4 - hashSize;
 
+            string text = "  ";
 
+            text += string.Concat(Enumerable.Repeat(" ", emptySpaceSize)); // "  ##|##  "
+            text += string.Concat(Enumerable.Repeat("#", hashSize));
+            text += "|";
+            text += string.Concat(Enumerable.Repeat("#", hashSize));
+            text += string.Concat(Enumerable.Repeat(" ", emptySpaceSize));
+            text += "  ";
+
+            return text;
+        }
+        
         // properties
-        public int DiskSize { get; set; } // disk size e.g. 2, 4, 6, 8
+        public int DiskSize { get; } // disk size e.g. 2, 4, 6, 8
     }
 }

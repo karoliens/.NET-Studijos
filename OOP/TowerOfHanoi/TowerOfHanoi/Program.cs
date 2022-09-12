@@ -53,7 +53,7 @@ namespace TowerOfHanoi
                 Console.WriteLine("Klaida! Neteisinga įvestis");
             }
             */
-
+            /*
             Console.WriteLine("Tower Of Hanoi");
 
             Console.WriteLine("Ėjimas");
@@ -61,12 +61,14 @@ namespace TowerOfHanoi
             Console.WriteLine("Diskas rankoje:");
 
             Console.WriteLine("Pasirinkite stulpelį iš kurio paimti");
-
+            */
 
             Game newGame = new Game();
-            Stack firstStack = newGame.FirstStack;
+            // Stack firstStack = newGame.FirstStack;
             Stack secondStack = newGame.SecondStack;
             Stack thirdStack = newGame.ThirdStack;
+
+            Stack firstStack = new Stack();
 
             Disk disk1 = new Disk(2);
             Disk disk2 = new Disk(4);
@@ -78,11 +80,46 @@ namespace TowerOfHanoi
             firstStack.AddDisk(disk3);
             firstStack.AddDisk(disk4);
 
-            firstStack.RemoveDisk(disk3);
-            secondStack.AddDisk(disk4);
 
-            var input = Console.ReadLine();
+            var selectedDisk = firstStack.RemoveDisk();
 
+            secondStack.AddDisk(selectedDisk);
+            
+            for (int i = 3; i >= 0; i--)
+            {
+                var firstStackDisk = firstStack.GetDisk(i);
+                var secondStackDisk = secondStack.GetDisk(i);
+                var thirdStackDisk = thirdStack.GetDisk(i);
+
+                Console.Write($"{firstStackDisk}");
+                Console.Write($"{secondStackDisk}");
+                Console.WriteLine($"{thirdStackDisk}");
+            }
+            
+            /*
+            foreach (Disk disk in firstStack.Disks)
+            {
+                Console.WriteLine($"{disk.DiskSize.ToString()}");
+            }
+
+            Console.WriteLine("_____________________");
+
+            foreach (Disk disk in secondStack.Disks)
+            {
+                Console.WriteLine($"{disk.DiskSize}");
+            }
+
+            Console.WriteLine("_____________________");
+
+            foreach (Disk disk in thirdStack.Disks)
+            {
+                Console.WriteLine($"{disk.DiskSize}");
+            }
+            */
+            // secondStack.AddDisk(disk4);
+
+            // var input = Console.ReadLine();
+            /*
             switch (input)
             {
                 case "1":
@@ -100,16 +137,20 @@ namespace TowerOfHanoi
                     Console.WriteLine("Klaida! Neteisinga įvestis");
                 break;
             }
+            */
 
+            // Console.WriteLine(firstStack.Disks.Count().ToString());
+            // Console.WriteLine(secondStack.Disks.ToString());
+            // Console.WriteLine(thirdStack.Disks);
 
-            // Console.WriteLine(firstStack.CountDisks().ToString());
-            // Console.WriteLine(secondStack.CountDisks().ToString());
-            // Console.WriteLine(thirdStack.CountDisks().ToString());
+            // Console.WriteLine($"Diskas rankoje: {selectedDisk.DiskSize}");
 
+            /*
             if (firstStack.CountDisks() == null)
             {
                 Console.WriteLine("Stulpelyje nėra disko");
             }
+            */
         }
     }
 }
