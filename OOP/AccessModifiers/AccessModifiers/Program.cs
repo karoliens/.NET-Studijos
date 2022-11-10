@@ -48,6 +48,50 @@
             {
                 TekstasAngliskai = "Designer"
             };
+
+            Mokykla mokykla1 = new Mokykla()
+            {
+                Pavadinimas = "Šiaulių Didždvario gimnazija",
+                Mokytojai = new List<Mokytojas>()
+                {
+                    new Mokytojas()
+                    {
+                        Vardas = "Tomas",
+                        Studentai = new List<Studentas>()
+                        {
+                            new Studentas()
+                            {
+                                Vardas = "Karolis"
+                            }
+                        }
+                    },
+
+                    new Mokytojas()
+                    {
+                        Vardas = "Armandas",
+                        Studentai = new List<Studentas>()
+                        {
+                            new Studentas()
+                            {
+                                Vardas = "Ieva"
+                            }
+                        }
+                    }
+                }
+            };
+
+
+            Mokykla mokykla2 = new Mokykla();
+            mokykla2.Pavadinimas = "Vilniaus licėjus";
+            mokykla2.Mokytojai = new List<Mokytojas>()
+            {
+               new Mokytojas(){ Vardas = "Gabrielė", Studentai = new List<Studentas>(){ new Studentas() { Vardas = "Karolis"} } }
+            };
+
+
+            AtspausdintiMokykla(mokykla1);
+            AtspausdintiMokykla(mokykla2);
+            AtspausdintiMokiniuVidurkius(mokykla1);
         }
 
         static void AtspausdintiMokykla(Mokykla mokykla)
@@ -69,7 +113,7 @@
             {
                 foreach (var mokinys in mokytojas.Studentai)
                 {
-                    foreach (var pamoka in mokinys.PazymiuKnygele.Pamokos)
+                    foreach (var pamoka in mokinys.PazymiuKnygele.Pazymiai)
                     {
 
                         Console.WriteLine($"Mokinys: {mokinys.Vardas}\nPamoka: {pamoka} - {ApskaiciuotiVidurki(pamoka.Value)}\n");

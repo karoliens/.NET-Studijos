@@ -38,16 +38,16 @@ namespace TowerOfHanoi.Domain.Models
             Disks.Insert(0, disk);
         }
 
-        public Disk GetDisk(int index)
+        public Disk GetDisk(int index) // kad grąžint tuščius diskus
         {
-            if (index < Disks.Count())
+            if (index < Disks.Count()) // skaičiuoja kiek diskų ant Stack
             {
                 return Disks[index];
             }
 
             else
             {
-                return new Disk();
+                return new Disk(); // grąžina diską su tuščiu konstruktorium
             }     
         }
 

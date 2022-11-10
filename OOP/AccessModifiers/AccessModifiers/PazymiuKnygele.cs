@@ -8,7 +8,18 @@ namespace AccessModifiers
 {
     internal class PazymiuKnygele
     {
+        public PazymiuKnygele()
+        {
+
+        }
+
+        public PazymiuKnygele(Studentas studentas, Dictionary<Pamoka, List<int>> pazymiai)
+        {
+            Studentas = studentas;
+            Pazymiai = pazymiai;
+        }
+
         public Studentas Studentas { get; set; }
-        public Dictionary<Pamoka, List<int>> Pamokos { get; set; }
+        public Dictionary<Pamoka, List<int>> Pazymiai { get; set; }
     }
 }

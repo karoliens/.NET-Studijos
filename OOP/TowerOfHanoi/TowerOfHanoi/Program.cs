@@ -81,11 +81,13 @@ namespace TowerOfHanoi
             firstStack.AddDisk(disk4);
 
 
-            var selectedDisk = firstStack.RemoveDisk();
+            var selectedDisk1 = firstStack.RemoveDisk();
+            var selectedDisk2 = firstStack.RemoveDisk();
 
-            secondStack.AddDisk(selectedDisk);
+            secondStack.AddDisk(selectedDisk1);
+            thirdStack.AddDisk(selectedDisk2);
             
-            for (int i = 3; i >= 0; i--)
+            for (int i = 3; i >= 0; i--) // einam per keturias Stack eilutes
             {
                 var firstStackDisk = firstStack.GetDisk(i);
                 var secondStackDisk = secondStack.GetDisk(i);

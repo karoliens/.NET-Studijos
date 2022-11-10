@@ -50,6 +50,6 @@ namespace AccessModifiers
         public double pinigai;
         public string issilavinimas;
         public List<string> masinos;
-        // public Bendrabutis bendrabutis;
+        public Bendrabutis bendrabutis;
     }
 }
