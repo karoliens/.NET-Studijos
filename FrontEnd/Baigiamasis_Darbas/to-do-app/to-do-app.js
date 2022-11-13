@@ -5,9 +5,14 @@ const br = document.createElement("br");
 function addForm() {
   // Create a form dynamically
   const form = document.createElement("form");
-  //form.setAttribute("method", "post");
-  //form.setAttribute("action", "submit.php");
   form.setAttribute("id", "form");
+
+  // Create an input element for Type
+  const id = document.createElement("input");
+  id.setAttribute("type", "number");
+  id.setAttribute("name", "id");
+  id.setAttribute("placeholder", "Id");
+  id.setAttribute("id", "id");
 
   // Create an input element for Type
   const type = document.createElement("input");
@@ -44,14 +49,19 @@ function addForm() {
   submitBtn.setAttribute("id", "submitBtn");
 
   const editBtn = document.createElement("input");
-  editBtn.setAttribute("type", "submit");
+  editBtn.setAttribute("type", "button");
   editBtn.setAttribute("value", "Edit");
   editBtn.setAttribute("id", "editBtn");
 
   const deleteBtn = document.createElement("input");
-  deleteBtn.setAttribute("type", "submit");
+  deleteBtn.setAttribute("type", "button");
   deleteBtn.setAttribute("value", "Delete");
   deleteBtn.setAttribute("id", "deleteBtn");
+
+  // Append the Id input to the form
+  form.appendChild(id);
+  form.appendChild(br.cloneNode());
+  form.appendChild(br.cloneNode());
 
   // Append the Type input to the form
   form.appendChild(type);
@@ -83,8 +93,18 @@ function addForm() {
   document.getElementsByTagName("body")[0].appendChild(form);
 
   submitBtn.addEventListener("click", (e) => {
-    e.preventDefault(); // Breaks manual refresh after submit
+    e.preventDefault();
     sendData();
+  });
+
+  editBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    editData();
+  });
+
+  deleteBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    deleteData();
   });
 }
 
@@ -103,12 +123,6 @@ function sendData() {
   let data = new FormData(form);
   let obj = {};
 
-  obj["15612"] = "timeValue";
-
-  console.log(data);
-
-  // #1 iteracija -> obj {name: 'asd'}
-  // #2 iteracija -> obj {type: 'asd'}
   data.forEach((value, key) => {
     console.log(`${key}(Key): ${value}(Value)`);
     obj[key] = value;
@@ -120,11 +134,38 @@ function sendData() {
       Accept: "application/json, text/plain, */*",
       "Content-Type": "application/json",
     },
-    // Naudojame JSON.stringify, nes objekte neturim .json() metodo
+
     body: JSON.stringify(obj),
   })
     .then((obj) => console.log(obj.json()))
     .catch((error) => console.log(error));
 }
 
+function editData() {
+  const form = document.querySelector("#form");
 
+  let data = new FormData(form);
+  let obj = {};
+
+  data.forEach((value, key) => {
+    obj[key] = value;
+  });
+
+  const url = "https://testapi.io/api/karoliens/resource/ToDoAppDB" + obj.id;
+
+  fetch(url, {
+    method: "put",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+
+    body: JSON.stringify(obj),
+  })
+    .then((obj) => {
+      const res = obj.json();
+      console.log(res);
+      return res;
+    })
+    .catch((error) => console.log(error));
+}

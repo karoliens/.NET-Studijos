@@ -14,8 +14,7 @@ function validateNameAndSurname() {}
 
 loginFormSbmBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  getName();
-  getSurname();
+  //loadData();
 });
 
 const url = "https://testapi.io/api/karoliens/resource/RegisteredUsers";
@@ -49,4 +48,4 @@ function loadData() {
     });
 }
 
-loadData();
+
