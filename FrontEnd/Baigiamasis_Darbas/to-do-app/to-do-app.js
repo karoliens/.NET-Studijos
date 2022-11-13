@@ -81,6 +81,11 @@ function addForm() {
   form.appendChild(deleteBtn);
 
   document.getElementsByTagName("body")[0].appendChild(form);
+
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault(); // Breaks manual refresh after submit
+    sendData();
+  });
 }
 
 addFormBtn.addEventListener(
@@ -92,10 +97,9 @@ addFormBtn.addEventListener(
   { once: true }
 );
 
-const form = document.querySelector("#form");
-const formSbmBtn = document.querySelector("#submitBtn");
-
 function sendData() {
+  const form = document.querySelector("#form");
+
   let data = new FormData(form);
   let obj = {};
 
@@ -123,7 +127,4 @@ function sendData() {
     .catch((error) => console.log(error));
 }
 
-formSbmBtn.addEventListener("click", (e) => {
-  e.preventDefault(); // Breaks manual refresh after submit
-  sendData();
-});
+

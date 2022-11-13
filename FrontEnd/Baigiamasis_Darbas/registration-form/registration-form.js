@@ -19,19 +19,15 @@ function sendData() {
     },
     body: JSON.stringify(obj),
   })
-    .then((obj) => console.log(obj.json()))
+    .then((obj) => openToDoAppWindow())
     .catch((error) => console.log(error));
 }
 
 registrationFormSbmBtn.addEventListener("click", (e) => {
   e.preventDefault();
   sendData();
-  //openToDoAppWindow();
 });
 
 function openToDoAppWindow() {
-  window.open(
-    "file:///C:/Users/Karolis/source/repos/.NET-Studijos/FrontEnd/Baigiamasis_Darbas/to-do-app/to-do-app.html",
-    "_blank"
-  );
+  window.open("../to-do-app/to-do-app.html", "_self");
 }
