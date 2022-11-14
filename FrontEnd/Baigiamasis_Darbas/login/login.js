@@ -1,51 +1,48 @@
 const loginFormSbmBtn = document.querySelector("#login");
 
 function getName() {
-  let x = document.forms["login"]["name"].value;
-  console.log(x);
+  let name = document.forms["login-form"]["name"].value;
+  return name;
 }
 
 function getSurname() {
-  let x = document.forms["login"]["surname"].value;
-  console.log(x);
+  let surname = document.forms["login-form"]["surname"].value;
+  return surname;
 }
 
-function validateNameAndSurname() {}
+function addNameAndSurnameToHtml() {
+  const paragraph = document.createElement("p");
+  const text = document.createTextNode(
+    "Šiuo metu prisijungęs" + " " + getName() + " " + getSurname()
+  );
 
-loginFormSbmBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  //loadData();
-});
+  paragraph.appendChild(text);
+
+  const element = document.getElementById("body");
+
+  element.appendChild(paragraph);
+}
+
+loginFormSbmBtn.addEventListener(
+  "click",
+  (e) => {
+    e.preventDefault();
+    lookForUser();
+    addNameAndSurnameToHtml();
+  },
+  { once: true }
+);
 
 const url = "https://testapi.io/api/karoliens/resource/RegisteredUsers";
-const options = {
-  method: "get",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
-};
 
-const response = {};
-
-function loadData() {
-  fetch(url, options)
-    .then((response) => response.json())
-    .then((a) => {
-      console.log(a);
-      //const animalEle = document.getElementById('animal-text');
-      //let htmlAnimal = '';
-
-      a.data.forEach((element) => {
-        console.log(element);
-        //let htmlElement = `<p>${element.name}</p>
-        //<p>${element.type}</p>
-        //<p>${element.legs}</p>`;
-        //htmlAnimal += htmlElement;
-      });
-
-      //animalEle.innerHTML = htmlAnimal;
-    });
+const lookForUser = () => {
+  fetch(url).then((obj) => obj.json()).then(userData => console.log(userData);
+    for (const user of userData.data) 
+    {        
+      if (user.name === getName() &&        
+user.surname === getSurname())
 }
+  
 
-
+  )
+};

@@ -131,7 +131,7 @@ function sendData() {
   fetch("https://testapi.io/api/karoliens/resource/ToDoAppDB", {
     method: "post",
     headers: {
-      Accept: "application/json, text/plain, */*",
+      "Accept": "application/json",
       "Content-Type": "application/json",
     },
 
@@ -156,7 +156,7 @@ function editData() {
   fetch(url, {
     method: "put",
     headers: {
-      Accept: "application/json, text/plain, */*",
+      "Accept": "application/json",
       "Content-Type": "application/json",
     },
 
@@ -165,6 +165,35 @@ function editData() {
     .then((obj) => {
       const res = obj.json();
       console.log(res);
+      return res;
+    })
+    .catch((error) => console.log(error));
+}
+
+function deleteData() {
+  const form = document.querySelector("#form");
+
+  let data = new FormData(form);
+  let obj = {};
+
+  data.forEach((value, key) => {
+    obj[key] = value;
+  });
+
+  const url = "https://testapi.io/api/karoliens/resource/ToDoAppDB/" + obj.id;
+
+  fetch(url, {
+    method: "delete",
+    //headers: {
+      //"Accept": "application/json",
+      //"Content-Type": "application/json",
+    //},
+
+    body: JSON.stringify(obj),
+  })
+    .then((obj) => {
+      const res = obj.json();
+      //console.log(res);
       return res;
     })
     .catch((error) => console.log(error));

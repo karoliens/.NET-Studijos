@@ -14,16 +14,16 @@ function sendData() {
   fetch("https://testapi.io/api/karoliens/resource/RegisteredUsers", {
     method: "post",
     headers: {
-      Accept: "application/json, text/plain, */*",
+      "Accept": "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(obj),
   })
-    .then((obj) => openToDoAppWindow())
+    .then(openToDoAppWindow())
     .catch((error) => console.log(error));
 }
 
-registrationFormSbmBtn.addEventListener("click", (e) => {
+function checkIfFormIsCompleted() {
   if (document.getElementById("name").value === "") {
     console.log("Name is not entered");
   } else if (document.getElementById("surname").value === "") {
@@ -32,6 +32,12 @@ registrationFormSbmBtn.addEventListener("click", (e) => {
     console.log("Email is not entered");
     return false;
   } else {
+    return true;
+  }
+}
+
+registrationFormSbmBtn.addEventListener("click", (e) => {
+  if (checkIfFormIsCompleted() === true) {
     e.preventDefault();
     sendData();
   }
