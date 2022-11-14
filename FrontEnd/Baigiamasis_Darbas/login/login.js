@@ -54,7 +54,7 @@ const lookForUser = () => {
           }
         }
         state = false;
-        alert("Error");
+        alert("This user does not exist in the DB");
       }
     });
 };
