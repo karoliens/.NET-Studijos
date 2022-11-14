@@ -33,16 +33,28 @@ loginFormSbmBtn.addEventListener(
   { once: true }
 );
 
+function openToDoAppWindow() {
+  window.open("../to-do-app/to-do-app.html", "_self");
+}
+
 const url = "https://testapi.io/api/karoliens/resource/RegisteredUsers";
 
 const lookForUser = () => {
-  fetch(url).then((obj) => obj.json()).then(userData => console.log(userData);
-    for (const user of userData.data) 
-    {        
-      if (user.name === getName() &&        
-user.surname === getSurname())
-}
-  
+  fetch(url)
+    .then((obj) => obj.json())
+    .then((userData) => {
+      console.log(userData);
 
-  )
+      let state = true;
+
+      while (state) {
+        for (const user of userData.data) {
+          if (user.name === getName() && user.surname === getSurname()) {
+            openToDoAppWindow();
+          }
+        }
+        state = false;
+        alert("Error");
+      }
+    });
 };
