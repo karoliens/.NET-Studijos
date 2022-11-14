@@ -24,8 +24,17 @@ function sendData() {
 }
 
 registrationFormSbmBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  sendData();
+  if (document.getElementById("name").value === "") {
+    console.log("Name is not entered");
+  } else if (document.getElementById("surname").value === "") {
+    console.log("Surname is not entered");
+  } else if (document.getElementById("mail").value === "") {
+    console.log("Email is not entered");
+    return false;
+  } else {
+    e.preventDefault();
+    sendData();
+  }
 });
 
 function openToDoAppWindow() {

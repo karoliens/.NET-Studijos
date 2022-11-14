@@ -151,7 +151,7 @@ function editData() {
     obj[key] = value;
   });
 
-  const url = "https://testapi.io/api/karoliens/resource/ToDoAppDB" + obj.id;
+  const url = "https://testapi.io/api/karoliens/resource/ToDoAppDB/" + obj.id;
 
   fetch(url, {
     method: "put",
