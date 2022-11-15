@@ -45,16 +45,18 @@ const lookForUser = () => {
     .then((userData) => {
       console.log(userData);
 
-      let state = true;
-
-      while (state) {
-        for (const user of userData.data) {
-          if (user.name === getName() && user.surname === getSurname()) {
-            openToDoAppWindow();
-          }
-        }
-        state = false;
-        alert("This user does not exist in the DB");
+      for (const user of userData.data) {
+        //console.log(userData.data);
+        if (user.name === getName() && user.surname === getSurname()) {
+          openToDoAppWindow();
+          
+          
+        } 
+        
+        //else {
+          //alert("This user does not exist in the DB");
+          //break;
+        //}
       }
     });
 };

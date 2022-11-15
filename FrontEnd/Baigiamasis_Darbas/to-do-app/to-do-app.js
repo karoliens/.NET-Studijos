@@ -1,4 +1,5 @@
 const addFormBtn = document.querySelector("#addForm");
+const mainBtn = document.querySelector("#main-button");
 
 // Create a break line element
 const br = document.createElement("br");
@@ -117,6 +118,19 @@ addFormBtn.addEventListener(
   { once: true }
 );
 
+function openMainWindow() {
+  window.open("../index.html", "_self");
+}
+
+mainBtn.addEventListener(
+  "click",
+  (e) => {
+    e.preventDefault();
+    openMainWindow();
+  },
+  { once: true }
+);
+
 function sendData() {
   const form = document.querySelector("#form");
 
@@ -131,7 +145,7 @@ function sendData() {
   fetch("https://testapi.io/api/karoliens/resource/ToDoAppDB", {
     method: "post",
     headers: {
-      "Accept": "application/json",
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
 
@@ -156,7 +170,7 @@ function editData() {
   fetch(url, {
     method: "put",
     headers: {
-      "Accept": "application/json",
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
 
@@ -185,8 +199,8 @@ function deleteData() {
   fetch(url, {
     method: "delete",
     //headers: {
-      //"Accept": "application/json",
-      //"Content-Type": "application/json",
+    //"Accept": "application/json",
+    //"Content-Type": "application/json",
     //},
 
     body: JSON.stringify(obj),

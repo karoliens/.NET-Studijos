@@ -19,7 +19,7 @@ function sendData() {
     },
     body: JSON.stringify(obj),
   })
-    .then(openToDoAppWindow())
+    .then((obj) => openToDoAppWindow())
     .catch((error) => console.log(error));
 }
 
