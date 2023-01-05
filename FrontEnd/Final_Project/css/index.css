@@ -1,0 +1,76 @@
+/*
+
+PAGRINDINĖS SPALVOS IR ŠRIFTAS:
+
+Pilka: #808080
+Oranžinė: #ff6700
+Juoda
+Balta
+
+Font: Poppins
+
+*/
+
+.kontaktai {
+    display: flex;
+    background-color: #ff6700;
+    list-style: none;
+    justify-content: flex-start;
+    margin: 0px;
+    color: #ffffff;
+  }
+  
+  .kontaktai p {
+    display: block;
+    padding: 0px 0px 0px 50px;
+  }
+  
+  * {
+    font-family:  Poppins, Helvetica, sans-serif;
+    text-decoration: none;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    background-color: #808080;
+    margin: 0px;
+  }
+  
+  .navigation a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 22px;
+  }
+  
+  .navigation a:hover {
+    background-color: #ff6700;
+    color:#ffffff;
+  }
+  
+  .kontaktai a:visited {
+    color: #ffffff;
+  }
+  
+  #button {
+    background-color: #ff6700;
+    padding: 10px;
+    margin: 15px;
+    color: #ffffff;
+    font-variant: normal;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+  
+  #button:hover {
+    background-color: #000000;
+  }
+  
+  body {
+    background-color: #808080;
+  }
