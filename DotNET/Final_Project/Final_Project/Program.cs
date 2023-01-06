@@ -10,10 +10,10 @@ namespace Final_Project
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            // builder.Services.AddDbContext<RepairShopContext>(option =>
-            // {
-               // option.UseSqlite(builder.Configuration.GetConnectionString("RepaiShopConnectionString"));
-            // });
+            builder.Services.AddDbContext<RepairShopContext>(option =>
+            {
+               option.UseSqlite(builder.Configuration.GetConnectionString("RepaiShopConnectionString"));
+            });
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

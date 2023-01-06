@@ -1,12 +1,33 @@
-﻿namespace Final_Project.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace Final_Project.Models
 {
     public class User
     {
-        public int Id { get; set; }
+        public User()
+        {
+        }
+
+        public User(int id, string userName, string name, byte[] passwordHash, byte[] passwordSalt, string role, List<Ticket> tickets)
+        {
+            UserId = id;
+            UserName = userName;
+            Name = name;
+            PasswordHash = passwordHash;
+            PasswordSalt = passwordSalt;
+            Role = role;
+            Tickets = tickets;
+        }
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int UserId { get; set; }
         public string UserName { get; set; }
         public string Name { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public string Role { get; set; }
+        public List<Ticket> Tickets { get; set; }
     }
 }

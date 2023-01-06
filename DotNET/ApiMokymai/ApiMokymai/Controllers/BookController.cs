@@ -39,27 +39,35 @@ namespace ApiMokymai.Controllers
         }
 
 
-        [HttpGet("by")]
+        [HttpGet("by")] 
         public Book? GetBookByTitleAndAuthor(string title, string author)
         {
             return books.FirstOrDefault(b => b.Title == title && b.Author == author);
         }
 
         [HttpGet("filter")]
-        public List<Book> FilterByTitleAndAuthor(string title, string author)
+        public IEnumerable<Book>? FilterByTitleAndAuthor(string? title, string? author)
         {
-            if (title == null)
+            //var allCapsTitle = title.ToUpper();
+
+            var filteredBooksByTitle = books.Where(book => book.Title.Contains(title));
+            var filteredBooksByAuthor = books.FindAll(book => book.Author == author);
+
+            
+            if (title != null && author == null)
             {
-                return books.FindAll(b => b.Author == author);
+                return filteredBooksByTitle;
+            }
+
+            else if (title == null && author != null)
+            {
+                return filteredBooksByAuthor;
             }
 
             else
             {
-                return books.FindAll(b => b.Title == title);
+                return null;
             }
-
-            return null;
-            
         }
     }
 }
