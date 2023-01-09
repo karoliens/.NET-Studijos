@@ -29,7 +29,7 @@ namespace Final_Project.Models
         public string Description { get; set; }
         public DateTime CreateDateTime { get; set; }
         public DateTime UpdateDateTime { get; set; }
-        public User User { get; set; }
+        public User? User { get; set; }
 
     }
 }
