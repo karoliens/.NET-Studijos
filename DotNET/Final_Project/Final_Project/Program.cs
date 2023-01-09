@@ -12,7 +12,7 @@ namespace Final_Project
             // Add services to the container.
             builder.Services.AddDbContext<RepairShopContext>(option =>
             {
-               option.UseSqlite(builder.Configuration.GetConnectionString("RepaiShopConnectionString"));
+               option.UseSqlite(builder.Configuration.GetConnectionString("RepairShopConnectionString"));
             });
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

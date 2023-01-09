@@ -18,14 +18,6 @@ namespace Final_Project.Controllers
             _db = db;
         }
         
-        List<Ticket> DataSeed = new List<Ticket>
-        {
-                new Ticket { TicketId = 1, Email = "karoliens@gmail.com", PhoneNumber = "" },
-                new Ticket { TicketId = 2, Email = "ievuzis@gmail.com", PhoneNumber = "" },
-                new Ticket { TicketId = 3, Email = "tomukas@gmail.com", PhoneNumber = "" },
-                new Ticket { TicketId = 4, Email = "sauliens@gmail.com", PhoneNumber = "" }
-            };
-        
         [HttpGet("tickets")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -39,51 +31,48 @@ namespace Final_Project.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<GetTicketDTO> GetTicketById(int id)
+        public ActionResult<GetTicketDTO> GetTicketById(int ticketId)
         {
-            if (id == 0)
+            if (ticketId == 0)
             {
                 return BadRequest();
             }
 
-            var foundTicket = _db.Tickets.FirstOrDefault(t => t.TicketId == id);
+            var foundTicket = _db.Tickets.FirstOrDefault(t => t.TicketId == ticketId);
 
             if (foundTicket == null)
             {
                 return NotFound();
             }
 
-
             return new GetTicketDTO(foundTicket);
         }
-        /*
+        
         [HttpPost("tickets")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<CreateTicketDTO> CreateTicket(CreateTicketDTO ticketDTO)
         {
-            if (dishDTO == null)
+            if (ticketDTO == null)
             {
                 return BadRequest();
             }
 
             Ticket model = new()
             {
-                Country = dishDTO.Country,
-                SpiceLevel = dishDTO.SpiceLevel,
-                Type = dishDTO.Type,
-                Name = dishDTO.Name,
-                CreateDateTime = dishDTO.CreateDateTime,
-                ImagePath = dishDTO.ImagePath
+                Email = ticketDTO.Email,
+                PhoneNumber = ticketDTO.PhoneNumber,
+                TypeOfRepair = ticketDTO.TypeOfRepair,
+                Description = ticketDTO.Description,
             };
 
-            _db.Dishes.Add(model);
+            _db.Tickets.Add(model);
             _db.SaveChanges();
 
-            return CreatedAtRoute("GetDish", new { id = model.DishId }, dishDTO);
+            return CreatedAtRoute("GetDish", new { id = model.TicketId }, ticketDTO);
         }
-        */
+        
         [HttpDelete("tickets/delete/{id:int}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

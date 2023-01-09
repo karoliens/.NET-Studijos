@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.SignalR;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Final_Project.Models
@@ -9,9 +10,9 @@ namespace Final_Project.Models
         {
         }
 
-        public Ticket(int id, string email, string phoneNumber, string typeOfRepair, string description, DateTime  createDatetime)
+        public Ticket(int ticketId, string email, string phoneNumber, string typeOfRepair, string description, DateTime  createDatetime)
         {
-            TicketId = id;
+            TicketId = ticketId;
             Email = email;
             PhoneNumber = phoneNumber;
             TypeOfRepair = typeOfRepair;
@@ -26,7 +27,6 @@ namespace Final_Project.Models
         public string PhoneNumber { get; set; }
         public string TypeOfRepair { get; set; }
         public string Description { get; set; }
-        public int UserId { get; set; }
         public DateTime CreateDateTime { get; set; }
         public DateTime UpdateDateTime { get; set; }
         public User User { get; set; }
