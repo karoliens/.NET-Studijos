@@ -18,7 +18,7 @@ namespace Final_Project.Controllers
             _db = db;
         }
         
-        [HttpGet("tickets")]
+        [HttpGet("tickets", Name ="GetAllTickets")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<List<GetTicketDTO>> GetAllTickets()
@@ -26,7 +26,7 @@ namespace Final_Project.Controllers
             return _db.Tickets.Select(t => new GetTicketDTO(t)).ToList();
         }
 
-        [HttpGet("tickets/{id:int}")]
+        [HttpGet("tickets/{id:int}", Name ="GetTicketById")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -48,7 +48,7 @@ namespace Final_Project.Controllers
             return new GetTicketDTO(foundTicket);
         }
         
-        [HttpPost("tickets")]
+        [HttpPost("tickets", Name ="CreateTicket")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -59,18 +59,19 @@ namespace Final_Project.Controllers
                 return BadRequest();
             }
 
-            Ticket model = new()
+            Ticket ticket = new()
             {
                 Email = ticketDTO.Email,
                 PhoneNumber = ticketDTO.PhoneNumber,
                 TypeOfRepair = ticketDTO.TypeOfRepair,
                 Description = ticketDTO.Description,
-            };
+                CreateDateTime = ticketDTO.CreateDateTime,
+        };
 
-            _db.Tickets.Add(model);
+            _db.Tickets.Add(ticket);
             _db.SaveChanges();
 
-            return CreatedAtRoute("GetDish", new { id = model.TicketId }, ticketDTO);
+            return CreatedAtRoute("GetTicketById", new { id = ticket.TicketId }, ticketDTO);
         }
         
         [HttpDelete("tickets/delete/{id:int}")]
@@ -92,38 +93,6 @@ namespace Final_Project.Controllers
             }
 
             _db.Tickets.Remove(foundTicket);
-            _db.SaveChanges();
-
-            return NoContent();
-        }
-
-        [HttpPut("tickets/update/{id:int}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult UpdateTicketById(int id, UpdateTicketDTO updateTicketDTO)
-        {
-            if (id == 0 || updateTicketDTO == null)
-            {
-                return BadRequest();
-            }
-
-            var foundTicket = _db.Tickets
-                .FirstOrDefault(d => d.TicketId == id);
-
-            if (foundTicket == null)
-            {
-                return NotFound();
-            }
-            /*
-            foundTicket.Name = updateTicketDTO.Name;
-            foundTicket.ImagePath = updateTicketDTO.ImagePath;
-            foundTicket.Type = updateTicketDTO.Type;
-            foundTicket.SpiceLevel = updateTicketDTO.SpiceLevel;
-            foundTicket.Country = updateTicketDTO.Country;
-            */
-            _db.Tickets.Update(foundTicket);
             _db.SaveChanges();
 
             return NoContent();

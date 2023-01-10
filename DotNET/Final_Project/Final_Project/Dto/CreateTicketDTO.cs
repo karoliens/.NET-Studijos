@@ -8,5 +8,6 @@ namespace Final_Project.Dto
         public string PhoneNumber { get; set; }
         public string TypeOfRepair { get; set; }
         public string Description { get; set; }
+        public DateTime CreateDateTime { get; set; }
     }
 }

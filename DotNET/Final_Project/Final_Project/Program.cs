@@ -19,6 +19,13 @@ namespace Final_Project
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddCors(p => p.AddPolicy("CorsForRepairShop", builder =>
+            {
+                builder.WithOrigins("*")
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            }));
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
