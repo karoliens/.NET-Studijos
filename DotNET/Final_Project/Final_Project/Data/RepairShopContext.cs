@@ -12,25 +12,41 @@ namespace Final_Project.Data
         }
 
         public DbSet<Ticket> Tickets { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<RepairCategory> RepairCategories { get; set; }
+        public DbSet<Technician> Technicians { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Ticket>()
                 .HasData(
-                new Ticket (1, "karoliens@gmail.com", "", "Repair", "", DateTime.Now),
-                new Ticket (2, "ievuzis@gmail.com", "", "Data Recovery", "", DateTime.Now),
-                new Ticket (3, "tomukas@gmail.com", "", "Repair", "", DateTime.Now),
-                new Ticket (4, "sauliens@gmail.com", "",  "Repair", "", DateTime.Now)
+                new Ticket (1, "Reikia pakeisti iPhone 7 ekraną", DateTime.Now),
+                new Ticket (2, "Reikia pakeisti iPhone X bateriją", DateTime.Now),
+                new Ticket (3, "Reikia pakeisti SAMSUNG S20 ekraną", DateTime.Now),
+                new Ticket (4, "Reikia perlituoti PS5 pultelio krovimo lizdą", DateTime.Now)
                 );
 
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<Client>()
                 .HasData(
-                new User (1, "karoliens", "Karolis", 1),
-                new User (2, "ievuzis", "Ieva", 2),
-                new User (3, "tomukas", "Tomas", 3),
-                new User (4, "sauliens","Saulius", 4)
+                new Client (1, "Karolis", "karoliens@gmail.com", "+37061212121", 1),
+                new Client (2, "Ieva", "ievuzis@gmail.com", "+37061252121", 2),
+                new Client (3, "Tomas", "tomukas@gmail.com", "+37061212128", 3),
+                new Client (4, "Saulius", "sauliens@gmail.com", "+37061215121", 4)
                 );
+
+            modelBuilder.Entity<RepairCategory>()
+               .HasData(
+               new RepairCategory(1, "Data Recovery"),
+               new RepairCategory(2, "Screen Replacement"),
+               new RepairCategory(3, "Batery Replacement"),
+               new RepairCategory(4, "Logic Board Repair")
+               );
+
+            modelBuilder.Entity<Technician>()
+              .HasData(
+              new Technician(1, "Karolis"),
+              new Technician(2, "Artūras")
+              );
         }
     }
 }
