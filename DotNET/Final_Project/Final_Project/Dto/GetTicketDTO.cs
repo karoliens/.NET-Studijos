@@ -10,6 +10,9 @@ namespace Final_Project.Dto
 
         public GetTicketDTO(Ticket ticket)
         {
+            Email= ticket.Email;
+            PhoneNumber= ticket.PhoneNumber;
+            TypeOfRepair= ticket.TypeOfRepair;
             Description= ticket.Description;
         }
 
@@ -19,6 +22,6 @@ namespace Final_Project.Dto
         public string TypeOfRepair { get; set; }
         public string Description { get; set; }
         public int UserId { get; set; }
-        public Client Client { get; set; }
+        public User User { get; set; }
     }
 }
