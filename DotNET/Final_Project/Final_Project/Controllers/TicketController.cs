@@ -61,9 +61,6 @@ namespace Final_Project.Controllers
 
             Ticket ticket = new()
             {
-                Email = ticketDTO.Email,
-                PhoneNumber = ticketDTO.PhoneNumber,
-                TypeOfRepair = ticketDTO.TypeOfRepair,
                 Description = ticketDTO.Description,
                 CreateDateTime = ticketDTO.CreateDateTime,
         };

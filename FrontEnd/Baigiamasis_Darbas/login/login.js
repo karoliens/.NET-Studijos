@@ -45,7 +45,7 @@ const lookForUser = () => {
     .then((userData) => {
       console.log(userData);
 
-      var found = false;
+      let found = false;
       for (const user of userData.data) {
           if (user.name === getName() && user.surname === getSurname()) {
               found = true;

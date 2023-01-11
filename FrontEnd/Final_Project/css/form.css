@@ -27,13 +27,13 @@ body {
     border: none;
   }
     
-  [type~="button"] {
+  #ticket-submit {
     background-color: #ff6700;
     color: #ffffff;
     padding: 10px;
   }
   
-  [type~="button"]:hover {
+  #ticket-submit:hover {
     background-color: #000000;
     color: #ffffff;
   }
