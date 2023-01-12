@@ -1,4 +1,6 @@
-﻿namespace Final_Project.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Final_Project.Models
 {
     public class Technician
     {
@@ -13,6 +15,7 @@
         }
 
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public List<Ticket> Tickets { get; set; }
     }

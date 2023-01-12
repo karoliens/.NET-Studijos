@@ -15,7 +15,9 @@ namespace Final_Project.Data
         public DbSet<Client> Clients { get; set; }
         public DbSet<RepairCategory> RepairCategories { get; set; }
         public DbSet<Technician> Technicians { get; set; }
-        
+        public DbSet<Device> Devices { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Ticket>()
@@ -46,6 +48,12 @@ namespace Final_Project.Data
               .HasData(
               new Technician(1, "Karolis"),
               new Technician(2, "Artūras")
+              );
+
+            modelBuilder.Entity<Device>()
+              .HasData(
+              new Device(1, "iPhone 7", "Phone"),
+              new Device(2, "MacBook Pro", "Laptop")
               );
         }
     }

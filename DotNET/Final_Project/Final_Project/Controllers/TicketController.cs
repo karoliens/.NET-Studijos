@@ -38,7 +38,7 @@ namespace Final_Project.Controllers
                 return BadRequest();
             }
 
-            var foundTicket = _db.Tickets.FirstOrDefault(t => t.TicketId == ticketId);
+            var foundTicket = _db.Tickets.FirstOrDefault(t => t.Id == ticketId);
 
             if (foundTicket == null)
             {
@@ -52,7 +52,7 @@ namespace Final_Project.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<ClientTicketDTO> CreateTicket(ClientTicketDTO ticketDTO)
+        public ActionResult<CreateTicketDTO> CreateTicket(CreateTicketDTO ticketDTO)
         {
             if (ticketDTO == null)
             {
@@ -68,7 +68,7 @@ namespace Final_Project.Controllers
             _db.Tickets.Add(ticket);
             _db.SaveChanges();
 
-            return CreatedAtRoute("GetTicketById", new { id = ticket.TicketId }, ticketDTO);
+            return CreatedAtRoute("GetTicketById", new { id = ticket.Id }, ticketDTO);
         }
         
         [HttpDelete("tickets/delete/{id:int}")]
@@ -82,7 +82,7 @@ namespace Final_Project.Controllers
                 return BadRequest();
             }
 
-            var foundTicket = _db.Tickets.FirstOrDefault(d => d.TicketId == id);
+            var foundTicket = _db.Tickets.FirstOrDefault(d => d.Id == id);
 
             if (foundTicket == null)
             {
