@@ -175,28 +175,28 @@ namespace FinalProject.Migrations
                         new
                         {
                             TicketId = 1,
-                            CreateDateTime = new DateTime(2023, 1, 11, 18, 52, 18, 159, DateTimeKind.Local).AddTicks(8240),
+                            CreateDateTime = new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9330),
                             Description = "Reikia pakeisti iPhone 7 ekraną",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             TicketId = 2,
-                            CreateDateTime = new DateTime(2023, 1, 11, 18, 52, 18, 159, DateTimeKind.Local).AddTicks(8279),
+                            CreateDateTime = new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9366),
                             Description = "Reikia pakeisti iPhone X bateriją",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             TicketId = 3,
-                            CreateDateTime = new DateTime(2023, 1, 11, 18, 52, 18, 159, DateTimeKind.Local).AddTicks(8282),
+                            CreateDateTime = new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9368),
                             Description = "Reikia pakeisti SAMSUNG S20 ekraną",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             TicketId = 4,
-                            CreateDateTime = new DateTime(2023, 1, 11, 18, 52, 18, 159, DateTimeKind.Local).AddTicks(8284),
+                            CreateDateTime = new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9369),
                             Description = "Reikia perlituoti PS5 pultelio krovimo lizdą",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });

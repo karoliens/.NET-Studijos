@@ -28,10 +28,10 @@ namespace Final_Project.Data
 
             modelBuilder.Entity<Client>()
                 .HasData(
-                new Client (1, "Karolis", "karoliens@gmail.com", "+37061212121", 1),
-                new Client (2, "Ieva", "ievuzis@gmail.com", "+37061252121", 2),
-                new Client (3, "Tomas", "tomukas@gmail.com", "+37061212128", 3),
-                new Client (4, "Saulius", "sauliens@gmail.com", "+37061215121", 4)
+                new Client (1, "Karolis", "karoliens@gmail.com", "+37061212121"),
+                new Client (2, "Ieva", "ievuzis@gmail.com", "+37061252121"),
+                new Client (3, "Tomas", "tomukas@gmail.com", "+37061212128"),
+                new Client (4, "Saulius", "sauliens@gmail.com", "+37061215121")
                 );
 
             modelBuilder.Entity<RepairCategory>()

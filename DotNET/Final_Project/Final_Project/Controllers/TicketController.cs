@@ -52,7 +52,7 @@ namespace Final_Project.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<CreateTicketDTO> CreateTicket(CreateTicketDTO ticketDTO)
+        public ActionResult<ClientTicketDTO> CreateTicket(ClientTicketDTO ticketDTO)
         {
             if (ticketDTO == null)
             {

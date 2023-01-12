@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FinalProject.Migrations
 {
     /// <inheritdoc />
-    public partial class AddedNewTablesAndProps : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -142,10 +142,10 @@ namespace FinalProject.Migrations
                 columns: new[] { "TicketId", "ClientId", "CreateDateTime", "Description", "TechnicianId", "UpdateDateTime" },
                 values: new object[,]
                 {
-                    { 1, null, new DateTime(2023, 1, 11, 18, 52, 18, 159, DateTimeKind.Local).AddTicks(8240), "Reikia pakeisti iPhone 7 ekraną", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, null, new DateTime(2023, 1, 11, 18, 52, 18, 159, DateTimeKind.Local).AddTicks(8279), "Reikia pakeisti iPhone X bateriją", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 3, null, new DateTime(2023, 1, 11, 18, 52, 18, 159, DateTimeKind.Local).AddTicks(8282), "Reikia pakeisti SAMSUNG S20 ekraną", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 4, null, new DateTime(2023, 1, 11, 18, 52, 18, 159, DateTimeKind.Local).AddTicks(8284), "Reikia perlituoti PS5 pultelio krovimo lizdą", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1, null, new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9330), "Reikia pakeisti iPhone 7 ekraną", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, null, new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9366), "Reikia pakeisti iPhone X bateriją", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3, null, new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9368), "Reikia pakeisti SAMSUNG S20 ekraną", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 4, null, new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9369), "Reikia perlituoti PS5 pultelio krovimo lizdą", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(
