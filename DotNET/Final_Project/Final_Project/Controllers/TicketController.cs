@@ -38,7 +38,7 @@ namespace Final_Project.Controllers
                 return BadRequest();
             }
 
-            var foundTicket = _db.Tickets.FirstOrDefault(t => t.Id == ticketId);
+            var foundTicket = _db.Tickets.FirstOrDefault(t => t.TicketId == ticketId);
 
             if (foundTicket == null)
             {
@@ -68,7 +68,7 @@ namespace Final_Project.Controllers
             _db.Tickets.Add(ticket);
             _db.SaveChanges();
 
-            return CreatedAtRoute("GetTicketById", new { id = ticket.Id }, ticketDTO);
+            return CreatedAtRoute("GetTicketById", new { id = ticket.TicketId }, ticketDTO);
         }
         
         [HttpDelete("tickets/delete/{id:int}")]
@@ -82,7 +82,7 @@ namespace Final_Project.Controllers
                 return BadRequest();
             }
 
-            var foundTicket = _db.Tickets.FirstOrDefault(d => d.Id == id);
+            var foundTicket = _db.Tickets.FirstOrDefault(d => d.TicketId == id);
 
             if (foundTicket == null)
             {

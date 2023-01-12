@@ -8,13 +8,13 @@ namespace Final_Project.Models
         {
         }
 
-        public Technician(int id, string name)
+        public Technician(int technicianId, string name)
         {
-            Id = id;
+            TechnicianId = technicianId;
             Name = name;
         }
 
-        public int Id { get; set; }
+        public int TechnicianId { get; set; }
         [Required]
         public string Name { get; set; }
         public List<Ticket> Tickets { get; set; }

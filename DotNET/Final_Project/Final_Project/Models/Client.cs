@@ -9,15 +9,15 @@ namespace Final_Project.Models
         {
         }
 
-        public Client(int id, string name, string email, string phoneNumber)
+        public Client(int clientId, string name, string email, string phoneNumber)
         {
-            Id = id;
+            ClientId = clientId;
             Name = name;
             Email = email;
             PhoneNumber = phoneNumber;
         }
 
-        public int Id { get; set; }
+        public int ClientId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

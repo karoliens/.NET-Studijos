@@ -8,17 +8,19 @@ namespace Final_Project.Models
         {
         }
 
-        public Device(int id, string model, string type)
+        public Device(int deviceId, string model, string type)
         {
-            Id = id;
+            DeviceId = deviceId;
             Model = model;
             Type = type;
         }
 
-        public int Id { get; set; }
+        public int DeviceId { get; set; }
         [Required]
         public string Model { get; set; }
         [Required]
         public string Type { get; set; }
+        public Ticket Ticket { get; set; }
+        public int TicketId { get; set; }
     }
 }

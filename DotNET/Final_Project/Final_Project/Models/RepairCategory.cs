@@ -6,13 +6,13 @@
         {
         }
 
-        public RepairCategory(int id, string name)
+        public RepairCategory(int repairCategoryId, string name)
         {
-            Id = id;
+            RepairCategoryId = repairCategoryId;
             Name = name;
         }
 
-        public int Id { get; set; }
+        public int RepairCategoryId { get; set; }
         public string Name { get; set; }
         public List<Ticket> Tickets { get; set; }
     }

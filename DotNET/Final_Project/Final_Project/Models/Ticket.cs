@@ -10,23 +10,26 @@ namespace Final_Project.Models
         {
         }
 
-        public Ticket(int id, string description, DateTime  createDatetime)
+        public Ticket(int ticketDd, string description, DateTime  createDateTime)
         {
-            Id = id;
+            TicketId = ticketDd;
             Description = description;
-            CreateDateTime = createDatetime;
+            CreateDateTime = createDateTime;
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int TicketId { get; set; }
         [Required]
         public string Description { get; set; }
         public DateTime CreateDateTime { get; set; }
         public DateTime UpdateDateTime { get; set; }
         public Client? Client { get; set; }
+        public int ClientId { get; set; }
         public List<RepairCategory> RepairCategories { get; set; }
         public Technician? Technician { get; set; }
+        public int TechnicianId { get; set; }
         public Device? Device { get; set; }
+        public int DeviceId { get; set; }
     }
 }

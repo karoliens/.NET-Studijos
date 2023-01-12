@@ -21,6 +21,11 @@ namespace Final_Project.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Ticket>()
+                .HasOne(d => d.Device)
+                .WithOne(t => t.Ticket)
+                .HasForeignKey<Device>(ti => ti.TicketId);
+
+            modelBuilder.Entity<Ticket>()
                 .HasData(
                 new Ticket (1, "Reikia pakeisti iPhone 7 ekraną", DateTime.Now),
                 new Ticket (2, "Reikia pakeisti iPhone X bateriją", DateTime.Now),
