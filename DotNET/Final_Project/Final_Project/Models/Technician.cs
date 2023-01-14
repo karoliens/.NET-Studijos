@@ -14,7 +14,7 @@ namespace Final_Project.Models
             Name = name;
         }
 
-        public int TechnicianId { get; set; }
+        public int? TechnicianId { get; set; }
         [Required]
         public string Name { get; set; }
         public List<Ticket> Tickets { get; set; }

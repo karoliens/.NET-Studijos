@@ -15,11 +15,9 @@ namespace Final_Project.Models
             Type = type;
         }
 
-        public int DeviceId { get; set; }
-        [Required]
+        public int? DeviceId { get; set; }
         public string Model { get; set; }
         public double Imei { get; set; }
-        [Required]
         public string Type { get; set; }
         public Ticket? Ticket { get; set; }
         public int? TicketId { get; set; }

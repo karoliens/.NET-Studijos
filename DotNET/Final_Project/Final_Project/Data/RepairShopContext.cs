@@ -53,7 +53,8 @@ namespace Final_Project.Data
             modelBuilder.Entity<Technician>()
               .HasData(
               new Technician(1, "Karolis"),
-              new Technician(2, "Artūras")
+              new Technician(2, "Artūras"),
+              new Technician(3, "Armandas")
               );
 
             modelBuilder.Entity<Device>()
