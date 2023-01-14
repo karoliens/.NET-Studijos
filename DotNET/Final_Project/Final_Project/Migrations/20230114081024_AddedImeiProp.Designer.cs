@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProject.Migrations
 {
     [DbContext(typeof(RepairShopContext))]
-    [Migration("20230112161352_AddedNewTable")]
-    partial class AddedNewTable
+    [Migration("20230114081024_AddedImeiProp")]
+    partial class AddedImeiProp
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace FinalProject.Migrations
 
             modelBuilder.Entity("Final_Project.Models.Client", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ClientId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -38,35 +38,35 @@ namespace FinalProject.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("ClientId");
 
                     b.ToTable("Clients");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            ClientId = 1,
                             Email = "karoliens@gmail.com",
                             Name = "Karolis",
                             PhoneNumber = "+37061212121"
                         },
                         new
                         {
-                            Id = 2,
+                            ClientId = 2,
                             Email = "ievuzis@gmail.com",
                             Name = "Ieva",
                             PhoneNumber = "+37061252121"
                         },
                         new
                         {
-                            Id = 3,
+                            ClientId = 3,
                             Email = "tomukas@gmail.com",
                             Name = "Tomas",
                             PhoneNumber = "+37061212128"
                         },
                         new
                         {
-                            Id = 4,
+                            ClientId = 4,
                             Email = "sauliens@gmail.com",
                             Name = "Saulius",
                             PhoneNumber = "+37061215121"
@@ -75,32 +75,43 @@ namespace FinalProject.Migrations
 
             modelBuilder.Entity("Final_Project.Models.Device", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("DeviceId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<double>("Imei")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("Model")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("TicketId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("DeviceId");
+
+                    b.HasIndex("TicketId")
+                        .IsUnique();
 
                     b.ToTable("Devices");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            DeviceId = 1,
+                            Imei = 0.0,
                             Model = "iPhone 7",
                             Type = "Phone"
                         },
                         new
                         {
-                            Id = 2,
+                            DeviceId = 2,
+                            Imei = 0.0,
                             Model = "MacBook Pro",
                             Type = "Laptop"
                         });
@@ -108,7 +119,7 @@ namespace FinalProject.Migrations
 
             modelBuilder.Entity("Final_Project.Models.RepairCategory", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("RepairCategoryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -116,36 +127,36 @@ namespace FinalProject.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("RepairCategoryId");
 
                     b.ToTable("RepairCategories");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            RepairCategoryId = 1,
                             Name = "Data Recovery"
                         },
                         new
                         {
-                            Id = 2,
+                            RepairCategoryId = 2,
                             Name = "Screen Replacement"
                         },
                         new
                         {
-                            Id = 3,
+                            RepairCategoryId = 3,
                             Name = "Batery Replacement"
                         },
                         new
                         {
-                            Id = 4,
+                            RepairCategoryId = 4,
                             Name = "Logic Board Repair"
                         });
                 });
 
             modelBuilder.Entity("Final_Project.Models.Technician", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("TechnicianId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -153,26 +164,26 @@ namespace FinalProject.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("TechnicianId");
 
                     b.ToTable("Technicians");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            TechnicianId = 1,
                             Name = "Karolis"
                         },
                         new
                         {
-                            Id = 2,
+                            TechnicianId = 2,
                             Name = "Artūras"
                         });
                 });
 
             modelBuilder.Entity("Final_Project.Models.Ticket", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("TicketId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -195,11 +206,9 @@ namespace FinalProject.Migrations
                     b.Property<DateTime>("UpdateDateTime")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("TicketId");
 
                     b.HasIndex("ClientId");
-
-                    b.HasIndex("DeviceId");
 
                     b.HasIndex("TechnicianId");
 
@@ -208,29 +217,29 @@ namespace FinalProject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            CreateDateTime = new DateTime(2023, 1, 12, 18, 13, 52, 528, DateTimeKind.Local).AddTicks(1399),
+                            TicketId = 1,
+                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3687),
                             Description = "Reikia pakeisti iPhone 7 ekraną",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = 2,
-                            CreateDateTime = new DateTime(2023, 1, 12, 18, 13, 52, 528, DateTimeKind.Local).AddTicks(1437),
+                            TicketId = 2,
+                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3720),
                             Description = "Reikia pakeisti iPhone X bateriją",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = 3,
-                            CreateDateTime = new DateTime(2023, 1, 12, 18, 13, 52, 528, DateTimeKind.Local).AddTicks(1439),
+                            TicketId = 3,
+                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3722),
                             Description = "Reikia pakeisti SAMSUNG S20 ekraną",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = 4,
-                            CreateDateTime = new DateTime(2023, 1, 12, 18, 13, 52, 528, DateTimeKind.Local).AddTicks(1441),
+                            TicketId = 4,
+                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3723),
                             Description = "Reikia perlituoti PS5 pultelio krovimo lizdą",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
@@ -238,17 +247,26 @@ namespace FinalProject.Migrations
 
             modelBuilder.Entity("RepairCategoryTicket", b =>
                 {
-                    b.Property<int>("RepairCategoriesId")
+                    b.Property<int>("RepairCategoriesRepairCategoryId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("TicketsId")
+                    b.Property<int>("TicketsTicketId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("RepairCategoriesId", "TicketsId");
+                    b.HasKey("RepairCategoriesRepairCategoryId", "TicketsTicketId");
 
-                    b.HasIndex("TicketsId");
+                    b.HasIndex("TicketsTicketId");
 
                     b.ToTable("RepairCategoryTicket");
+                });
+
+            modelBuilder.Entity("Final_Project.Models.Device", b =>
+                {
+                    b.HasOne("Final_Project.Models.Ticket", "Ticket")
+                        .WithOne("Device")
+                        .HasForeignKey("Final_Project.Models.Device", "TicketId");
+
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("Final_Project.Models.Ticket", b =>
@@ -257,17 +275,11 @@ namespace FinalProject.Migrations
                         .WithMany("Tickets")
                         .HasForeignKey("ClientId");
 
-                    b.HasOne("Final_Project.Models.Device", "Device")
-                        .WithMany()
-                        .HasForeignKey("DeviceId");
-
                     b.HasOne("Final_Project.Models.Technician", "Technician")
                         .WithMany("Tickets")
                         .HasForeignKey("TechnicianId");
 
                     b.Navigation("Client");
-
-                    b.Navigation("Device");
 
                     b.Navigation("Technician");
                 });
@@ -276,13 +288,13 @@ namespace FinalProject.Migrations
                 {
                     b.HasOne("Final_Project.Models.RepairCategory", null)
                         .WithMany()
-                        .HasForeignKey("RepairCategoriesId")
+                        .HasForeignKey("RepairCategoriesRepairCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Final_Project.Models.Ticket", null)
                         .WithMany()
-                        .HasForeignKey("TicketsId")
+                        .HasForeignKey("TicketsTicketId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -295,6 +307,11 @@ namespace FinalProject.Migrations
             modelBuilder.Entity("Final_Project.Models.Technician", b =>
                 {
                     b.Navigation("Tickets");
+                });
+
+            modelBuilder.Entity("Final_Project.Models.Ticket", b =>
+                {
+                    b.Navigation("Device");
                 });
 #pragma warning restore 612, 618
         }

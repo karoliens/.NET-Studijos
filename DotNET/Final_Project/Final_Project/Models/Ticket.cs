@@ -25,11 +25,11 @@ namespace Final_Project.Models
         public DateTime CreateDateTime { get; set; }
         public DateTime UpdateDateTime { get; set; }
         public Client? Client { get; set; }
-        public int ClientId { get; set; }
+        public int? ClientId { get; set; }
         public List<RepairCategory> RepairCategories { get; set; }
         public Technician? Technician { get; set; }
-        public int TechnicianId { get; set; }
+        public int? TechnicianId { get; set; }
         public Device? Device { get; set; }
-        public int DeviceId { get; set; }
+        public int? DeviceId { get; set; }
     }
 }

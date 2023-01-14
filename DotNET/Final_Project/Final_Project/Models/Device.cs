@@ -18,9 +18,10 @@ namespace Final_Project.Models
         public int DeviceId { get; set; }
         [Required]
         public string Model { get; set; }
+        public double Imei { get; set; }
         [Required]
         public string Type { get; set; }
-        public Ticket Ticket { get; set; }
-        public int TicketId { get; set; }
+        public Ticket? Ticket { get; set; }
+        public int? TicketId { get; set; }
     }
 }

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProject.Migrations
 {
     [DbContext(typeof(RepairShopContext))]
-    [Migration("20230112173424_AddedNewProps")]
-    partial class AddedNewProps
+    [Migration("20230112174454_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -216,7 +216,7 @@ namespace FinalProject.Migrations
                         {
                             TicketId = 1,
                             ClientId = 0,
-                            CreateDateTime = new DateTime(2023, 1, 12, 19, 34, 24, 545, DateTimeKind.Local).AddTicks(1186),
+                            CreateDateTime = new DateTime(2023, 1, 12, 19, 44, 54, 308, DateTimeKind.Local).AddTicks(7523),
                             Description = "Reikia pakeisti iPhone 7 ekraną",
                             DeviceId = 0,
                             TechnicianId = 0,
@@ -226,7 +226,7 @@ namespace FinalProject.Migrations
                         {
                             TicketId = 2,
                             ClientId = 0,
-                            CreateDateTime = new DateTime(2023, 1, 12, 19, 34, 24, 545, DateTimeKind.Local).AddTicks(1228),
+                            CreateDateTime = new DateTime(2023, 1, 12, 19, 44, 54, 308, DateTimeKind.Local).AddTicks(7561),
                             Description = "Reikia pakeisti iPhone X bateriją",
                             DeviceId = 0,
                             TechnicianId = 0,
@@ -236,7 +236,7 @@ namespace FinalProject.Migrations
                         {
                             TicketId = 3,
                             ClientId = 0,
-                            CreateDateTime = new DateTime(2023, 1, 12, 19, 34, 24, 545, DateTimeKind.Local).AddTicks(1230),
+                            CreateDateTime = new DateTime(2023, 1, 12, 19, 44, 54, 308, DateTimeKind.Local).AddTicks(7564),
                             Description = "Reikia pakeisti SAMSUNG S20 ekraną",
                             DeviceId = 0,
                             TechnicianId = 0,
@@ -246,7 +246,7 @@ namespace FinalProject.Migrations
                         {
                             TicketId = 4,
                             ClientId = 0,
-                            CreateDateTime = new DateTime(2023, 1, 12, 19, 34, 24, 545, DateTimeKind.Local).AddTicks(1233),
+                            CreateDateTime = new DateTime(2023, 1, 12, 19, 44, 54, 308, DateTimeKind.Local).AddTicks(7567),
                             Description = "Reikia perlituoti PS5 pultelio krovimo lizdą",
                             DeviceId = 0,
                             TechnicianId = 0,

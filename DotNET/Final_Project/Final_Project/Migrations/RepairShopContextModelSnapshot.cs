@@ -76,11 +76,14 @@ namespace FinalProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<double>("Imei")
+                        .HasColumnType("REAL");
+
                     b.Property<string>("Model")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("TicketId")
+                    b.Property<int?>("TicketId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Type")
@@ -98,15 +101,15 @@ namespace FinalProject.Migrations
                         new
                         {
                             DeviceId = 1,
+                            Imei = 0.0,
                             Model = "iPhone 7",
-                            TicketId = 0,
                             Type = "Phone"
                         },
                         new
                         {
                             DeviceId = 2,
+                            Imei = 0.0,
                             Model = "MacBook Pro",
-                            TicketId = 0,
                             Type = "Laptop"
                         });
                 });
@@ -181,7 +184,7 @@ namespace FinalProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ClientId")
+                    b.Property<int?>("ClientId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CreateDateTime")
@@ -191,10 +194,10 @@ namespace FinalProject.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("DeviceId")
+                    b.Property<int?>("DeviceId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("TechnicianId")
+                    b.Property<int?>("TechnicianId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("UpdateDateTime")
@@ -212,41 +215,29 @@ namespace FinalProject.Migrations
                         new
                         {
                             TicketId = 1,
-                            ClientId = 0,
-                            CreateDateTime = new DateTime(2023, 1, 12, 19, 34, 24, 545, DateTimeKind.Local).AddTicks(1186),
+                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3687),
                             Description = "Reikia pakeisti iPhone 7 ekraną",
-                            DeviceId = 0,
-                            TechnicianId = 0,
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             TicketId = 2,
-                            ClientId = 0,
-                            CreateDateTime = new DateTime(2023, 1, 12, 19, 34, 24, 545, DateTimeKind.Local).AddTicks(1228),
+                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3720),
                             Description = "Reikia pakeisti iPhone X bateriją",
-                            DeviceId = 0,
-                            TechnicianId = 0,
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             TicketId = 3,
-                            ClientId = 0,
-                            CreateDateTime = new DateTime(2023, 1, 12, 19, 34, 24, 545, DateTimeKind.Local).AddTicks(1230),
+                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3722),
                             Description = "Reikia pakeisti SAMSUNG S20 ekraną",
-                            DeviceId = 0,
-                            TechnicianId = 0,
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             TicketId = 4,
-                            ClientId = 0,
-                            CreateDateTime = new DateTime(2023, 1, 12, 19, 34, 24, 545, DateTimeKind.Local).AddTicks(1233),
+                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3723),
                             Description = "Reikia perlituoti PS5 pultelio krovimo lizdą",
-                            DeviceId = 0,
-                            TechnicianId = 0,
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -270,9 +261,7 @@ namespace FinalProject.Migrations
                 {
                     b.HasOne("Final_Project.Models.Ticket", "Ticket")
                         .WithOne("Device")
-                        .HasForeignKey("Final_Project.Models.Device", "TicketId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Final_Project.Models.Device", "TicketId");
 
                     b.Navigation("Ticket");
                 });
@@ -281,15 +270,11 @@ namespace FinalProject.Migrations
                 {
                     b.HasOne("Final_Project.Models.Client", "Client")
                         .WithMany("Tickets")
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ClientId");
 
                     b.HasOne("Final_Project.Models.Technician", "Technician")
                         .WithMany("Tickets")
-                        .HasForeignKey("TechnicianId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TechnicianId");
 
                     b.Navigation("Client");
 

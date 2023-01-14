@@ -17,42 +17,41 @@ namespace FinalProject.Migrations
                 name: "Clients",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    ClientId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "TEXT", nullable: false),
-                    TicketId = table.Column<int>(type: "INTEGER", nullable: false)
+                    PhoneNumber = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clients", x => x.Id);
+                    table.PrimaryKey("PK_Clients", x => x.ClientId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "RepairCategories",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    RepairCategoryId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RepairCategories", x => x.Id);
+                    table.PrimaryKey("PK_RepairCategories", x => x.RepairCategoryId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Technicians",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    TechnicianId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Technicians", x => x.Id);
+                    table.PrimaryKey("PK_Technicians", x => x.TechnicianId);
                 });
 
             migrationBuilder.CreateTable(
@@ -64,8 +63,9 @@ namespace FinalProject.Migrations
                     Description = table.Column<string>(type: "TEXT", nullable: false),
                     CreateDateTime = table.Column<DateTime>(type: "TEXT", nullable: false),
                     UpdateDateTime = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    ClientId = table.Column<int>(type: "INTEGER", nullable: true),
-                    TechnicianId = table.Column<int>(type: "INTEGER", nullable: true)
+                    ClientId = table.Column<int>(type: "INTEGER", nullable: false),
+                    TechnicianId = table.Column<int>(type: "INTEGER", nullable: false),
+                    DeviceId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -74,29 +74,52 @@ namespace FinalProject.Migrations
                         name: "FK_Tickets_Clients_ClientId",
                         column: x => x.ClientId,
                         principalTable: "Clients",
-                        principalColumn: "Id");
+                        principalColumn: "ClientId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Tickets_Technicians_TechnicianId",
                         column: x => x.TechnicianId,
                         principalTable: "Technicians",
-                        principalColumn: "Id");
+                        principalColumn: "TechnicianId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Devices",
+                columns: table => new
+                {
+                    DeviceId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Model = table.Column<string>(type: "TEXT", nullable: false),
+                    Type = table.Column<string>(type: "TEXT", nullable: false),
+                    TicketId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Devices", x => x.DeviceId);
+                    table.ForeignKey(
+                        name: "FK_Devices_Tickets_TicketId",
+                        column: x => x.TicketId,
+                        principalTable: "Tickets",
+                        principalColumn: "TicketId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "RepairCategoryTicket",
                 columns: table => new
                 {
-                    RepairCategoriesId = table.Column<int>(type: "INTEGER", nullable: false),
+                    RepairCategoriesRepairCategoryId = table.Column<int>(type: "INTEGER", nullable: false),
                     TicketsTicketId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RepairCategoryTicket", x => new { x.RepairCategoriesId, x.TicketsTicketId });
+                    table.PrimaryKey("PK_RepairCategoryTicket", x => new { x.RepairCategoriesRepairCategoryId, x.TicketsTicketId });
                     table.ForeignKey(
-                        name: "FK_RepairCategoryTicket_RepairCategories_RepairCategoriesId",
-                        column: x => x.RepairCategoriesId,
+                        name: "FK_RepairCategoryTicket_RepairCategories_RepairCategoriesRepairCategoryId",
+                        column: x => x.RepairCategoriesRepairCategoryId,
                         principalTable: "RepairCategories",
-                        principalColumn: "Id",
+                        principalColumn: "RepairCategoryId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_RepairCategoryTicket_Tickets_TicketsTicketId",
@@ -108,18 +131,27 @@ namespace FinalProject.Migrations
 
             migrationBuilder.InsertData(
                 table: "Clients",
-                columns: new[] { "Id", "Email", "Name", "PhoneNumber", "TicketId" },
+                columns: new[] { "ClientId", "Email", "Name", "PhoneNumber" },
                 values: new object[,]
                 {
-                    { 1, "karoliens@gmail.com", "Karolis", "+37061212121", 1 },
-                    { 2, "ievuzis@gmail.com", "Ieva", "+37061252121", 2 },
-                    { 3, "tomukas@gmail.com", "Tomas", "+37061212128", 3 },
-                    { 4, "sauliens@gmail.com", "Saulius", "+37061215121", 4 }
+                    { 1, "karoliens@gmail.com", "Karolis", "+37061212121" },
+                    { 2, "ievuzis@gmail.com", "Ieva", "+37061252121" },
+                    { 3, "tomukas@gmail.com", "Tomas", "+37061212128" },
+                    { 4, "sauliens@gmail.com", "Saulius", "+37061215121" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Devices",
+                columns: new[] { "DeviceId", "Model", "TicketId", "Type" },
+                values: new object[,]
+                {
+                    { 1, "iPhone 7", 0, "Phone" },
+                    { 2, "MacBook Pro", 0, "Laptop" }
                 });
 
             migrationBuilder.InsertData(
                 table: "RepairCategories",
-                columns: new[] { "Id", "Name" },
+                columns: new[] { "RepairCategoryId", "Name" },
                 values: new object[,]
                 {
                     { 1, "Data Recovery" },
@@ -130,7 +162,7 @@ namespace FinalProject.Migrations
 
             migrationBuilder.InsertData(
                 table: "Technicians",
-                columns: new[] { "Id", "Name" },
+                columns: new[] { "TechnicianId", "Name" },
                 values: new object[,]
                 {
                     { 1, "Karolis" },
@@ -139,14 +171,20 @@ namespace FinalProject.Migrations
 
             migrationBuilder.InsertData(
                 table: "Tickets",
-                columns: new[] { "TicketId", "ClientId", "CreateDateTime", "Description", "TechnicianId", "UpdateDateTime" },
+                columns: new[] { "TicketId", "ClientId", "CreateDateTime", "Description", "DeviceId", "TechnicianId", "UpdateDateTime" },
                 values: new object[,]
                 {
-                    { 1, null, new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9330), "Reikia pakeisti iPhone 7 ekraną", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, null, new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9366), "Reikia pakeisti iPhone X bateriją", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 3, null, new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9368), "Reikia pakeisti SAMSUNG S20 ekraną", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 4, null, new DateTime(2023, 1, 11, 19, 11, 38, 574, DateTimeKind.Local).AddTicks(9369), "Reikia perlituoti PS5 pultelio krovimo lizdą", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1, 0, new DateTime(2023, 1, 12, 19, 44, 54, 308, DateTimeKind.Local).AddTicks(7523), "Reikia pakeisti iPhone 7 ekraną", 0, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, 0, new DateTime(2023, 1, 12, 19, 44, 54, 308, DateTimeKind.Local).AddTicks(7561), "Reikia pakeisti iPhone X bateriją", 0, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3, 0, new DateTime(2023, 1, 12, 19, 44, 54, 308, DateTimeKind.Local).AddTicks(7564), "Reikia pakeisti SAMSUNG S20 ekraną", 0, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 4, 0, new DateTime(2023, 1, 12, 19, 44, 54, 308, DateTimeKind.Local).AddTicks(7567), "Reikia perlituoti PS5 pultelio krovimo lizdą", 0, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Devices_TicketId",
+                table: "Devices",
+                column: "TicketId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_RepairCategoryTicket_TicketsTicketId",
@@ -167,6 +205,9 @@ namespace FinalProject.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Devices");
+
             migrationBuilder.DropTable(
                 name: "RepairCategoryTicket");
 

@@ -23,7 +23,8 @@ namespace Final_Project.Data
             modelBuilder.Entity<Ticket>()
                 .HasOne(d => d.Device)
                 .WithOne(t => t.Ticket)
-                .HasForeignKey<Device>(ti => ti.TicketId);
+                .HasForeignKey<Device>(ti => ti.TicketId)
+                .IsRequired(false);
 
             modelBuilder.Entity<Ticket>()
                 .HasData(
