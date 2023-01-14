@@ -59,8 +59,8 @@ namespace Final_Project.Data
 
             modelBuilder.Entity<Device>()
               .HasData(
-              new Device(1, "iPhone 7", "Phone"),
-              new Device(2, "MacBook Pro", "Laptop")
+              new Device(1, "iPhone 7", "Phone", 123456789111111),
+              new Device(2, "MacBook Pro", "Laptop", 123456789111118)
               );
         }
     }

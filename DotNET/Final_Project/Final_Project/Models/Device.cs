@@ -8,11 +8,12 @@ namespace Final_Project.Models
         {
         }
 
-        public Device(int deviceId, string model, string type)
+        public Device(int deviceId, string model, string type, double imei)
         {
             DeviceId = deviceId;
             Model = model;
             Type = type;
+            Imei = imei;
         }
 
         public int? DeviceId { get; set; }
