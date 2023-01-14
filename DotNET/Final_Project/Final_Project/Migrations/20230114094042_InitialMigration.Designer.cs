@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProject.Migrations
 {
     [DbContext(typeof(RepairShopContext))]
-    [Migration("20230114081024_AddedImeiProp")]
-    partial class AddedImeiProp
+    [Migration("20230114094042_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace FinalProject.Migrations
 
             modelBuilder.Entity("Final_Project.Models.Client", b =>
                 {
-                    b.Property<int>("ClientId")
+                    b.Property<int?>("ClientId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -75,7 +75,7 @@ namespace FinalProject.Migrations
 
             modelBuilder.Entity("Final_Project.Models.Device", b =>
                 {
-                    b.Property<int>("DeviceId")
+                    b.Property<int?>("DeviceId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -104,14 +104,14 @@ namespace FinalProject.Migrations
                         new
                         {
                             DeviceId = 1,
-                            Imei = 0.0,
+                            Imei = 123456789111111.0,
                             Model = "iPhone 7",
                             Type = "Phone"
                         },
                         new
                         {
                             DeviceId = 2,
-                            Imei = 0.0,
+                            Imei = 123456789111118.0,
                             Model = "MacBook Pro",
                             Type = "Laptop"
                         });
@@ -119,7 +119,7 @@ namespace FinalProject.Migrations
 
             modelBuilder.Entity("Final_Project.Models.RepairCategory", b =>
                 {
-                    b.Property<int>("RepairCategoryId")
+                    b.Property<int?>("RepairCategoryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -156,7 +156,7 @@ namespace FinalProject.Migrations
 
             modelBuilder.Entity("Final_Project.Models.Technician", b =>
                 {
-                    b.Property<int>("TechnicianId")
+                    b.Property<int?>("TechnicianId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -178,12 +178,17 @@ namespace FinalProject.Migrations
                         {
                             TechnicianId = 2,
                             Name = "Artūras"
+                        },
+                        new
+                        {
+                            TechnicianId = 3,
+                            Name = "Armandas"
                         });
                 });
 
             modelBuilder.Entity("Final_Project.Models.Ticket", b =>
                 {
-                    b.Property<int>("TicketId")
+                    b.Property<int?>("TicketId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -218,28 +223,28 @@ namespace FinalProject.Migrations
                         new
                         {
                             TicketId = 1,
-                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3687),
+                            CreateDateTime = new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3377),
                             Description = "Reikia pakeisti iPhone 7 ekraną",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             TicketId = 2,
-                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3720),
+                            CreateDateTime = new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3406),
                             Description = "Reikia pakeisti iPhone X bateriją",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             TicketId = 3,
-                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3722),
+                            CreateDateTime = new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3408),
                             Description = "Reikia pakeisti SAMSUNG S20 ekraną",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             TicketId = 4,
-                            CreateDateTime = new DateTime(2023, 1, 14, 10, 10, 24, 360, DateTimeKind.Local).AddTicks(3723),
+                            CreateDateTime = new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3409),
                             Description = "Reikia perlituoti PS5 pultelio krovimo lizdą",
                             UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });

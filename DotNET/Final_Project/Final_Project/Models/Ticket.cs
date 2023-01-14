@@ -10,11 +10,14 @@ namespace Final_Project.Models
         {
         }
 
-        public Ticket(int ticketDd, string description, DateTime  createDateTime)
+        public Ticket(int? ticketId, string description, DateTime createDateTime, int? clientId, int? technicianId, int? deviceId)
         {
-            TicketId = ticketDd;
+            TicketId = ticketId;
             Description = description;
             CreateDateTime = createDateTime;
+            ClientId = clientId;
+            TechnicianId = technicianId;
+            DeviceId = deviceId;
         }
 
         [Key]

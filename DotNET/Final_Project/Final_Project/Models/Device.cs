@@ -21,6 +21,6 @@ namespace Final_Project.Models
         public double Imei { get; set; }
         public string Type { get; set; }
         public Ticket? Ticket { get; set; }
-        public int? TicketId { get; set; }
+        public int? TicketId { get; set; } = null;
     }
 }

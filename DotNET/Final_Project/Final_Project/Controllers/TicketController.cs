@@ -70,29 +70,5 @@ namespace Final_Project.Controllers
 
             return CreatedAtRoute("GetTicketById", new { id = ticket.TicketId }, ticketDTO);
         }
-        
-        [HttpDelete("tickets/delete/{id:int}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult DeleteTicketById(int id)
-        {
-            if (id == 0)
-            {
-                return BadRequest();
-            }
-
-            var foundTicket = _db.Tickets.FirstOrDefault(d => d.TicketId == id);
-
-            if (foundTicket == null)
-            {
-                return NotFound();
-            }
-
-            _db.Tickets.Remove(foundTicket);
-            _db.SaveChanges();
-
-            return NoContent();
-        }
     }
 }

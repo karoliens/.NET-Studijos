@@ -14,6 +14,6 @@
 
         public int? RepairCategoryId { get; set; }
         public string Name { get; set; }
-        public List<Ticket> Tickets { get; set; }
+        public List<Ticket> Tickets { get; set; } = new List<Ticket>();
     }
 }

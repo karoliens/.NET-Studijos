@@ -28,10 +28,10 @@ namespace Final_Project.Data
 
             modelBuilder.Entity<Ticket>()
                 .HasData(
-                new Ticket (1, "Reikia pakeisti iPhone 7 ekraną", DateTime.Now),
-                new Ticket (2, "Reikia pakeisti iPhone X bateriją", DateTime.Now),
-                new Ticket (3, "Reikia pakeisti SAMSUNG S20 ekraną", DateTime.Now),
-                new Ticket (4, "Reikia perlituoti PS5 pultelio krovimo lizdą", DateTime.Now)
+                new Ticket (1, "Reikia pakeisti iPhone 7 ekraną", DateTime.Now, 1, 1, 1),
+                new Ticket (2, "Reikia pakeisti iPhone X bateriją", DateTime.Now, 2, 2, 2),
+                new Ticket (3, "Reikia pakeisti SAMSUNG S20 ekraną", DateTime.Now, 3, 3, 3),
+                new Ticket (4, "Reikia perlituoti PS5 pultelio krovimo lizdą", DateTime.Now, 4, 4, 4)
                 );
 
             modelBuilder.Entity<Client>()
