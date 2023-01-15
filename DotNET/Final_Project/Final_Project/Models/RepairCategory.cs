@@ -1,4 +1,7 @@
-﻿namespace Final_Project.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace Final_Project.Models
 {
     public class RepairCategory
     {
@@ -12,6 +15,8 @@
             Name = name;
         }
 
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int? RepairCategoryId { get; set; }
         public string Name { get; set; }
         public List<Ticket> Tickets { get; set; } = new List<Ticket>();

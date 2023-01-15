@@ -11,19 +11,17 @@ namespace Final_Project.Dto
         public GetTicketDTO(Ticket ticket)
         {
             Description = ticket.Description;
-            ClientId = ticket.ClientId;
-            TechnicianId = ticket.TechnicianId;
-            DeviceId = ticket.DeviceId;
-            RepairCategories = ticket.RepairCategories
-                .Select(rc => new GetRepairCategoryDTO(rc))
-                .ToList();
+            Client = ticket.Client;
+            Technician = ticket.Technician;
+            Device = ticket.Device;
+            RepairCategories = ticket.RepairCategories;
         }
         public string Description { get; set; }
         public int? ClientId { get; set; }
         public int? TechnicianId { get; set; }
         public int? DeviceId { get; set; }
         public Client? Client { get; set; }
-        public List<GetRepairCategoryDTO> RepairCategories { get; set; } = new List<GetRepairCategoryDTO>();
+        public List<RepairCategory> RepairCategories { get; set; }
         public Technician? Technician { get; set; }
         public Device Device { get; set; }
     }

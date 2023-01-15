@@ -2,6 +2,7 @@
 using Final_Project.Dto;
 using Final_Project.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,9 +22,13 @@ namespace Final_Project.Controllers
         [HttpGet("tickets", Name ="GetAllTickets")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<List<GetTicketDTO>> GetAllTickets()
+        public ActionResult<IEnumerable<GetTicketDTO>> GetAllTickets()
         {
             return _db.Tickets
+                .Include(c => c.Client)
+                .Include(t => t.Technician)
+                .Include(d => d.Device)
+                .Include(rc => rc.RepairCategories)
                 .Select(t => new GetTicketDTO(t))
                 .ToList();
         }
