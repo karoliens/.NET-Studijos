@@ -28,10 +28,10 @@ namespace Final_Project.Data
 
             modelBuilder.Entity<Ticket>()
                 .HasData(
-                new Ticket (1, "Reikia pakeisti iPhone 7 ekraną", DateTime.Now, 1, 1, 1),
-                new Ticket (2, "Reikia pakeisti iPhone X bateriją", DateTime.Now, 2, 2, 2),
-                new Ticket (3, "Reikia pakeisti SAMSUNG S20 ekraną", DateTime.Now, 3, 3, 3),
-                new Ticket (4, "Reikia perlituoti PS5 pultelio krovimo lizdą", DateTime.Now, 4, 4, 4)
+                new Ticket (1, "Reikia pakeisti iPhone 7 ekraną", DateTime.Now, 1, 1, 1, 2),
+                new Ticket (2, "Reikia pakeisti iPhone X bateriją", DateTime.Now, 2, 2, 2, 3),
+                new Ticket (3, "Reikia pakeisti SAMSUNG S20 ekraną", DateTime.Now, 3, 1, 2, 2),
+                new Ticket (4, "Reikia perlituoti PS5 pultelio krovimo lizdą", DateTime.Now, 4, 3, 2, 4)
                 );
 
             modelBuilder.Entity<Client>()
@@ -60,7 +60,9 @@ namespace Final_Project.Data
             modelBuilder.Entity<Device>()
               .HasData(
               new Device(1, "iPhone 7", "Phone", 123456789111111),
-              new Device(2, "MacBook Pro", "Laptop", 123456789111118)
+              new Device(2, "iPhone X", "Phone", 123456789111118),
+              new Device(3, "SAMSUNG S20", "Phone", 123456789111117),
+              new Device(4, "PlayStation 5", "Gaming Console", 123456789111115)
               );
         }
     }

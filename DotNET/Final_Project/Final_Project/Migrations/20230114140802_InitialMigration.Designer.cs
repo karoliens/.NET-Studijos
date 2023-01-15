@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProject.Migrations
 {
     [DbContext(typeof(RepairShopContext))]
-    [Migration("20230114094042_InitialMigration")]
+    [Migration("20230114140802_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -112,8 +112,22 @@ namespace FinalProject.Migrations
                         {
                             DeviceId = 2,
                             Imei = 123456789111118.0,
-                            Model = "MacBook Pro",
-                            Type = "Laptop"
+                            Model = "iPhone X",
+                            Type = "Phone"
+                        },
+                        new
+                        {
+                            DeviceId = 3,
+                            Imei = 123456789111117.0,
+                            Model = "SAMSUNG S20",
+                            Type = "Phone"
+                        },
+                        new
+                        {
+                            DeviceId = 4,
+                            Imei = 123456789111115.0,
+                            Model = "PlayStation 5",
+                            Type = "Gaming Console"
                         });
                 });
 
@@ -205,11 +219,11 @@ namespace FinalProject.Migrations
                     b.Property<int?>("DeviceId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("TechnicianId")
+                    b.Property<int?>("RepairCategoryId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("UpdateDateTime")
-                        .HasColumnType("TEXT");
+                    b.Property<int?>("TechnicianId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("TicketId");
 
@@ -223,30 +237,42 @@ namespace FinalProject.Migrations
                         new
                         {
                             TicketId = 1,
-                            CreateDateTime = new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3377),
+                            ClientId = 1,
+                            CreateDateTime = new DateTime(2023, 1, 14, 16, 8, 1, 915, DateTimeKind.Local).AddTicks(3964),
                             Description = "Reikia pakeisti iPhone 7 ekraną",
-                            UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            DeviceId = 1,
+                            RepairCategoryId = 2,
+                            TechnicianId = 1
                         },
                         new
                         {
                             TicketId = 2,
-                            CreateDateTime = new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3406),
+                            ClientId = 2,
+                            CreateDateTime = new DateTime(2023, 1, 14, 16, 8, 1, 915, DateTimeKind.Local).AddTicks(4000),
                             Description = "Reikia pakeisti iPhone X bateriją",
-                            UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            DeviceId = 2,
+                            RepairCategoryId = 3,
+                            TechnicianId = 2
                         },
                         new
                         {
                             TicketId = 3,
-                            CreateDateTime = new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3408),
+                            ClientId = 3,
+                            CreateDateTime = new DateTime(2023, 1, 14, 16, 8, 1, 915, DateTimeKind.Local).AddTicks(4003),
                             Description = "Reikia pakeisti SAMSUNG S20 ekraną",
-                            UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            DeviceId = 2,
+                            RepairCategoryId = 2,
+                            TechnicianId = 1
                         },
                         new
                         {
                             TicketId = 4,
-                            CreateDateTime = new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3409),
+                            ClientId = 4,
+                            CreateDateTime = new DateTime(2023, 1, 14, 16, 8, 1, 915, DateTimeKind.Local).AddTicks(4004),
                             Description = "Reikia perlituoti PS5 pultelio krovimo lizdą",
-                            UpdateDateTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            DeviceId = 2,
+                            RepairCategoryId = 4,
+                            TechnicianId = 3
                         });
                 });
 

@@ -10,7 +10,7 @@ namespace Final_Project.Models
         {
         }
 
-        public Ticket(int? ticketId, string description, DateTime createDateTime, int? clientId, int? technicianId, int? deviceId)
+        public Ticket(int? ticketId, string description, DateTime createDateTime, int? clientId, int? technicianId, int? deviceId, int? repairCategoryId)
         {
             TicketId = ticketId;
             Description = description;
@@ -18,6 +18,7 @@ namespace Final_Project.Models
             ClientId = clientId;
             TechnicianId = technicianId;
             DeviceId = deviceId;
+            RepairCategoryId = repairCategoryId;
         }
 
         [Key]
@@ -26,10 +27,10 @@ namespace Final_Project.Models
         [Required]
         public string Description { get; set; }
         public DateTime CreateDateTime { get; set; }
-        public DateTime UpdateDateTime { get; set; }
         public Client? Client { get; set; }
         public int? ClientId { get; set; }
         public List<RepairCategory> RepairCategories { get; set; }
+        public int? RepairCategoryId { get; set; }
         public Technician? Technician { get; set; }
         public int? TechnicianId { get; set; }
         public Device? Device { get; set; }

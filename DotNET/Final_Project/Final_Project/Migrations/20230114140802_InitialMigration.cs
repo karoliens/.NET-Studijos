@@ -62,8 +62,8 @@ namespace FinalProject.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Description = table.Column<string>(type: "TEXT", nullable: false),
                     CreateDateTime = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(type: "TEXT", nullable: false),
                     ClientId = table.Column<int>(type: "INTEGER", nullable: true),
+                    RepairCategoryId = table.Column<int>(type: "INTEGER", nullable: true),
                     TechnicianId = table.Column<int>(type: "INTEGER", nullable: true),
                     DeviceId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
@@ -144,7 +144,9 @@ namespace FinalProject.Migrations
                 values: new object[,]
                 {
                     { 1, 123456789111111.0, "iPhone 7", null, "Phone" },
-                    { 2, 123456789111118.0, "MacBook Pro", null, "Laptop" }
+                    { 2, 123456789111118.0, "iPhone X", null, "Phone" },
+                    { 3, 123456789111117.0, "SAMSUNG S20", null, "Phone" },
+                    { 4, 123456789111115.0, "PlayStation 5", null, "Gaming Console" }
                 });
 
             migrationBuilder.InsertData(
@@ -170,13 +172,13 @@ namespace FinalProject.Migrations
 
             migrationBuilder.InsertData(
                 table: "Tickets",
-                columns: new[] { "TicketId", "ClientId", "CreateDateTime", "Description", "DeviceId", "TechnicianId", "UpdateDateTime" },
+                columns: new[] { "TicketId", "ClientId", "CreateDateTime", "Description", "DeviceId", "RepairCategoryId", "TechnicianId" },
                 values: new object[,]
                 {
-                    { 1, null, new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3377), "Reikia pakeisti iPhone 7 ekraną", null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, null, new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3406), "Reikia pakeisti iPhone X bateriją", null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 3, null, new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3408), "Reikia pakeisti SAMSUNG S20 ekraną", null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 4, null, new DateTime(2023, 1, 14, 11, 40, 41, 881, DateTimeKind.Local).AddTicks(3409), "Reikia perlituoti PS5 pultelio krovimo lizdą", null, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1, 1, new DateTime(2023, 1, 14, 16, 8, 1, 915, DateTimeKind.Local).AddTicks(3964), "Reikia pakeisti iPhone 7 ekraną", 1, 2, 1 },
+                    { 2, 2, new DateTime(2023, 1, 14, 16, 8, 1, 915, DateTimeKind.Local).AddTicks(4000), "Reikia pakeisti iPhone X bateriją", 2, 3, 2 },
+                    { 3, 3, new DateTime(2023, 1, 14, 16, 8, 1, 915, DateTimeKind.Local).AddTicks(4003), "Reikia pakeisti SAMSUNG S20 ekraną", 2, 2, 1 },
+                    { 4, 4, new DateTime(2023, 1, 14, 16, 8, 1, 915, DateTimeKind.Local).AddTicks(4004), "Reikia perlituoti PS5 pultelio krovimo lizdą", 2, 4, 3 }
                 });
 
             migrationBuilder.CreateIndex(

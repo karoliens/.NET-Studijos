@@ -23,7 +23,9 @@ namespace Final_Project.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<List<GetTicketDTO>> GetAllTickets()
         {
-            return _db.Tickets.Select(t => new GetTicketDTO(t)).ToList();
+            return _db.Tickets
+                .Select(t => new GetTicketDTO(t))
+                .ToList();
         }
 
         [HttpGet("tickets/{id:int}", Name ="GetTicketById")]
