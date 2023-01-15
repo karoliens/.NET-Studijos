@@ -71,16 +71,16 @@ namespace Final_Project.Controllers
                 return BadRequest();
             }
 
-            Ticket ticket = new()
+            Ticket newTicket = new()
             {
                 Description = ticketDTO.Description,
                 CreateDateTime = ticketDTO.CreateDateTime,
         };
 
-            _db.Tickets.Add(ticket);
+            _db.Tickets.Add(newTicket);
             _db.SaveChanges();
 
-            return CreatedAtRoute("GetTicketById", new { id = ticket.TicketId }, ticketDTO);
+            return CreatedAtRoute("GetTicketById", new { id = newTicket.TicketId }, ticketDTO);
         }
     }
 }
