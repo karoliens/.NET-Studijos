@@ -45,7 +45,12 @@ namespace Final_Project.Controllers
                 return BadRequest();
             }
 
-            var foundTicket = _db.Tickets.FirstOrDefault(t => t.TicketId == ticketId);
+            var foundTicket = _db.Tickets
+                .Include(c => c.Client)
+                .Include(t => t.Technician)
+                .Include(d => d.Device)
+                .Include(rc => rc.RepairCategories)
+                .FirstOrDefault(t => t.TicketId == ticketId);
 
             if (foundTicket == null)
             {

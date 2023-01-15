@@ -10,11 +10,11 @@ namespace Final_Project.Dto
 
         public GetTicketDTO(Ticket ticket)
         {
-            Description = ticket.Description;
             Client = ticket.Client;
             Technician = ticket.Technician;
             Device = ticket.Device;
             RepairCategories = ticket.RepairCategories;
+            Description = ticket.Description;
         }
         public string Description { get; set; }
         public int? ClientId { get; set; }
@@ -23,6 +23,6 @@ namespace Final_Project.Dto
         public Client? Client { get; set; }
         public List<RepairCategory> RepairCategories { get; set; }
         public Technician? Technician { get; set; }
-        public Device Device { get; set; }
+        public Device? Device { get; set; }
     }
 }
