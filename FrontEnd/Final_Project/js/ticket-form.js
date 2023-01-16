@@ -15,8 +15,14 @@ function sendData() {
 
   fetch("https://localhost:7118/api/Client/clients", {
     method: "post",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(obj),
-  }).catch((error) => console.log(error));
+  })
+    .then((obj) => console.log(obj.json()))
+    .catch((error) => console.log(error));
 }
 
 registrationFormSbmBtn.addEventListener("click", (e) => {
