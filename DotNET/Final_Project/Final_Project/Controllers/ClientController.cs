@@ -63,7 +63,7 @@ namespace Final_Project.Controllers
             _db.Clients.Add(newClient);
             _db.SaveChanges();
 
-            return CreatedAtRoute("GetTicketById", new { id = newClient.ClientId }, clientDTO);
+            return CreatedAtRoute("GetClientById", new { id = newClient.ClientId }, clientDTO);
         }
     }
 }

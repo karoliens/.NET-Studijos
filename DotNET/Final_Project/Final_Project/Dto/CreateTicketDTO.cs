@@ -14,7 +14,7 @@ namespace Final_Project.Dto
             CreateDateTime = createDateTime;
         }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
         public DateTime CreateDateTime { get; set; }
     }
 }
