@@ -8,14 +8,12 @@
     <link rel="stylesheet" href="./css/form.css" />
   </head>
   <body>
-    <form id="survey-form">
-      <img src="" />
-      <h1 id="title">Siųsti įrenginį remontui</h1>
-      <p id="description">Užpildykite žemiau pateiktą formą</p>
+    <form id="new-ticket-form">
+      <h1>Siųsti įrenginį remontui</h1>
+      <p>Užpildykite žemiau pateiktą formą</p>
       <label id="name-label" for="name">Vardas</label>
       <input
         id="name"
-        type="text"
         name="name"
         placeholder="Įveskite vardą"
         required
@@ -23,21 +21,19 @@
       <label id="email-label" for="email">Elektroninio pašto adresas</label>
       <input
         id="email"
-        type="email"
         name="email"
         placeholder="Įveskite el. pašto adresą"
         required
       /><br />
-      <label id="number-label" for="number">Telefono numeris</label>
+      <label id="phone-number-label" for="phone-number">Telefono numeris</label>
       <input
-        id="number"
-        type="number"
-        name="number"
+        id="phone-number"
+        name="phone-number"
         placeholder="Įveskite telefono numerį"
         min="0"
         max="9"
       /><br />
-      <label for="dropdown">Pasirinkite įrenginį</label>
+      <!--<label for="dropdown">Pasirinkite įrenginį</label>
       <select id="dropdown" placeholder="Pasirinkite įrenginį">
         <option value="iphone">iPhone</option>
         <option value="macbook">iPad</option>
@@ -68,8 +64,10 @@
         cols="40"
         placeholder="Apibūdinkite gedimą"
       ></textarea
-      ><br /><br />
-      <input type="button" id="ticket-submit" value="Siųsti" />
+      ><br /><br />-->
+
+      <input id="ticket-submit-button" type="submit" value="Siųsti" />
     </form>
+    <script src="js/ticket-form.js"></script>
   </body>
 </html>
