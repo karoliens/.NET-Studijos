@@ -60,3 +60,7 @@ body {
   background-color: #ff6700;
   color: #ffffff;
 }
+
+textarea {
+  resize: none;
+}
