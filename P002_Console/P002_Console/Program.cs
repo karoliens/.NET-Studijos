@@ -26,7 +26,9 @@
             //Padarykite konsolės meniu skirtingose eilutėse(1) Pirkti, (2) Parduoti, (3) Likučiai. Išveskite pasirinktą meniu punktą
 
             Console.WriteLine("\n(1) Pirkti\n(2) Parduoti\n(3) Likučiai");
-            Console.WriteLine(Console.ReadKey());
+            Console.WriteLine("\n\"Pasirinkimas yra " + Console.ReadKey().KeyChar + " \"");
+            Console.WriteLine("\n\"Pasirinkimas yra {0} \"", Console.ReadKey().KeyChar);
+            Console.WriteLine($"\n\"Pasirinkimas yra {Console.ReadKey().KeyChar}\"");
 
             //Parašykite programą, kuri žodžio LABAS kiekvieną raidę išveda naujoje eilutėje
 
