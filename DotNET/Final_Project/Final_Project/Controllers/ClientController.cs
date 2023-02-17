@@ -3,6 +3,7 @@ using Final_Project.Dto;
 using Final_Project.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Mime;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -46,7 +47,8 @@ namespace Final_Project.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<CreateClientDTO> AddClient(CreateClientDTO clientDTO)
+        [Produces(MediaTypeNames.Application.Json)]
+        public ActionResult<CreateClientDTO> AddClient([FromBody]CreateClientDTO clientDTO)
         {
             if (clientDTO == null)
             {

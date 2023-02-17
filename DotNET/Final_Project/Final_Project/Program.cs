@@ -38,6 +38,8 @@ namespace Final_Project
             }
 
             app.UseCors();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
