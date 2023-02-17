@@ -1,4 +1,6 @@
-﻿namespace P011_Methods
+﻿using System.Diagnostics;
+
+namespace P011_Methods
 {
     public class Program
     {
@@ -14,13 +16,117 @@
             Console.WriteLine($"Dalyba: {Dalyba(pirmasSkaicius, antrasSkaicius)}");
 
             Console.WriteLine($"Visų gautų rezultatų suma: {Suma(pirmasSkaicius, antrasSkaicius) + Atimtis(pirmasSkaicius, antrasSkaicius) + Daugyba(pirmasSkaicius, antrasSkaicius) + Dalyba(pirmasSkaicius, antrasSkaicius)}");
-            
-            Console.WriteLine("Įveskite du skaičius ir matematninį veiksmą:");
-            var pirmasSkaicius1 = int.Parse(Console.ReadLine());
-            var antrasSkaicius1 = int.Parse(Console.ReadLine());
-            var matematinisVeiksmas = Console.ReadLine();
 
-            Console.WriteLine(Skaiciuotuvas(pirmasSkaicius1, antrasSkaicius1, matematinisVeiksmas));
+            Console.WriteLine("1) +");
+            Console.WriteLine("2) -");
+            Console.WriteLine("3) *");
+            Console.WriteLine("4) /");
+            Console.WriteLine("5) a^2");
+            Console.WriteLine("6) a^3");
+
+            var menuPasirinkimas = Console.ReadLine();
+
+            if (menuPasirinkimas == "1" || menuPasirinkimas == "2" || menuPasirinkimas == "3" || menuPasirinkimas == "4" || menuPasirinkimas == "+" || menuPasirinkimas == "-" || menuPasirinkimas == "*" || menuPasirinkimas == "/")
+            {
+                Console.WriteLine("Įveskite du skaičius:");
+                var pirmasSkaicius1 = Console.ReadLine();
+                var antrasSkaicius1 = Console.ReadLine();
+
+                    switch (menuPasirinkimas)
+                    {
+                        case "1" or "+":
+                    if (ArSvekiejiSkaiciai(pirmasSkaicius1, antrasSkaicius1))
+                    {
+                        var konvertuotasPirmasSkaicius1 = Convert.ToInt32(pirmasSkaicius1);
+                        var konvertuotasAntrasSkaicius1 = Convert.ToInt32(antrasSkaicius1);
+                        Console.WriteLine($"{pirmasSkaicius1} + {antrasSkaicius1} = {Suma(konvertuotasPirmasSkaicius1, konvertuotasAntrasSkaicius1)}");
+                        Debug.WriteLine("Panaudotas int");
+                    }
+
+                    else if (ArDesimtainiaiSkaiciai(pirmasSkaicius1, antrasSkaicius1))
+                    {
+                        var konvertuotasPirmasSkaicius1 = Convert.ToDouble(pirmasSkaicius1);
+                        var konvertuotasAntrasSkaicius1 = Convert.ToDouble(antrasSkaicius1);
+                        Console.WriteLine($"{pirmasSkaicius1} + {antrasSkaicius1} = {Suma(konvertuotasPirmasSkaicius1, konvertuotasAntrasSkaicius1)}");
+                        Debug.WriteLine("Panaudotas double");
+                    }
+                    break;
+                        case "2" or "-":
+                    if (ArSvekiejiSkaiciai(pirmasSkaicius1, antrasSkaicius1))
+                    {
+                        var konvertuotasPirmasSkaicius1 = Convert.ToInt32(pirmasSkaicius1);
+                        var konvertuotasAntrasSkaicius1 = Convert.ToInt32(antrasSkaicius1);
+                        Console.WriteLine($"{pirmasSkaicius1} + {antrasSkaicius1} = {Atimtis(konvertuotasPirmasSkaicius1, konvertuotasAntrasSkaicius1)}");
+                        Debug.WriteLine("Panaudotas int");
+                    }
+
+                    else if (ArDesimtainiaiSkaiciai(pirmasSkaicius1, antrasSkaicius1))
+                    {
+                        var konvertuotasPirmasSkaicius1 = Convert.ToDouble(pirmasSkaicius1);
+                        var konvertuotasAntrasSkaicius1 = Convert.ToDouble(antrasSkaicius1);
+                        Console.WriteLine($"{pirmasSkaicius1} + {antrasSkaicius1} = {Atimtis(konvertuotasPirmasSkaicius1, konvertuotasAntrasSkaicius1)}");
+                        Debug.WriteLine("Panaudotas double");
+                    }
+                        break;
+                        case "3" or "*":
+                    if (ArSvekiejiSkaiciai(pirmasSkaicius1, antrasSkaicius1))
+                    {
+                        var konvertuotasPirmasSkaicius1 = Convert.ToInt32(pirmasSkaicius1);
+                        var konvertuotasAntrasSkaicius1 = Convert.ToInt32(antrasSkaicius1);
+                        Console.WriteLine($"{pirmasSkaicius1} + {antrasSkaicius1} = {Daugyba(konvertuotasPirmasSkaicius1, konvertuotasAntrasSkaicius1)}");
+                        Debug.WriteLine("Panaudotas int");
+                    }
+
+                    else if (ArDesimtainiaiSkaiciai(pirmasSkaicius1, antrasSkaicius1))
+                    {
+                        var konvertuotasPirmasSkaicius1 = Convert.ToDouble(pirmasSkaicius1);
+                        var konvertuotasAntrasSkaicius1 = Convert.ToDouble(antrasSkaicius1);
+                        Console.WriteLine($"{pirmasSkaicius1} + {antrasSkaicius1} = {Daugyba(konvertuotasPirmasSkaicius1, konvertuotasAntrasSkaicius1)}");
+                        Debug.WriteLine("Panaudotas double");
+                    }
+                        break;
+                        case "4" or "/":
+                    if (ArSvekiejiSkaiciai(pirmasSkaicius1, antrasSkaicius1))
+                    {
+                        var konvertuotasPirmasSkaicius1 = Convert.ToInt32(pirmasSkaicius1);
+                        var konvertuotasAntrasSkaicius1 = Convert.ToInt32(antrasSkaicius1);
+                        Console.WriteLine($"{pirmasSkaicius1} + {antrasSkaicius1} = {Dalyba(konvertuotasPirmasSkaicius1, konvertuotasAntrasSkaicius1)}");
+                        Debug.WriteLine("Panaudotas int");
+                    }
+
+                    else if (ArDesimtainiaiSkaiciai(pirmasSkaicius1, antrasSkaicius1))
+                    {
+                        var konvertuotasPirmasSkaicius1 = Convert.ToDouble(pirmasSkaicius1);
+                        var konvertuotasAntrasSkaicius1 = Convert.ToDouble(antrasSkaicius1);
+                        Console.WriteLine($"{pirmasSkaicius1} + {antrasSkaicius1} = {Dalyba(konvertuotasPirmasSkaicius1, konvertuotasAntrasSkaicius1)}");
+                        Debug.WriteLine("Panaudotas double");
+                    }
+                        break;
+                    }
+            }
+
+            else if (menuPasirinkimas == "5" || menuPasirinkimas == "6")
+            {
+                Console.WriteLine("Įveskite skaičių:");
+                var skaicius = int.Parse(Console.ReadLine());
+
+                switch (menuPasirinkimas)
+                {
+                    case "5":
+                    Console.WriteLine(KelimasKvadratu(skaicius));
+                    break;
+                    case "6":
+                    Console.WriteLine(KelimasKubu(skaicius));
+                    break;
+                    default:
+                    Console.WriteLine("Toks menu pasirinkimas neegzituoja");
+                    break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Klaida");
+            }
             
             Console.WriteLine("Įveskite taisiklingojo daugiakampio kraštinių kiekį (n):");
             var krastiniuKiekis = int.Parse(Console.ReadLine());
@@ -209,14 +315,17 @@
             return pirmasSkaicius / antrasSkaicius;
         }
 
-        public static double KelimasKvadratu(double pirmasSkaicius)
+        public static double KelimasKvadratu(double skaicius)
         {
-            return pirmasSkaicius * pirmasSkaicius;
+            return skaicius * skaicius;
         }
 
-        public static double KelimasKubu(double pirmasSkaicius)
+        public static double KelimasKubu(double skaicius)
         {
-            return pirmasSkaicius * pirmasSkaicius * pirmasSkaicius;
+            return skaicius * skaicius * skaicius;
         }
+
+        public static bool ArSvekiejiSkaiciai(string a, string b) => int.TryParse(a, out _) && int.TryParse(b, out _);
+        public static bool ArDesimtainiaiSkaiciai(string a, string b) => double.TryParse(a, out _) && double.TryParse(b, out _);
     }
 }
