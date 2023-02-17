@@ -10,7 +10,7 @@
             - JEIGU SKAIČIUS YRA NEIGIAMAS "SKAIČIUS YRA NEIGIAMAS"
             - KITU ATVEJU IŠVESTI PATĮ SKAIČIŲ
             */
-            /*
+
             Console.WriteLine("Įveskite skaičių:");
 
             var skaicius = int.Parse(Console.ReadLine());
@@ -18,18 +18,18 @@
             if (skaicius % 2 == 0 && skaicius != 0)
             {
                 Console.WriteLine("Skaičius yra lyginis");
-            }    
-            
+            }
+
             if (skaicius < 0)
             {
                 Console.WriteLine("Skaičius yra neigiamas");
             }
-      
+
             else
             {
                 Console.WriteLine($"{skaicius}");
-            }*/
-            
+            }
+
             /*
             PARAŠYTI PROGRAMĄ, KURI PAPRAŠO
             VARTOTOJO ĮVESTI GRUPĖS NARIŲ KIEKĮ.
@@ -40,9 +40,9 @@
             DAUGIAU NEI 10 ––„TAI KAMERINIS
             ANSAMBLIS“.
             */
-            /*
+
             Console.WriteLine("Įveskite grupės narių kiekį:");
-            
+
             var nariuKiekis = int.Parse(Console.ReadLine());
 
             if (nariuKiekis == 1)
@@ -68,8 +68,8 @@
             else
             {
                 Console.WriteLine("TAI KAMERINIS ANSAMBLIS");
-            }*/
-           
+            }
+
             /*
             PARAŠYTI PROGRAMĄ, KURI
             PAPRAŠO VARTOTOJO ĮVESTI
@@ -84,12 +84,12 @@
             KLAIDĄ PRANEŠTI IR UŽBAIGTI
             DARBĄ
             */
-            
+
             Console.WriteLine("Įveskite išdirbtas valandas:");
 
             var valandos = int.Parse(Console.ReadLine());
 
-            if (valandos < 160 && valandos > 0) 
+            if (valandos < 160 && valandos > 0)
             {
                 Console.WriteLine($"Dar reikia išdirbti: {160 - valandos}");
             }
