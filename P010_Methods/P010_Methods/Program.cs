@@ -4,6 +4,10 @@
     {
         static void Main(string[] args)
         {
+            SveikiVisi();
+            GerosDienos();
+            Linkejimas(NuskaitytiIrIsvestiVarda());
+
             Console.WriteLine("Įveskite pirmą skaičių:");
             int skaicius1 = int.Parse(Console.ReadLine());
 
@@ -64,9 +68,9 @@
             return vardas;
         }
 
-        public static void Linkejimas()
+        public static void Linkejimas(string vardas)
         {
-            Console.WriteLine($"Linkiu jums {NuskaitytiIrIsvestiVarda()} geros dienos");
+            Console.WriteLine($"Linkiu jums {vardas} geros dienos");
         }
 
         /*
