@@ -15,7 +15,7 @@
             9: LABAI GERAI
             10: PUIKIAI
             */
-            
+
             Console.WriteLine("Įveskite egzamino pažymį:");
             var pazymys = int.Parse(Console.ReadLine());
 
@@ -66,9 +66,11 @@
             - Pavyzdžio atsakymas: "pirkėjui priklauso 2 nemokami puodeliai"
             - Alternatyvus atsakymas: "Pirkėjui nepriklauso nemokama kava"
             */
-            
-            var puodeliuKiekis = -2;
-            var nemokamiPuodeliai = puodeliuKiekis / 3;
+
+            Console.WriteLine("Įveskite puodelių kiekį:");
+
+            var puodeliuKiekis = int.Parse(Console.ReadLine());
+            var nemokamiPuodeliai = (double)puodeliuKiekis / 3;
 
             if (nemokamiPuodeliai == 1)
             {
@@ -80,14 +82,14 @@
                 Console.WriteLine($"Pirkėjui priklauso {nemokamiPuodeliai} nemokami puodeliai");
             }
 
+            else if (nemokamiPuodeliai < 1 && nemokamiPuodeliai != 0)
+            {
+                Console.WriteLine("Pirkėjui nepriklauso nemokami puodeliai");
+            }
+
             else if (nemokamiPuodeliai <= 0)
             {
                 Console.WriteLine("KLAIDA");
-            }
-
-            else
-            {
-                Console.WriteLine("Pirkėjui nepriklauso nemokami puodeliai");
             }
 
             /*
@@ -96,7 +98,7 @@
             - Parašykite programą kuri į ekraną išves neigiamą/teigiamą skaičiaus reikšmę
             - Pavyzdžio atsakymas 5 -> -5; 15 -> -15; -25 -> 25; 0 -> N/A;
             */
-            
+
             Console.WriteLine("Įveskite betkokius 4 sveikus skaičius:");
             var skaicius1 = int.Parse(Console.ReadLine());
             var skaicius2 = int.Parse(Console.ReadLine());
@@ -115,7 +117,7 @@
                 Console.WriteLine("N/A");
             }
 
-            else 
+            else
             {
                 Console.WriteLine($"{skaicius1 * -1}");
             }
@@ -174,7 +176,7 @@
             - JEI NAUDOTOJAS ĮVEDĖ PER DIDELĮ SKAIČIŲ - IŠVEDAMAS PRANEŠIMAS "SKAIČIUS YRA MAŽESNIS"
             nutraukiant programos vykdymą Environment.Exit(0) ar pan. naudoti negalima. Naudoti if.
             */
-            
+
             var betKoksSkaicius = 5;
 
             Console.WriteLine("Įveskite skaičių nuo 1 iki 20:");
@@ -207,7 +209,7 @@
             - naudokite if
             - naudokite switch
             */
-            
+
             Console.WriteLine("Įveskite du skaičius:");
 
             var pirmasSkaicius = int.Parse(Console.ReadLine());
@@ -221,7 +223,7 @@
 
             if (matematineOperacija == "+")
             {
-                Console.WriteLine($"Skaičių {pirmasSkaicius} ir {antrasSkaicius } sudėties rezultatas: {pirmasSkaicius + antrasSkaicius}");
+                Console.WriteLine($"Skaičių {pirmasSkaicius} ir {antrasSkaicius} sudėties rezultatas: {pirmasSkaicius + antrasSkaicius}");
             }
 
             if (matematineOperacija == "-")
@@ -249,7 +251,7 @@
             <Hint> ieškant jauniausio, seniausio naudoti if sąlygos sakinius ir naudoti tik elementus ir
             konstrukcijas kurias iki šiol išėjome.
             */
-            
+
             Console.WriteLine("Įveskite draugo vardą:");
 
             var draugoVardas1 = Console.ReadLine();
@@ -338,7 +340,7 @@
 
             else if (data3.Month == 12 && data3.Day == 24)
                 Console.WriteLine("Jums priklauso nemokami kalėdų sausainiai");
-            
+
             else if (data4.Month == 12 && data4.Day == 24)
                 Console.WriteLine("Jums priklauso nemokami kalėdų sausainiai");
 
