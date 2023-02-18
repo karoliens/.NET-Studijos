@@ -15,19 +15,19 @@
 
         public static void DoWhilePavyzdys()
         {
-            var zaidejuSkaicius = 0;
+            int zaidejuSkaicius = -1;
+
             do
             {
-                Console.WriteLine("Kiek žaidėjų žais žaidimą?");
-                zaidejuSkaicius = int.Parse(Console.ReadLine());
-
-            } while (zaidejuSkaicius < 1 || zaidejuSkaicius > 10);
+                Console.WriteLine("Kiek zaideju zais zaidima?");
+                zaidejuSkaicius = Convert.ToInt32(Console.ReadLine());
+            } 
+            
+            while (zaidejuSkaicius < 0 || zaidejuSkaicius > 10);
         }
 
-        /*         
-        * Paprašyti vartotojo įvesti bet kokį skaičių. Išvesti skaičių sumą nuo 1 iki įvesto skaičiaus.
-        */
-
+        // Paprašyti vartotojo įvesti bet kokį skaičių. Išvesti skaičių sumą nuo 1 iki įvesto skaičiaus.
+     
         public static void SkaiciuSumaNuoVienoIkiIvesto()
         {
             var suma = 0;
@@ -61,7 +61,6 @@
                 if (ivestasSkaicius % 2 == 0)
                 {
                     Console.Write($"{ivestasSkaicius}, ");
-                    
                 }
 
                 ivestasSkaicius--;
@@ -123,14 +122,31 @@
             Console.WriteLine("Pakartokite slaptažodį:");
             var pakartotasSlaptazodis = Console.ReadLine();
 
+            var ivedimuKiekis = 1;
+
             while (ivestasSlaptazodis != pakartotasSlaptazodis)
             {
                 Console.WriteLine("Slaptažodis neteisingas. Bandykite dar kartą.");
 
-                Console.WriteLine("Pakartokite slaptažodį:");
                 pakartotasSlaptazodis = Console.ReadLine();
 
-                break;
+                ivedimuKiekis++;
+
+                if(ivedimuKiekis == 3)
+                {
+                    Console.WriteLine("Jūs užblokuotas");
+                    break;
+                }
+
+                if (ivestasSlaptazodis == pakartotasSlaptazodis)
+                {
+                    break;
+                }
+            }
+
+            if (ivestasSlaptazodis == pakartotasSlaptazodis)
+            {
+                Console.WriteLine("Sveikinam! Prisijungėte!");
             }
         }
 
@@ -138,14 +154,20 @@
 
         public static void SkaiciusArHerbas()
         {
-            var randomObjektas = new Random();
-            var ismestaMoneta = randomObjektas.Next(1, 2);
+            Console.WriteLine("Skaičius ar herbas");
+            
             int monetosMetimas = 0;
 
             while (monetosMetimas < 10)
-            {
-                monetosMetimas++;
-            }
+                {
+                var spejimas = Console.ReadLine();
+
+                if (spejimas != "skaicius" && spejimas != "herbas")
+                {
+                    Console.WriteLine("Spėjimas neteisingas");
+                }
+                    monetosMetimas++;
+                }
         }
     }
 }
